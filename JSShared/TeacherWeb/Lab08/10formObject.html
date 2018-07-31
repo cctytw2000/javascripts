@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>10formObject.html</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("idbutton").addEventListener("click",checkf);//事件繫結
+            document.getElementById("idreset").addEventListener("click",resetf);
+            document.getElementById("idsubmit").addEventListener("click",submitf);
+        });
+
+        function checkf() {
+            var theName=document.forms[0].txtName.value;
+            var theName=document.forms[0].elements[0].value;
+            var theName=document.getElementsByName("txtName")[0].value;
+            var theName=document.getElementById("idName").value;
+            // alert(theName);
+            var eles=document.forms[0].elements;
+            var elesLen=eles.length;
+            // alert(elesLen);
+            for(var i=0;i<elesLen;i++){
+                //alert(eles[i].tagName);
+                if(eles[i].checked)
+                    alert(eles[i].value);
+
+            }
+        }
+
+        function resetf() {
+            document.forms[0].reset();//清除為預設
+        }
+
+        function submitf() {
+            var theName=document.getElementsByName("txtName")[0].value;
+
+            if(theName=="")
+                document.getElementById("idsp").innerHTML="you must enter";
+            else
+                document.forms[0].submit();
+        }
+    </script>
+</head>
+<body>
+    <form  action="get.aspx" method="post">
+			name:<input type="text" id="idName" name="txtName" value="abc" /><span id="idsp"></span><br/>
+			<input type="checkbox" name="hobby" checked="checked" value="reading"/>reading
+			<input type="checkbox" name="hobby" value="game"/>game
+			<input type="checkbox" name="hobby" value="sleep"/>sleep
+			<br/>
+            <input type="submit" value="送出" />	
+            <input id="idbutton" type="button" value="check" />
+            <input id="idreset" type="button" value="reset" />
+			<input id="idsubmit" type="button" value="submit" />
+	</form>
+</body>
+</html>

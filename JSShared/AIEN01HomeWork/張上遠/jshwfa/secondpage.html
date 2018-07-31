@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index-css.css">
+    <link rel="stylesheet" href="styles/form2.css">    
+    <style>
+        article{text-align: left;}
+    </style>
+        <script>
+                function idcheck(){
+                    var idName = document.getElementById("account").value;            
+                    var re = /^[\u4e00-\u9fa5]{2,20}$/;
+                    if(re.test(idName)){
+                        // alert("NCorrect");
+                        document.getElementById("nc").innerHTML="<img src='images/nike.jpg'> 正確";
+                    }
+                    else{
+                        // alert("NError");
+                        document.getElementById("nc").innerHTML="<img src='images/cross.jpg'> 錯誤";             
+                    }
+                    
+                    var pWd = document.getElementById("pwd").value;                       
+                    var re = /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{6,}$/;           
+                    if(re.test(pWd)){
+                        // alert("PCorrect");
+                        document.getElementById("pc").innerHTML="<img src='images/nike.jpg' >正確";
+                    }
+                    else{
+                        // alert("PError");
+                        document.getElementById("pc").innerHTML="<img src='images/cross.jpg'> 錯誤";                  
+                    }
+                                    
+                    var dAte = document.getElementById("date").value;    
+                    // document.write(dAte);
+                    var strA = dAte.split(["/"]);
+                    // document.write(strA[2]);
+                    var dTest = new Date(strA).getDate();
+                    // document.write(dTest);
+                    var re = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
+        
+                    if (dTest!=strA[2]){
+                        document.getElementById("dc").innerHTML="<img src='images/cross.jpg' >錯誤";                          
+                    }
+                    else if(re.test(dAte)){
+                        // alert("DCorrect");
+                        document.getElementById("dc").innerHTML="<img src='images/nike.jpg' >正確";
+                    }
+                    else{
+                        // alert("DError");
+                        document.getElementById("dc").innerHTML="<img src='images/cross.jpg' >錯誤";          
+                    }
+                }
+        
+            </script>
+</head>
+<body>
+    <div id="allpage">
+        <!-- Header -->
+        <header><nav>
+            <ul class="menu">
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="firstpage.html">Mutiplication table</a></li>
+                <li><a href="secondpage.html">Submit form</a></li>
+                <li><a href="thirdpage.html">Grading system</a></li>
+                <li><a href="fourthpage.html">Slide show</a></li>
+                <li><a href="fifth.html">Date selector</a></li>
+                <li><a href="">Contacts Us</a></li>
+            </ul>
+            <img src="images/space___big_physics_def_english.jpg" width="1024px">
+        </nav></header>
+        <!-- Header end -->
+        <!-- Contents -->
+        <div class="centre">
+            <article>
+                    <form action="#" method="get" enctype="multipart/form-data">
+                        <fieldset>
+                            <legend>Form Check<em>(必填)</em></legend>
+                            <div class="st1">
+                                <label class="t1" for="account1">姓名:</label>
+                                <input type="text" name="account" id="account" size="10" placeholder="王建民"><span id="nc"></span>
+                                <br>
+                                <span>(1.不可空白，2.至少兩個字以上，3.必須全部為中字)</span>
+                            </div>
+                
+                            <div class="st1">
+                                <label class="t1" for="pwd1">密碼:</label>
+                                <input type="text" name="pwd" id="pwd" placeholder="請輸入密碼" style="color: gray;"><span id="pc"></span>
+                                <br>
+                                <span>1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*]</span>
+                            </div>
+                
+                            <div class="st1">
+                                <label class="t1" for="pwd1">日期:</label>
+                                <input type="text" name="date" id="date" maxlength="10" placeholder="ex:2000/02/29" style="color: gray;"><span id="dc"></span>
+                                <br>
+                                <span>格式:西元年/月/日 yyyy/MM/dd</span>
+                            </div>
+                
+                            <div align="center">
+                            <input type="button" value="送出" onclick="idcheck()">
+                            <input type="reset" value="清除">
+                            </div>
+                        </fieldset>
+                    </form>
+            </article>  
+        <hr>
+        <aside>
+        
+        </aside>
+        </div>
+        <!-- Contents end -->
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Html demo page</p>
+        </footer>
+        <!-- Footer end -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01varDeclarationTypeTransfer.html</title>
+    <script>
+        var a = 10;  //number literal
+        //document.write("a=");
+        //document.write(a);
+        document.write("a=" + a + " typeof(a)=" + typeof (a) + "<br>");
+        a = "abc"; //string literal
+        document.write("a=" + a + " typeof(a)=" + typeof (a) + "<br>");
+        var n = null;
+        document.write("n=" + n + " typeof(n)=" + typeof (n) + "<br>");
+        var u;
+        document.write("u=" + u + " typeof(u)=" + typeof (u) + "<br>");
+       
+        //object
+        var personal = new Object();
+        personal.name = "Jack";
+        personal.ID = "A123456789";
+        personal.age = 30;
+        
+        document.write(personal.name + "," + personal["ID"] + "," + personal.age + "<br>");
+
+        var cars = {label:"audi",speed:300}; //object literal
+        document.write(cars.label + "," + cars["speed"] + "<br>");
+
+        document.write("parseInt('123.45')=" + parseInt('123.45') + "<br>");  //123
+        document.write("parseInt('a123.45')=" + parseInt('a123.45') + "<br>");  //NaN
+    </script>
+</head>
+<body>
+    <h1>h1</h1>
+</body>
+</html>

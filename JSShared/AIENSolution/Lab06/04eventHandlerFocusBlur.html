@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>04eventHandlerFocusBlur.html</title>
+    <script>
+        window.onload = function () {
+            document.getElementById("idinput").onchange = change;  //修改文字方塊內容且離開
+            document.getElementById("idinput").onblur = blur; 　　　　//焦點離開
+            document.getElementById("idinput").onfocus = focus;　　  //取得焦點
+            document.getElementById("idName").onblur = ckName;
+        }
+        function ckName() {
+            var theName=document.getElementById("idName").value;
+            if (theName == "")
+                document.getElementById("idsp").innerHTML = "<img src='error.png' />you must enter";
+                //document.getElementById("idName").insertAdjacentHTML("AfterEnd", "you must enter");
+        }       
+
+        function change() {
+            document.fgColor = "yellow";  //fgColor-->foreground color(前景顏色,文字)
+        }
+
+        function blur() {
+            document.bgColor = "red";       //bgColor-->background color(背景顏色)
+
+        }
+
+        function focus() {
+            document.bgColor = "blue";
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="text" id="idinput" value="click here change bgColor"/>
+	<h1>this is h1</h1>
+    <hr />
+    name:<input type="text" id="idName" />
+    <span id="idsp"></span>
+    <br />
+    password:<input type="password" id="idPwd" />
+</body>
+</html>

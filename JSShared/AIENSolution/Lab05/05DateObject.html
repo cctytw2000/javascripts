@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>05DateObject.html</title>
+    <script>
+        //var d = new Date();  //建立日期物件方法１
+        //var d = new Date("2016/7/16");　　//建立日期物件方法３
+        var d = new Date(2016, 6, 14);　　　//建立日期物件方法４
+        var theYear = d.getFullYear() - 1911;
+        var theMonth = d.getMonth() + 1;
+        var theDate = d.getDate();
+        //document.write(d);
+        //document.write("民國" + theYear + "年" + theMonth + "月" + theDate + "日" + "<br>");
+        
+        //================
+        //昨天=今天 - 1天
+        //昨天毫秒數=今天毫秒數 - 1天毫秒數
+        //昨天毫秒數=new Date().getTime() - 24 * 60 * 60 * 1000
+        //昨天=new Date(昨天毫秒數)
+        //================
+        var y = new Date(new Date().getTime() - 24 * 60 * 60 * 1000);　//建立日期物件方法２
+        alert(y);
+        
+        //參考Ｌab12/01Cookie.html
+        var exp = new Date();
+        //alert(exp);
+        exp.setTime(exp.getTime() - (24 * 60 * 60 * 1000));
+        alert(exp);
+        </script>
+</head>
+<body>
+
+</body>
+</html>

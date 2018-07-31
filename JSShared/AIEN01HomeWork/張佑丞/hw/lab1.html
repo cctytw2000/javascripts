@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework</title>
+    <link rel="stylesheet" href="style/h.css">
+</head>
+<style>
+    article {
+        width: 100%;
+    }
+
+    table.tb1 {
+        border: 3px solid rgb(12, 9, 168);
+        border-collapse: collapse;
+        width: 600px;
+        height: auto;
+        margin: 50px auto;
+
+        background-color: rgb(170, 241, 250);
+        
+
+    }
+
+    td {
+        border: 3px solid rgb(12, 9, 168);
+        text-align: center;
+
+    }
+
+</style>
+
+<body>
+    <div class="tttt">
+        <header>
+            <h2 class="topp"> AIEN 02-Homework</h2>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">首頁</a>
+                </li>
+                <li>
+                    <a href="lab1.html">九九乘法表</a>
+                </li>
+                <li>
+                    <a href="lab2.html">填表單</a>
+                </li>
+                <li>
+                    <a href="lab3.html">評分</a>
+                </li>
+                <li>
+                    <a href="lab4.html">廣告輪播</a>
+                </li>
+                <li>
+                    <a href="lab5.html">日曆選擇</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="ardiv">
+            <article>
+                <h2 class="title">人工智慧應用開發就業養成班</h2>
+                <table class="tb1">
+                    <tr>
+                        <script>
+                            for (i = 2; i < 10; i++)
+                                for (j = 1; j < 10; j++)
+                                    if (j == 1)
+                                        document.write("<td>" + i + "*" + j + "=" + i * j + "<br>")
+                                    else if (j > 1 && j < 9)
+                                        document.write(i + "*" + j + "=" + i * j + "<br>")
+                                    else if (j == 9)
+                                        document.write(i + "*" + j + "=" + i * j + "</td>")   
+                        </script>
+                    </tr>
+                </table>
+
+            </article>
+
+
+        </div>
+        <footer>
+            <p>資策會 &nbsp;Tel:(02) 6631-6599 &nbsp; 台北市大安區復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology
+                CO. </p>
+        </footer>
+    </div>
+</body>
+
+</html>

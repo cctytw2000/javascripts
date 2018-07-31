@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>05createOptionObject.html</title>
+    
+	</head>
+	<body>
+        <select id="idSelectYear"></select>
+        <select id="idSelectMonth"></select>
+        <input type="button" value="ClearDate" id="idClearDate">
+        <script type="text/javascript">
+            //window.onload = function () {
+                document.getElementById("idSelectYear").addEventListener("change",addDate);
+                document.getElementById("idSelectMonth").addEventListener("change",addDate);
+                document.getElementById("idClearDate").addEventListener("click",clearDate);
+                for (i =2010; i <= 2020; i++) {   //新增年 
+                    var opt = window.document.createElement("option");
+                    opt.value = i;
+                    opt.innerHTML = i;
+                    document.getElementById('idSelectYear').appendChild(opt);
+                }
+
+                for (i = 1; i <= 12; i++) {   //新增月 
+                        var opt = window.document.createElement("option");
+                        opt.value = i;
+                        opt.innerHTML = i;
+                        document.getElementById('idSelectMonth').appendChild(opt);
+                    }
+
+           // };
+
+           function addDate(){
+               var theYear=document.getElementById("idSelectYear").value;
+               var theMonth=document.getElementById("idSelectMonth").value;
+               //alert(theYear+","+theMonth);
+               var d=new Date(theYear,theMonth,0);
+               alert(d.getDate());
+           }
+
+           function clearDate(){
+               //document.getElementById("idSelectMonth").innerHTML="";
+               var theMonth= document.getElementById("idSelectMonth");
+               var theMonthLen=theMonth.childNodes.length;
+               alert(theMonthLen);
+               for(var i=0;i<theMonthLen;i++ ){
+                    // theMonth.childNodes[0].remove();
+                    //theMonth.firstChild.remove();
+                    theMonth.lastChild.remove();
+               }
+           }
+        </script>
+	</body>
+
+</html>

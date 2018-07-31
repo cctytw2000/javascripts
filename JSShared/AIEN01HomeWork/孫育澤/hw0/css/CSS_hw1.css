@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0
+}
+
+#table01{
+    width:500px;
+    border:3px gainsboro double;
+    background-color: aliceblue;
+    margin:50px auto;
+    padding:2px;
+    border-collapse: collapse;
+}
+
+caption{
+    margin:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+table td{
+    border:1px solid black;
+    text-align:center;
+    color:darkgray;
+    height:200px;
+}
+
+.MyNote{
+    font-family: fantasy;
+    color:darkgray;
+    font-size: 30px;
+}

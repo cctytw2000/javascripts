@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首頁</title>
+    <link rel="stylesheet" href="style/str3.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var imgs = document.querySelectorAll(".imgbut");
+            var imgsLen = imgs.length;
+            for (var i = 1; i < imgsLen; i++) {
+                imgs[i].addEventListener("mouseover", mouseOver);
+                imgs[i].addEventListener("mouseout", mouseOut);
+                imgs[i].addEventListener("click", Click);
+            }
+        });
+        var ck = true;
+        function mouseOver() {
+            var a = this.id[3];
+            if (ck) {
+                for (var j = 1; j <= a; j++) {
+                    document.images[j].src = "image/chngstar.gif";
+                }
+            }
+        }
+        function mouseOut() {
+            var a = this.id[3];
+            if (ck) {
+                for (var j = 1; j <= a; j++) {
+                    document.images[j].src = "image/star.gif";
+                }
+            }
+        }
+        function Click() {
+            ck = !ck;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="zero.html">回首頁</a></li>
+                    <li><a href="first.html">九九乘法表</a></li>
+                    <li><a href="second.html">Form Check</a></li>
+                    <li><a href="third.html">評點製作</a></li>
+                    <li><a href="fourth.html">廣告輪播</a></li>
+                    <li><a href="fifth.html">製作年日曆</a></li>
+                </ul>
+            </nav>
+            <img src="image/homework.jpg" alt="logo" title="logo">
+            <div class="content">
+            <article>
+                <h2 class="title">評點製作</h2>
+            </article>
+            </div>
+        </header>
+       
+        <div>
+            <img id="img1" class="imgbut" src="image/star.gif">
+            <img id="img2" class="imgbut" src="image/star.gif">
+            <img id="img3" class="imgbut" src="image/star.gif">
+            <img id="img4" class="imgbut" src="image/star.gif">
+            <img id="img5" class="imgbut" src="image/star.gif">
+        </div>
+    </div>
+</body>
+
+</html>

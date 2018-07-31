@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW-01</title>
+    <link rel="stylesheet" href="Linking/web.css">
+</head>
+<style>
+    table {
+        border: 3px solid #2894ff;
+        color: red;
+        background-color: #a6ffff;
+        border-collapse: collapse;
+        margin:50px auto;
+    }
+    td {
+        border: 2px solid #2894ff;
+    }
+
+</style>
+
+<body>
+    <div id="allpage">
+        <header>
+            <h1>JavaScript 作業</h1>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="hw-homepage.html">HW-01</a>
+                    </li>
+                    <li>
+                        <a href="hw-page02.html">HW-02</a>
+                    </li>
+                    <li>
+                        <a href="hw-page03.html"></a>
+                    </li>
+                    <li>
+                        <a href="hw-page04.html"></a>
+                    </li>
+                    <li>
+                        <a href="hw-page05.html">HW-05</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+        <div class="content">
+            <article>
+                <h3 class="title">九九乘法表</h3>
+                <table>
+                    <tr>
+                        <script>
+                            for (var i = 2; i < 10; i++) {
+                                document.write("<td>")
+                                for (var j = 1; j < 10; j++)
+                                    document.write(i + "*" + j + "=" + i * j + "<br>")
+                                document.write("</td>")
+                            }
+                        </script>
+                    </tr>
+                </table>
+
+            </article>
+            <!-- <aside>
+                <h2 class="title">最新消息</h2>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+            </aside> -->
+        </div>
+        <footer>
+            <!-- E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology
+            CO. -->
+        </footer>
+    </div>
+</body>
+
+</html>

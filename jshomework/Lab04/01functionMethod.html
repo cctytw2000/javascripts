@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01functionMethod.html</title>
+    <script>
+        //==========定義函數==================
+        //方法一宣告式函數，定義帶參數的函數
+        // function add1(a,b){
+        //   return a+b
+        // }
+        // a = parseInt(window.prompt("please input a:"))
+        // b = parseInt(window.prompt("please input b:"))
+        // document.write("add1(10,20)="+add1(10,20))
+       
+
+        //==========函式呼叫==================
+        //呼叫帶參數的函數
+     
+
+
+        //JavaScript沒有規定function的參數及呼叫function時給予的參數數量必須要一致
+        //少掉的參數為undefined，而多的參數會被忽略
+
+
+
+        //==========定義函數==================
+        //方法二函數實字
+        // var add2 = function(a,b){
+        //     return a + b
+        // }
+        
+        //  document.write(add2)
+
+        //列印函數內容
+
+
+
+        //==========方法製作==================
+        //定義物件        
+           var person={
+           first : window.prompt("please input firstname:"),
+           last : window.prompt("please input lastname:")
+           }
+        //定義物件方法一(使用函數實字)
+        //  person.fullname=function(){return this.first+this.last}
+
+        //定義物件方法二(使用宣告式函數)
+         function fullname1()
+         {
+             return this.first+this.last
+         }
+         person.fullname2 = fullname1
+        //方法呼叫
+    //    document.write(person.fullname()+"<br>")
+       document.write(person.fullname2()+"<br>")
+
+        //==========檢查是否有此方法，是否支援此方法，已達到跨瀏覽器功能==================
+        document.write(person.fullname2+"<br>")
+       if(person.fullname5)
+             alert(true)
+       else
+             alert(false)
+       alert(alert)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+.s1{
+    list-style-type: none;
+    list-style-image: url("../images/fig1.gif");
+    }
+h2{
+    color:peru
+    }
+body{
+    background-image: url("../images/back4.jpg");
+    margin-top:55px;
+    margin-left:100px;
+    margin-right:200px;
+}
+a:link{
+    color: brown
+
+}
+a:visited{
+    color: chartreuse
+}
+a:hover{
+    text-decoration: underline;
+    color: mediumslateblue
+}
+a:active{
+    font-size: 60px;
+    color: blue
+}
+@font-face{
+    src: url(../fonts/JustOldFashion.ttf);
+    font-family: fontxxx;
+}
+@font-face{
+    src: url(../fonts/SCRIPALT.ttf);
+    font-family: fontyyy;
+}
+@font-face{
+    src: url(../fonts/SCRIPTIN.ttf);
+    font-family: fontzzz;
+}
+@font-face{
+    src: url(../fonts/CW2.TTC);
+    font-family: fontaaa;
+}
+.s2{
+    font-family: fontyyy;
+}
+.s3{
+    font-family: fontzzz;
+}
+.s5{
+    font-family: 華康鋼筆體W2;
+}
+table{
+    background-color: lightcoral;
+    width: 400px;
+    border: 5px solid purple;
+    border-collapse: collapse;
+}
+td,th{
+    border: 3px dashed blue;
+    padding: 5px;
+    text-align: center;
+    vertical-align: bottom;
+}
+tbody tr:nth-child(2n){
+     background-color: gold;
+}
+tbody tr:nth-child(2n+1){
+    background-color: silver;
+}
+tbody td:hover{
+    background-color: lightsalmon;
+}

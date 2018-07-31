@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+
+#allpage{
+    width:1024px;
+    margin:0 auto;
+  
+}
+
+h1{
+    margin:30px;
+    font-family: 'Great Vibes', cursive;
+    font-size:60px;
+    text-align:center;
+}
+.menu{
+    overflow:auto;
+    width:100%;
+    list-style-type: none;
+    /* background-color:#66B3FF; */
+    border-bottom:3px solid #cccccc;
+    border-top-right-radius:15px;
+    border-top-left-radius:15px;
+}
+
+.menu li{
+    float:left;
+    width:204.8px;
+
+    /* border-right:1px solid #CCCCCC; */
+
+}
+.menu li a{
+    display:block;
+    line-height:3em;
+    color:#333333;
+    text-decoration:none;   
+    text-align:center;
+    font-family: 'Great Vibes', cursive;
+    font-size:20px;
+}
+.menu li a:hover{
+    color:#FFFFFFFF;
+    background-color:darkgray;
+    font-family: 'Great Vibes', cursive;
+    font-size:20px;
+}
+
+#frameContent{
+    width:100%;
+    height:768px;
+    
+
+}

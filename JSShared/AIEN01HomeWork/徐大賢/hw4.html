@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gary Hsu's Homework Page</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+
+</head>
+
+
+<body>
+	
+	<header id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<span class="icon icon-wrench"></span>
+				<h1><a >Gary Hsu's Homework Page</a></h1>
+				<!-- <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span> -->
+			</div>
+			<div id="triangle-up"></div>
+		</div>
+	</header>>
+	<nav id="menu-wrapper">
+			<div id="menu">
+				<ul>
+					<li><a href="hw1.html"  title="">Timestable</a></li>
+					<li><a href="hw2.html"  title="">Formcheck</a></li>
+					<li><a href="hw3.html"  title="">Score</a></li>
+					<li><a href="hw4.html"  title="">Carousel</a></li>
+					<li><a href="hw5.html"  title="">Calender</a></li>
+				</ul>
+			</div>
+	</nav>
+
+	<div id="wrapper" style="height: 1200px;font-size: 28px;font-weight: 400;" >
+		<br>
+		<div style="margin: 0 auto;width: 1030px">
+			<img src="images/left.png" width="100px" style="display:inline-block;" id="left">
+			<img src="images/2.gif" width="800px" style="display:inline-block;" id="screen">
+			<img src="images/right.png" width="100px" style="display:inline-block;" id="right">
+	    </div>
+
+
+	</div>
+	<div id="stamp" class="container">
+		<div class="hexagon"><span class="icon icon-wrench"></span></div>
+	</div>
+	<!-- <div id="copyright" class="container">
+		<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+	</div> -->
+	<script type="text/javascript">
+		var a = 2;
+		document.getElementById("left").addEventListener("click",previous);
+		document.getElementById("right").addEventListener("click",next);
+		function previous(){
+			a = (a+7) %8;
+			document.getElementById("screen").src ="images/" + a + ".gif";
+		}
+		function next(){
+			a = (a+1) %8;
+			document.getElementById("screen").src ="images/" + a + ".gif";
+		}
+	</script>
+</body>
+</html>

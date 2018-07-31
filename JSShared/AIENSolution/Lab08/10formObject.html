@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>10formObject.html</title>
+    <script>
+        window.onload = function () {
+            document.getElementById("idbutton").onclick = checkf;
+            document.getElementById("idsubmit").onclick = submitf;
+        };
+        function checkf() {
+            var eles = document.forms[0].elements;  //表單下所有元素
+            //alert(eles.length);　　　　　　　　　　　 //元素長度
+            for (var i = 0; i < eles.length; i++) {
+                //alert(eles[i].tagName);
+                if (eles[i].checked)　　　　　　　　　　//有打勾的元素會回傳true　
+                    alert(eles[i].value);
+            }
+        }
+        function submitf() {
+            if (document.getElementById("idName").value == "")
+                document.getElementById("idsp").innerHTML = "you must enter";
+            else
+                document.forms[0].submit();
+        }
+    </script>
+</head>
+<body>
+    <form action="http://192.168.21.50:8080/get.jsp" method="get">
+			name:<input type="text" name="txtName" id="idName" value="abc" /><span id="idsp"></span><br/>
+			<input type="checkbox" name="hobby" checked="checked" value="reading"/>reading
+			<input type="checkbox" name="hobby" value="game"/>game
+			<input type="checkbox" name="hobby" value="sleep"/>sleep
+			<br/>
+            <input type="submit" value="送出" />	
+            <input id="idbutton" type="button" value="check" />
+			<input id="idsubmit" type="button" value="submit" />
+	</form>
+</body>
+</html>

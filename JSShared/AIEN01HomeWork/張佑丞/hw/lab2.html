@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework</title>
+    <link rel="stylesheet" href="style/h.css">
+    <script src="javascript/lab2.js"></script>
+</head>
+<style>
+    article {
+        width: 100%;
+    }
+
+    fieldset {
+        border: 1px solid green;
+        border-radius: 20px;
+        width: 500px;
+        margin: auto;
+        padding: 20px;
+
+    }
+
+    .div1 {
+        border-bottom: 1px solid rgb(190, 189, 189);
+        padding: 0px 0px 10px 10px;
+        margin-bottom: 15px
+    }
+
+    .lab1 {
+        margin-right: 5px;
+
+    }
+
+    .hh {
+        margin: 0px;
+        color: rgb(190, 189, 189);
+        font-weight: 200;
+        margin-top: 3px;
+
+    }
+
+    .hi {
+
+        text-align: center;
+    }
+
+    span {
+        color: red;
+        font-size: 16px;
+        font-family: 標楷體;
+
+    }
+    form{
+        margin: 50px 0;
+    }
+</style>
+
+
+<body>
+    <div class="tttt">
+        <header>
+            <h2 class="topp"> AIEN 02-Homework</h2>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">首頁</a>
+                </li>
+                <li>
+                    <a href="lab1.html">九九乘法表</a>
+                </li>
+                <li>
+                    <a href="lab2.html">填表單</a>
+                </li>
+                <li>
+                    <a href="lab3.html">評分</a>
+                </li>
+                <li>
+                    <a href="lab4.html">廣告輪播</a>
+                </li>
+                <li>
+                    <a href="lab5.html">日曆選擇</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="ardiv">
+            <article>
+                <h2 class="title">人工智慧應用開發就業養成班</h2>
+                <form>
+                    <fieldset>
+                        <legend>Forom Check</legend>
+                        <div class="div1">
+                            <label class="lab1">姓名:</label>
+                            <input type="text" placeholder="請輸入姓名" name="name-2 " id="name2">
+                            <span id="spanname"></span>
+                            <h6 class="hh">(1.不可空白，2.至少兩個字以上，3.必須全部中文字)</h6>
+                        </div>
+                        <div class="div1">
+                            <label class="lab1">密碼:</label>
+                            <input type="password" placeholder="請輸入密碼" name="pw-1" id="pw1">
+                            <span id="spanpw"></span>
+                            <h6 class="hh">(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*]</h6>
+                        </div>
+                        <div class="div1">
+                            <label class="lab1">日期:</label>
+                            <input type="text" placeholder="ex:2000/2/29" name="date-1" id="date1">
+                            <span id="spandt"></span>
+                            <h6 class="hh">(格式:西元年/月/日 yyyy/MM/dd)</h6>
+                        </div>
+                        <div class="hi">
+                            <input type="submit" value="送出" onclick="return chkall()">
+                            <input type="reset" value="清除">
+                        </div>
+                    </fieldset>
+                </form>
+            </article>
+        </div>
+        <footer>
+            <p>資策會 &nbsp;Tel:(02) 6631-6599 &nbsp; 台北市大安區復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology
+                CO. </p>
+        </footer>
+    </div>
+</body>
+
+</html>

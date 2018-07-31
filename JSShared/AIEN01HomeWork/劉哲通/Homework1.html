@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+       .table1{
+            border:3px solid #00BBFF;background-color: #BBFFEE;color:#CC0000; margin: 16px;
+             border-collapse: collapse ; border-top:3px solid #00BBFF
+        }
+        td{ border-left: 2px solid #00BBFF;padding: 4px;text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="allpage">
+        <header>
+            
+            <nav>
+                <ul class="menu">
+                <li><a href="index.html">回首頁</a></li>
+                <li><a href="Homework1.html">九九乘法表</a></li>
+                <li><a href="Homework2.html">表單製作</a></li>
+                <li><a href="HomeWork3.html">評點製作</a></li>
+                <li><a href="">主要客戶</a></li>
+                <li><a href="">公司簡介</a></li>
+                <li><a href="">聯絡我們</a></li>
+                </ul>
+            </nav>
+            <img src="images/logo.jpg"width=1024px height=150px>
+        </header>
+        <div class="content">
+        <article>
+                <h2 class="title">九九乘法表</h2>
+                <table class = "table1">
+                        <script>
+                            for(var i=1;i<10;i++)
+                         {
+                            document.write("<tr>")
+            for(var j=2;j<10;j++)
+            document.write("<td>"+j+"*"+i+"="+i*j+"<br>"+"</td>");
+            document.write("</tr>")
+                         }
+                     </script>
+                     </table>
+        </article>
+        <aside>
+                <h2 class="title">最新消息</h2>
+                 <dl>   
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                 </dl>
+                 <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>   
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>   
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+               </dl>
+        </aside>
+    </div>
+    <footer>
+            E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology CO. 
+    </footer>
+    </div>
+</body>
+</html>

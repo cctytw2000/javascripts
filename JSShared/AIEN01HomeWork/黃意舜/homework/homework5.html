@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWork5</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        document.getElementById("idYear").addEventListener("change",change)
+        document.getElementById("idMon").addEventListener("change",change)
+        document.getElementById("idbut").addEventListener("click",check)
+        
+        for(i=2010;i<=2020;i++){
+            var selYear = document.getElementById("idYear");
+            var optYear = document.createElement("option");
+            var yearText = document.createTextNode(String(i));
+            optYear.appendChild(yearText);
+            optYear.setAttribute("value",String(i));
+            selYear.appendChild(optYear);
+        }
+        for(j=1;j<=12;j++){
+            var selMon = document.getElementById("idMon");
+            var optMon = document.createElement("option");
+            var monText = document.createTextNode(String(j));
+            optMon.appendChild(monText);
+            optMon.setAttribute("value",String(j));
+            selMon.appendChild(optMon);
+        }
+        for(k=1;k<=31;k++){
+            var selDate = document.getElementById("idDate");
+            var optDate = document.createElement("option");
+            var dateText = document.createTextNode(String(k));
+            optDate.appendChild(dateText);
+            optDate.setAttribute("value",String(k));
+            selDate.appendChild(optDate);
+        }
+    });
+
+    function change(){
+        var theDate = document.getElementById("idDate");
+        theDate.remove();
+        document.getElementsByTagName("lebal").item(2).remove();
+        var theDate_new = document.createElement("select");
+        theDate_new.setAttribute("id","idDate");
+        var thediv = document.getElementById("iddiv");
+        thediv.appendChild(theDate_new);
+        var lebal_new = document.createElement("lebal");
+        var lebalText = document.createTextNode("日");
+        lebal_new.appendChild(lebalText);
+        thediv.appendChild(lebal_new);
+        var theYear = document.getElementById("idYear").value;
+        var theMon = document.getElementById("idMon").value;
+        var theDay = new Date(theYear,theMon,0)
+        var theDate = theDay.getDate();
+        for(k=1;k<=theDate;k++){
+            var selDate = document.getElementById("idDate");
+            var optDate = document.createElement("option");
+            var dateText = document.createTextNode(String(k));
+            optDate.appendChild(dateText);
+            optDate.setAttribute("value",String(k));
+            selDate.appendChild(optDate);
+        }
+    }
+    function check(){   
+        var theYear = document.getElementById("idYear").value;
+        var theMon = document.getElementById("idMon").value;
+        var theDate = document.getElementById("idDate").value;
+        document.getElementById("idp").innerHTML=
+        "你選擇的日期為:"+theYear+"年"+theMon+"月"+theDate+"日";
+    }
+       
+</script>
+<style>
+    h1{
+        text-align: center;
+    }
+    div.sty1{
+        width:500px;
+        height:100px;
+        border:1px solid red;
+        margin:0 auto;
+        padding:1em;
+        
+    }
+    #iddiv{
+        float:left;
+        
+    }
+    #idinfo{
+        width:250px;
+        height:100px;
+        border:1px solid red;
+        float:right;
+
+    }
+    #idinfo h3{
+        margin:0;
+        padding:3px;
+    }
+    #checksty{
+        float:left;
+        
+    }
+</style>
+<body>
+    
+    <h1>Calendar 2010~2020</h1>
+    
+    <div class="sty1">
+        <div id="iddiv">
+            <select id="idYear"></select><lebal>年</lebal>
+            <select id="idMon"></select><lebal>月</lebal>
+            <select id="idDate"></select><lebal>日</lebal>
+        </div>
+        <div id="idinfo">
+            <h3>Information</h3>
+            <P id="idp"></P>
+        </div>
+        <br><br>           
+        <div id="checksty">
+            <input type="button" id="idbut" value="確定日期">
+        </div>
+        
+    </div>
+</body>
+</html>

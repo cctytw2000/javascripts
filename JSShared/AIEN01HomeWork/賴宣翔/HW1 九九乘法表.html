@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        caption{font-family:微軟正黑體}
+        table{border:3px solid black ;
+        border-collapse: collapse ;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        color:darkblue ;
+        width:80%;
+        margin:5px auto;
+        text-align: center}
+    
+        td{border-right:1px solid purple; }
+        
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>九九乘法表作業</title>
+    <script>
+       
+        document.write ('<table>        <caption>九九乘法表</caption>')
+      
+        for(var i=1;i<=9;i++)
+        { document.write('<tr border = "0">')
+            for(j=2;j<=9;j++)
+            {
+                document.write('<td >',j,'*',i,'=',j*i,'</td>')
+            }
+            document.write("</tr>")
+        }
+        document.write ('</table>')
+        
+    </script>
+    
+</head>
+<body>
+    
+
+</body>
+</html>

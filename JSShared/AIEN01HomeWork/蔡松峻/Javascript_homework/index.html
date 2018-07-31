@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index_css.css">
+    <style>
+        table{
+            border: 1px solid brown;
+            padding: 20px;
+            background-color: burlywood;
+            border-collapse: collapse;
+        }
+
+        tr{
+            text-align: center;
+        }
+
+        td{
+            border-right: 1px solid brown;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="form.html">表單檢核</a>
+                    </li>
+                    <li>
+                        <a href="score.html">評分</a>
+                    </li>
+                    <li>
+                        <a href="#">合作夥伴</a>
+                    </li>
+                    <li>
+                        <a href="#">主要客戶</a>
+                    </li>
+                    <li>
+                        <a href="#">公司簡介</a>
+                    </li>
+                    <li>
+                        <a href="#">聯絡我們</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="img/logo.png" alt="" width="1024">
+        </header>
+
+        <div class="content">
+            <article>
+                <h2 class="title">九九乘法表</h2>
+                <section>
+                    <h2></h2>
+                    <div class="tb" id="tbdiv">
+                        
+
+                    </div>
+
+                </section>
+
+            </article>
+
+            <aside>
+
+            </aside>
+
+        </div>
+
+
+        <footer>
+            蔡松峻
+        </footer>
+
+        <script>
+                str_table = "<table>";
+                str_tr = "";
+
+                for (i = 1; i <= 9; i++) {
+                    str_tr += "<tr>";
+                    for (j = 2; j <= 9; j++) {
+                        str_tr += "<td style='width: 90px;'>" + j + " * " + i + " = " + j * i + "</td>";
+                    }
+                    str_tr += "</tr>";
+                }
+
+                str_table += str_tr + "</table>";
+
+                document.getElementById("tbdiv").innerHTML = str_table;
+            </script>
+    </div>
+
+
+</body>
+
+</html>

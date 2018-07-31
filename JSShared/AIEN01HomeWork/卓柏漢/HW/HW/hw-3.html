@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript星星評分</title>
+    <link rel="stylesheet" href="codestyle/0426.css">
+    <style>
+        fieldset {
+            width: 700px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            border-radius: 15px;
+        }
+
+        .str1 {
+            width: 600px;
+            margin: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .submit {
+            width: 450px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        span {
+            font-size: 5px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var stara = document.getElementsByTagName("img");
+            var starlen = stara.length;
+            for (var i = 0; i < starlen; i++) {
+                stara[i].addEventListener("mouseover", mouseOver);
+                stara[i].addEventListener("mouseout", mouseOut);
+                stara[i].addEventListener("click", Click, false);
+                stara[i].index = i;
+            }
+        });
+        function mouseOver() {
+            var a = this.id[6];
+            for (var i = 0; i < a; i++) {
+                document.images[i].src = "images/chngstar.gif";
+            }
+        }
+        function mouseOut() {
+            var a = this.id[6];
+            for (var i = 0; i < a; i++) {
+                document.images[i].src = "images/star.gif";
+
+            }
+        }
+        function Click() {
+            var a = this.id[6];
+            for (var i = 0; i < a; i++) {
+                document.images[i].outerHTML = "<img src='images/chngstar.gif'>";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="#">首頁</a>
+                    </li>
+                    <li>
+                        <a href="hw-1.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="hw-2.html">帳號密碼驗證</a>
+                    </li>
+                    <li>
+                        <a href="hw-3.html">評分的星星</a>
+                    </li>
+                    <li>
+                        <a href="bootstrappractice.html">輪播的功能</a>
+                    </li>
+                    <li>
+                        <a href="hw-5w.html">日期的選擇</a>
+                    </li>
+                    <li>
+                        <a href="first.html">HTML作業</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <img src="images/star.gif" class="imgs" id="idstar1">
+            <img src="images/star.gif" class="imgs" id="idstar2">
+            <img src="images/star.gif" class="imgs" id="idstar3">
+            <img src="images/star.gif" class="imgs" id="idstar4">
+            <img src="images/star.gif" class="imgs" id="idstar5">
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首頁</title>
+    <link rel="stylesheet" href="style/str0.css">
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("idSelectYear").addEventListener("change", ch);
+            document.getElementById("idSelectMonth").addEventListener("change", ch);
+
+            for (a = 2010; a <= 2020; a++) {   //新增年
+                var opt = document.createElement("option");
+                opt.setAttribute("value", a);
+                var optTxt = document.createTextNode(a);
+                opt.appendChild(optTxt);
+                // opt.value = a;
+                // opt.innerHTML = a;
+                document.getElementById('idSelectYear').appendChild(opt);
+            }
+            // -----------------------------------------------------                       
+            for (i = 1; i <= 12; i++) {   //新增月 
+                var opt = document.createElement("option");  //<option></option>
+                opt.setAttribute("value", i);  //<option value="....></option>
+                var optTxt = document.createTextNode(i);  //1,2,....
+                opt.appendChild(optTxt);  //<option value="....>1</option>
+                // opt.value = i;
+                // opt.innerHTML = i;
+                document.getElementById('idSelectMonth').appendChild(opt);
+            }
+
+        });
+        function ch() {
+            //alert(this.id);
+            var theYear = document.getElementById("idSelectYear").value;
+            // alert(theYear);
+            var theMonth = document.getElementById("idSelectMonth").value;
+            // alert(theMonth) 
+            document.getElementById("idSelectDay").innerHTML = "";
+            var d = new Date(theYear, theMonth, 0);  //月的第0天就是1月的最後一天
+            var Day = d.getDate();
+            for (b = 1; b <= Day; b++) {   //新增日
+                var opt = document.createElement("option");  //<option></option>
+                // opt.setAttribute("value", b);  //<option value="....></option>
+                var optTxt = document.createTextNode(b);  //1,2,....
+                opt.appendChild(optTxt);  //<option value="....>1</option>
+                // opt.value = b;
+                // opt.innerHTML = b;
+                document.getElementById('idSelectDay').appendChild(opt);
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="zero.html">回首頁</a>
+                    </li>
+                    <li>
+                        <a href="first.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="second.html">Form Check</a>
+                    </li>
+                    <li>
+                        <a href="third.html">評點製作</a>
+                    </li>
+                    <li>
+                        <a href="fourth.html">廣告輪播</a>
+                    </li>
+                    <li>
+                        <a href="fifth.html">製作年日曆</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="image/homework.jpg" alt="logo" title="logo">
+            <div class="content">
+                <article>
+                    <h2 class="title">製作年日曆</h2>
+                </article>
+            </div>
+            <div>
+                <select id="idSelectYear"></select>
+                <select id="idSelectMonth"></select>
+                <select id="idSelectDay"></select>
+            </div>
+        </header>
+    </div>
+</body>
+
+</html>

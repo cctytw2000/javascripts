@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>02DOM2.html</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("CEle").addEventListener("click", CreateElement)
+            document.getElementById("REle").addEventListener("click", RemoveElement)
+        });
+
+        function CreateElement() {
+            var theDIV = document.getElementById("iddiv");  //取得div物件
+
+            var eleP = document.createElement("p");
+            var txtP = document.createTextNode("Hello World");
+            eleP.appendChild(txtP);
+            theDIV.appendChild(eleP);
+            theDIV.setAttribute("id","idstr")
+
+            var eleImg = document.createElement("img");
+            eleImg.setAttribute("src", "DOM/DOMImage/rabbit-hat.gif");
+            eleImg.setAttribute("id","idImg")
+            theDIV.appendChild(eleImg);
+        }
+        function RemoveElement() {
+            var theNode = document.getElementById("idImg","idstr");
+            theNode.remove()
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="iddiv">div</div>
+    <input type="button" id="CEle" value="CreateElement">
+    <input type="button" id="REle" value="RemoveElement">
+
+</body>
+
+</html>

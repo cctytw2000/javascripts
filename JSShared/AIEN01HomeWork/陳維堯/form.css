@@ -1,0 +1,43 @@
+.st1{
+    border-bottom: 1px solid rgb(165, 163, 163);
+    padding: 30px;
+    background-color: rgb(153, 201, 223);
+    font-size: 30px;
+    font-family: 標楷體;
+}
+.st2{
+    margin:10px;
+    text-align: center;
+    background-color: rgb(153, 201, 223);
+}
+.st3{
+    margin-top: 5px;
+    font-size: 18px;
+    color: rgb(124, 124, 124);
+    background-color: rgb(153, 201, 223)
+}
+fieldset{
+    width: 500px;
+    border-radius: 20px;
+}
+label{
+    background-color: rgb(153, 201, 223)
+}
+.int1{
+    background-color: white;
+    width:250px;
+    height:30px;
+}
+.form1{
+    margin:auto;
+    padding:100px;
+    display: block;
+    background-color: white
+}
+.field{
+    margin:0px auto;
+    background-color:  rgb(153, 201, 223);
+    border-color: rgb(148, 200, 235);
+    width: 800px;
+    height:500px;
+}

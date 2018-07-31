@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index_css.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="form.html">表單檢核</a>
+                    </li>
+                    <li>
+                        <a href="score.html">評分</a>
+                    </li>
+                    <li>
+                        <a href="#">合作夥伴</a>
+                    </li>
+                    <li>
+                        <a href="#">主要客戶</a>
+                    </li>
+                    <li>
+                        <a href="#">公司簡介</a>
+                    </li>
+                    <li>
+                        <a href="#">聯絡我們</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="img/logo.png" alt="" width="1024">
+        </header>
+
+        <div class="content">
+            <article>
+                <h2 class="title">表單檢核</h2>
+                <fieldset style="padding: 20px;margin-top: 20px;">
+                    <legend>Form check</legend>
+                    <section>
+                        <label for="nm_id" style="padding: 20px;margin-right: 20px;">姓名</label>
+                        <input type="text" name="nm" id="nm_id">
+                        <label id="n_e_t">
+                            <span id="n_e_t_s"></span>
+                        </label>
+                        <div style="padding: 20px;color: gray;">
+                            (1.不可空白 2.至少2個字以上 3.必須全部文中文字)
+                        </div>
+                    </section>
+                    <section>
+                        <label for="pw_id" style="padding: 20px;margin-right: 20px;">密碼</label>
+                        <input type="text" name="nm" id="pw_id">
+                        <label id="p_e_t">
+                            <span id="p_e_t_s"></span>
+                        </label>
+                        <div style="padding: 20px;color: gray;">
+                            (1.不可空白 2.至少6個字以上必須包含英文字母 數字 特殊字元[!@#$%^&*])
+                        </div>
+                    </section>
+                    <section>
+                        <label for="dt_id" style="padding: 20px;margin-right: 20px;">日期</label>
+                        <input type="text" name="nm" id="dt_id">
+                        <label id="d_e_t">
+                            <span id="d_e_t_s"></span>
+                        </label>
+                        <div style="padding: 20px;color: gray;">
+                            (格式：：西元年/月/日 yyyy/MM/dd)
+                        </div>
+                    </section>
+                    <div style="text-align: center;">
+                        <input type="submit" value="送出">
+                        <input type="reset" value="清除">
+                    </div>
+                </fieldset>
+
+            </article>
+
+            <aside>
+
+            </aside>
+
+        </div>
+
+
+        <footer>
+            蔡松峻
+        </footer>
+
+        <script>
+            // var ss = new Date();
+            // alert(ss.getDate());
+
+            function checkfm() {
+                ck_id = this.id;
+
+                switch (ck_id) {
+                    case "nm_id":
+                        var n_e = "";
+                        nm_v = document.getElementById("nm_id").value.toString().trim();
+                        nm_isOK = false;
+
+                        if (nm_v.length == 0) {
+                            n_e += " " + "不可空白";
+                        } else if (nm_v.length < 2) {
+                            n_e += " " + "至少2個字以上";
+                        } else {
+                            for (i = 0; i < nm_v.length; i++) {
+                                c_num = nm_v.charCodeAt(i);
+                                if (c_num < 0x4E00 || c_num > 0x9FFF) {
+                                    n_e += " " + "必須全部文中文字";
+                                    break;
+                                } else {
+                                    // OK
+                                    nm_isOK = true;
+                                }
+                            }
+
+                        }
+
+
+                        if (nm_isOK != true) {
+                            repacle_new("n_e_t", "n_e_t_s", n_e);
+                            document.getElementById("nm_id").focus();
+                        } else {
+                            repacle_new_correct("n_e_t", "n_e_t_s", "正確");
+                        }
+
+                        break;
+
+                    case "pw_id":
+                        //取得元素值
+                        e_valu = document.getElementById("pw_id").value.trim();
+                        e_len = e_valu.length;
+                        sp_w = "!@#$%^&*";
+                        res_1 = false;
+                        res_2 = false;
+                        res_3 = false;
+                        p_e = "";
+                        p_isOK = false;
+
+                        //判斷元素值是否為空白，密碼長度是否大於6
+                        if (e_len == 0) {
+                            p_e += " " + "不可空白";
+                        } else if (e_len >= 6) {
+                            //如果長度是否大於6，判斷是否包含字母、數字、特殊符號                
+                            for (i = 0; i < e_len; i++) {
+                                pwd_c = e_valu[i].toUpperCase();
+
+                                if (pwd_c >= "A" && pwd_c <= "Z") {
+                                    res_1 = true;
+                                } else if (pwd_c >= "0" && pwd_c <= "9") {
+                                    res_2 = true;
+                                } else if (sp_w.indexOf(pwd_c) != -1) {
+                                    res_3 = true;
+                                }
+
+                                if (res_1 && res_2 && res_3) {
+                                    break;
+                                }
+                            }
+
+                            if (res_1 && res_2 && res_3) {
+                                // OK
+                                p_isOK = true;
+                            } else {
+                                p_isOK = false;
+
+                                if (res_1 == false) {
+                                    p_e += " " + "需包含字母";
+                                }
+                                if (res_2 == false) {
+                                    p_e += " " + "需包含數字";
+                                }
+                                if (res_3 == false) {
+                                    p_e += " " + "需包含特殊符號";
+                                }
+                            }
+                        } else {
+                            p_e += " " + "至少6個字以上";
+                        }
+
+                        if (p_isOK != true) {
+                            repacle_new("p_e_t", "p_e_t_s", p_e);
+                            document.getElementById("pw_id").focus();
+                        } else {
+                            repacle_new_correct("p_e_t", "p_e_t_s", "正確");
+                        }
+
+                        break;
+
+                    case "dt_id":
+                        dt_v = document.getElementById("dt_id").value.trim();
+                        d_e = "";
+                        d_isOK = false;
+
+                        if (dt_v.length != 0) {
+                            re = /^[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}$/;
+                            if (re.test(dt_v)) {
+                                dt_n = new Date(dt_v);
+                                // alert(dt_n);
+                                if (dt_n == "Invalid Date") {
+                                    d_e += " " + "日期無效";
+                                } else {
+                                    if (dt_n.getDate() != dt_v.split('/')[2]) {
+                                        d_e += " " + "日期無效";
+                                    } else {
+                                        // console.log("correct date" + dt_n.getDate());
+                                        d_isOK = true;
+                                    }
+
+                                }
+                            } else {
+                                d_e += " " + "日期格式錯誤";
+                            }
+                        } else {
+                            d_e += " " + "不可空白";
+                        }
+
+                        if (d_isOK != true) {
+                            repacle_new("d_e_t", "d_e_t_s", d_e);
+                            document.getElementById("dt_id").focus();
+                        } else {
+                            repacle_new_correct("d_e_t", "d_e_t_s", "正確");
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            function repacle_new(pid_parent, pid_parent_child, text_r) {
+                // var ch = document.getElementById("d_e_t_s");
+                // var x = document.createElement("span");
+                // var t = document.createTextNode("This is a paragraph.");
+                // x.appendChild(t);
+                // document.getElementById("d_e_t").replaceChild(x,ch);
+
+                var ch = document.getElementById(pid_parent_child);
+                var x_img = document.createElement("img");
+                x_img.src = "Images/error.png";
+                var x = document.createElement("span");
+                var t = document.createTextNode(text_r);
+                x.setAttribute("id", pid_parent_child);
+                x.setAttribute("style", "color:red");
+
+                x.appendChild(x_img);
+                x.appendChild(t);
+
+                document.getElementById(pid_parent).replaceChild(x, ch);
+            }
+
+            function repacle_new_correct(pid_parent, pid_parent_child, text_r) {
+                // var ch = document.getElementById("d_e_t_s");
+                // var x = document.createElement("span");
+                // var t = document.createTextNode("This is a paragraph.");
+                // x.appendChild(t);
+                // document.getElementById("d_e_t").replaceChild(x,ch);
+
+                var ch = document.getElementById(pid_parent_child);
+                var x_img = document.createElement("img");
+                x_img.src = "Images/right.png";
+                var x = document.createElement("span");
+                var t = document.createTextNode(text_r);
+                x.setAttribute("id", pid_parent_child);
+                x.setAttribute("style", "color:green");
+
+                x.appendChild(x_img);
+                x.appendChild(t);
+
+                document.getElementById(pid_parent).replaceChild(x, ch);
+                // document.getElementById(pid_parent).outerHTML = "<img src='Images/right.png'>";
+
+            }
+
+            // document.getElementById("nm_id").addEventListener("blur",function(){checkfm(this);});
+            document.getElementById("nm_id").addEventListener("blur", checkfm);
+            document.getElementById("pw_id").addEventListener("blur", checkfm);
+            document.getElementById("nm_id").addEventListener("input", checkfm);
+            document.getElementById("pw_id").addEventListener("input", checkfm);
+            document.getElementById("dt_id").addEventListener("blur", checkfm);
+        </script>
+    </div>
+
+
+</body>
+
+</html>

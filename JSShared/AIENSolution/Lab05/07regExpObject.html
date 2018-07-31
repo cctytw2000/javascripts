@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>07regExpObject.html</title>
+    <script>
+   
+        //var str="Is this all there is?";
+		//var re=new RegExp("is","gi");
+        //document.write(str.match(re)+"<hr/>");
+
+        document.write("\\" + "<hr>");
+
+        function chkEmail() {
+            var theEmail = document.getElementById("idEmail").value;
+            //var re = /^.+@.+\..{2,3}$/;
+            //var re = new RegExp("^\\S+@.+\\..{2,3}$");
+            
+
+            if (re.test(theEmail))
+                alert("successful");
+            else
+                alert("failure");
+
+        }
+    </script>
+</head>
+<body>
+    Email:<input type="text" id="idEmail" />
+    <br />
+    <input type="button" value="checkEmail" onclick="chkEmail();" />
+</body>
+</html>

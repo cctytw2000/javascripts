@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#allpage{
+    width: 1024px;
+    margin:0px auto;
+    border: silver;
+}
+.menu{
+    width: 100%;
+    overflow:auto;
+    background:teal;
+    border-bottom: 3px solid red;
+    border-top-left-radius: 15px;
+    border-top-right-radius:15px;
+}
+.footer{
+    width: 100%;
+    overflow:auto;
+    background:teal;
+    border-top: 3px solid red;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius:15px;
+    line-height: 3.2em;
+    color: wheat;            
+    text-align:center;
+    
+}
+.menu li{
+    float: left;
+    border-right:1px solid tan;
+    width: 145.2px;
+    /* padding: 1em 0em; */
+    list-style-type: none;
+    text-align:center;
+}
+.menu li a{
+    display: block;
+    width: 100%;
+    line-height: 3.2em;
+    /* border: 1px solid yellow; */
+    text-decoration: none;
+    color: wheat;            
+}
+.menu li:hover{
+    color: red;
+    background: rebeccapurple;
+}
+.menu li a:hover{
+    color: yellow;
+}
+.title{
+    padding-left: 20px;
+    background: wheat;
+}
+.centre{
+    overflow: auto;
+    width: 100%;
+}
+article section{
+    margin: 16px;
+}
+article section p{
+    margin: 16px;
+    /* padding-bottom: 10px; */
+    line-height: 150%;
+}
+article section ul{
+    list-style: decimal inside;
+}
+article{
+    float: left;text-align: center;
+    width: 75%;
+    height: 450px;
+}
+aside{
+    float: right;
+    width: 20%;
+}
+aside dl{
+    margin: 16px;
+    padding-bottom: 10px;
+    line-height: 150%;
+}

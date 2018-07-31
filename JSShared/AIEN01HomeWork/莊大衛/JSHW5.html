@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    .divSel{
+    margin:20px;    
+    float:left;
+    }
+    aside{
+    margin:20px;    
+    float:right;
+    border:1px solid black;
+    width:400px;
+    height:200px;
+    }
+    h2{
+        margin:0;
+        padding-left:20px;
+        border-bottom:1px solid black;
+        background-color:lightgray;
+       
+    }
+    .divIfor{
+        margin:20px;
+         font-family:"標楷體";
+        font-size:20px;
+    }
+</style>
+    <script>
+
+    var theYear =2010; 
+    var theMonth =1;
+    var theDay =0;
+    var theDate = new Date(theYear,theMonth,theDay);
+    var weekList = ['日', '一', '二', '三', '四', '五', '六'];
+
+    function drawSel(x,y,z){
+        for(i = x ; i<= y ; i++) {
+            var opt = document.createElement("option");
+            opt.setAttribute("value",i);
+            var optTxt = document.createTextNode(i);
+            opt.appendChild(optTxt);
+            document.getElementById(z).appendChild(opt);
+      }
+    }
+    
+    document.addEventListener("DOMContentLoaded",function(){       
+        document.getElementById("idSelectYear").addEventListener("change", chy);
+        document.getElementById("idSelectMonth").addEventListener("change", chm);
+        document.getElementById("idSelectDay").addEventListener("change", std);
+
+        drawSel(2010,2020,"idSelectYear");
+        drawSel(1,12,"idSelectMonth");
+        drawSel(1,31,"idSelectDay");
+    });
+    
+    function std(){
+        theDay=document.getElementById("idSelectDay").value;
+        theDate.setFullYear(theYear,theMonth-1,theDay);
+        document.getElementById("idSY").innerHTML= theYear;
+        document.getElementById("idSM").innerHTML= theMonth;
+        document.getElementById("idSD").innerHTML= theDay;
+        document.getElementById("idSW").innerHTML= weekList[theDate.getDay()];
+    }
+
+
+    function chd(){
+        theDay=document.getElementById("idSelectDay").value;
+        drawSel(1,theDate.getDate(),"idSelectDay");
+        std();
+    }
+
+    function chm(){
+        theMonth=document.getElementById("idSelectMonth").value;
+        theDate.setMonth(theMonth,0);
+        removeDay();
+        chd();
+    }
+
+    function chy(){
+        theYear=document.getElementById("idSelectYear").value;
+        theDate.setFullYear(theYear,theMonth,0)
+        removeDay();
+        chd();
+    }
+
+    function removeDay(){
+        var rmd = document.getElementById("idSelectDay");
+        for(i = 0; i<= 32; i++){
+            rmd.remove(rmd.childNodes[i]);    
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="divSel">
+        <select id="idSelectYear"></select><span>年</span>
+        <select id="idSelectMonth"></select><span>月</span>
+        <select id="idSelectDay"></select><span>日</span>
+        <span id="idwk"></span>
+   </div>
+   
+        <aside id="information">         
+            <h2>information</h2>
+            <div class = "divIfor">
+                <span>你選擇的日期是</span> 
+                <span id="idSY"></span>
+                <span>年</span>
+                <span id="idSM"></span>
+                <span>月</span>   
+                <span id="idSD"></span>
+                <span>日</span>  
+                <br><br>
+                <span>星期</span> 
+                <span id="idSW"></span>
+            </div>     
+        </aside>
+      
+</body>
+</html>

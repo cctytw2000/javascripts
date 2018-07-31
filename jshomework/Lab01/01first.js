@@ -1,0 +1,1 @@
+document.write("hi!!<br>JavaScript");

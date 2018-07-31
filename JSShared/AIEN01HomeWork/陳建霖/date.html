@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+    <link rel="stylesheet" href="style/main.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", addyear)
+
+        document.addEventListener("DOMContentLoaded", addmonth)
+
+
+
+        function addyear() {
+            listYear = document.getElementById("idYear")
+            for (i = 2000; i <= 2020; i++) {
+                var newoptn = document.createElement("OPTION")
+                newoptn.text = i
+                newoptn.value = i
+                listYear.options.add(newoptn)
+            }
+        }
+        function addmonth() {
+            listMonth = document.getElementById("idMonth")
+            for (i = 1; i <= 12; i++) {
+                var newoptn = document.createElement("OPTION")
+                newoptn.text = i
+                newoptn.value = i
+                listMonth.options.add(newoptn)
+            }
+            listMonth.addEventListener("change", addDate)
+        }
+        function addDate() {
+            listDate = document.getElementById("idDate")
+            for (x = listDate.options.length - 1; x > 0; x--) {
+                listDate.remove(x)
+            }
+            seleYear = document.getElementById("idYear").value
+            seleMonth = document.getElementById("idMonth").value
+            Day = new Date(seleYear, seleMonth, 0)
+            numDay = Day.getDate()
+            // alert(Day.getMonth())
+            for (i = 1; i <= numDay; i++) {
+                var newoptn = document.createElement("OPTION")
+                newoptn.text = i
+                newoptn.value = i
+                listDate.options.add(newoptn)
+                listDate.addEventListener("change", changeWord)
+            }
+        }
+        function changeWord() {
+            seleYear = document.getElementById("idYear").value
+            seleMonth = document.getElementById("idMonth").value
+            seleDate = document.getElementById("idDate").value
+            day = new Date(seleYear, seleMonth - 1, seleDate)
+            week = day.getDay()
+            var weekItem = ["日", "一", "二", "三", "四", "五", "六"]
+            document.getElementById("txtDiv").innerHTML = "所選的日期是： " + seleYear + "年" + seleMonth + "月" + seleDate + "日  星期" + weekItem[week]
+        }
+    </script>
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">回首頁</a>
+                    </li>
+                    <li>
+                        <a href="nine.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="form.html">表單確認</a>
+                    </li>
+                    <li>
+                        <a href="star.html">星星</a>
+                    </li>
+                    <li>
+                        <a href="date.html">日期</a>
+                    </li>
+                    <li>
+                        <a href="">公司簡介</a>
+                    </li>
+                    <li>
+                        <a href="">聯絡我們</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="images/p3.jpg" width="100%">
+        </header>
+        <div class="content">
+            <article id="article1">
+                <h2 class="title">表單確認</h2>
+                <section>
+                    <select name="year" id="idYear">
+                        <option>請選擇</option>
+                    </select>
+                    <select name="month" id="idMonth">
+                        <option>請選擇</option>
+                    </select>
+                    <select name="date" id="idDate">
+                        <option>請選擇</option>
+                    </select>
+
+                </section>
+                <section>
+                    <div id="txtDiv"></div>
+                </section>
+            </article>
+            <aside>
+                <h2 class="title">最新消息</h2>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+            </aside>
+
+            <!-- content end -->
+        </div>
+        <footer>
+            <p>E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality
+                Art Technology CO. </p>
+        </footer>
+
+        <!--all page end -->
+    </div>
+
+</body>
+
+</html>

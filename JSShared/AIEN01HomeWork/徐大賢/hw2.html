@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gary Hsu's Homework Page</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<style type="text/css">
+	input{
+		font-size: 28px;
+	}
+	button{
+		font-size: 28px;
+		float:right;
+		margin: 5px;
+	}
+	span{
+		color: red;
+	}
+</style>
+
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded",function(){
+		document.getElementById("name").onblur = check_name;
+		document.getElementById("password").onblur = check_password;
+		document.getElementById("date").onblur = check_date;
+
+    })
+
+    function check_name(){
+		var pattern = /^[\u4E00-\u9FFF]{2,}$/;
+		if (pattern.test(document.getElementById("name").value)){
+			document.getElementById("check_name").innerHTML = '<em style="color:blue">correct</em>';
+		}
+
+		else{
+			document.getElementById("check_name").innerHTML = '<em style="color:red">wrong!</em>';
+		}
+	}
+
+	function check_password(){
+		var pattern = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[\!\@\#\$\%\^\&\*]).{6,}$/;
+		if (pattern.test(document.getElementById("password").value)){
+			document.getElementById("check_password").innerHTML = '<em style="color:blue">correct</em>';
+		}
+		else{
+			document.getElementById("check_password").innerHTML = '<em style="color:red">wrong!</em>';
+		}
+	}
+
+	function check_date(){
+		var date = document.getElementById("date").value.split("/");
+		var date_length = date.length;
+		var year = date[0];
+		var month = date[1];
+		var day = date[2];
+		test = new Date(document.getElementById("date").value)
+		
+
+		if (date_length!=3 || year.length!=4 || month.length!=2 || day.length!=2 || isNaN(parseInt(year)) || isNaN(parseInt(month)) || isNaN(parseInt(day)) ){
+			document.getElementById("check_date").innerHTML = '<em style="color:red">wrong!</em>';
+		}
+		else if( test== "Invalid Date" ){
+			document.getElementById("check_date").innerHTML = '<em style="color:red">wrong!</em>';
+		}
+		else{
+			document.getElementById("check_date").innerHTML = '<em style="color:blue">correct</em>';
+		}
+		// var pattern = /^[\u4E00-\u9FFF]{2,}$/;
+		// if (pattern.test(document.getElementById("date").value)){
+		// 	document.getElementById("check_date").innerHTML = "correct";
+		// }
+		// else{
+		// 	document.getElementById("check_date").innerHTML = "wrong!";
+		// }
+	}
+
+</script>
+</head>
+
+
+<body>
+	
+	<header id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<span class="icon icon-wrench"></span>
+				<h1><a >Gary Hsu's Homework Page</a></h1>
+				<!-- <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span> -->
+			</div>
+			<div id="triangle-up"></div>
+		</div>
+	</header>>
+	<nav id="menu-wrapper">
+			<div id="menu">
+				<ul>
+					<li><a href="hw1.html"  title="">Timestable</a></li>
+					<li><a href="hw2.html"  title="">Formcheck</a></li>
+					<li><a href="hw3.html"  title="">Score</a></li>
+					<li><a href="hw4.html"  title="">Carousel</a></li>
+					<li><a href="hw5.html"  title="">Calender</a></li>
+				</ul>
+			</div>
+	</nav>
+
+	<div id="wrapper" style="height: 800px;font-size: 28px;font-weight: 400;" >
+		<br>
+		<form style="margin: 0 auto;width: 1000px;" >
+			<fieldset style="border: 20px solid #3D3D3D;border-radius: 20px">
+				<legend>Form Check</legend>
+				<label for="name">姓名: </label><input type="text" id="name"><span id="check_name"></span>
+				<div><small>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</small></div>
+				<hr>
+				<label for="password">密碼: </label><input type="password" id="password"><span id="check_password"></span>
+				<div><small>(1.不可空白，2.至少6個字且必須包含英文字母、數字
+				、特殊字元[!@#$%^&*])</small></div>
+				<hr>
+				<label for="date">日期: </label><input type="text" id="date"><span id="check_date"></span>
+				<div><small>(格式:西元年/月/日 YYYY/MM/DD)</small></div>
+				<hr>
+				<button type="submit">送出</button>
+				<button type="reset">清除</button>
+				<!-- <input type="button" name="confirm" value="送出">
+				<input type="button" name="confirm" value="清除"> -->
+			</fieldset>
+			
+		</form>
+
+
+	</div>
+	<div id="stamp" class="container">
+		<div class="hexagon"><span class="icon icon-wrench"></span></div>
+	</div>
+	<!-- <div id="copyright" class="container">
+		<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+	</div> -->
+</body>
+</html>

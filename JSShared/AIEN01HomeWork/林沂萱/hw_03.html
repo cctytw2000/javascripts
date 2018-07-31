@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>hw_03</title>
+    <link rel="stylesheet" href = "template.css">
+    <style>
+        .score {
+            width: 70%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 3px solid #C05640;
+            text-align:center;
+        }
+        .txt {
+            color: black;
+            font-size: 40px;
+            margin:20px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            imgs = document.querySelectorAll("img.stars");
+            for (var i=0; i < imgs.length; i++){
+                imgs[i].addEventListener("mouseover", mouseOver);
+                imgs[i].addEventListener("mouseout", mouseOut);
+                imgs[i].addEventListener("click", Click);
+            }
+            document.getElementById("reset").addEventListener("click", reset);
+        });
+        function mouseOver() {
+            for (var j=0; j < this.id.substr(4); j++){
+                imgs[j].src = "Images/chngstar.gif";
+            }
+            document.getElementById("txt").textContent = "評分中...." + this.id.substr(4) + "分"
+        }
+        function mouseOut() {
+            for (var i=0; i < imgs.length; i++){
+                imgs[i].src = "Images/star.gif";
+            }
+            document.getElementById("txt").textContent = "請評分"
+        }
+        function Click() {
+            for (var j=0; j < this.id.substr(4); j++){
+                imgs[j].src = "Images/chngstar.gif";
+            }
+            document.getElementById("txt").textContent = "您輸入的分數為" + this.id.substr(4) + "分"
+            for (var i=0; i < imgs.length; i++){
+                imgs[i].removeEventListener("mouseover",mouseOver);
+                imgs[i].removeEventListener("mouseout",mouseOut);
+                imgs[i].removeEventListener("click",Click);
+            }
+        }
+        function reset() {
+            for (var i=0; i < imgs.length; i++){
+                imgs[i].src = "Images/star.gif";
+            }
+            document.getElementById("txt").textContent = "請評分"
+            for (var i=0; i < imgs.length; i++){
+                imgs[i].addEventListener("mouseover",mouseOver);
+                imgs[i].addEventListener("mouseout",mouseOut);
+                imgs[i].addEventListener("click",Click);
+            } 
+        }
+        
+    </script>
+</head>
+<div class = "allpage">
+    <header>
+        <div class = "title">
+            <h2>AIEN0215 -- Lin, YiHsuan</h2>
+            <h4 class = "date"> May, 2018</h4>
+        </div>
+        <nav>
+            <ul>
+                <li><a href = "hw_01.html">hw_1 -- 九九乘法表</a></li>
+                <li><a href = "hw_02.html">hw_2 -- 表單驗證</a></li>
+                <li><a href = "hw_03.html">hw_3 -- 星星評分</a></li>
+                <li><a href = "hw_04.html">hw_4 -- 廣告輪播</a></li>
+                <li><a href = "hw_05.html">hw_5 -- 日曆製作</a></li>
+            </ul>  
+        </nav>
+    </header>
+    <div class = "content">
+        <div class = "score">
+                <img alt = "star" src = "Images/star.gif" id = "star1" class = "stars">
+                <img alt = "star" src = "Images/star.gif" id = "star2" class = "stars">
+                <img alt = "star" src = "Images/star.gif" id = "star3" class = "stars">
+                <img alt = "star" src = "Images/star.gif" id = "star4" class = "stars">
+                <img alt = "star" src = "Images/star.gif" id = "star5" class = "stars">
+                <h2 class = "txt" id = "txt">請評分</h2>
+                <input type = "button" id = "reset" value = "重新評分">
+        </div>
+    </div>
+    <footer>
+        <h4 class = "contact"> e-mail : b01204002@gmail.com</h4>
+    </footer>
+</div>
+</html>

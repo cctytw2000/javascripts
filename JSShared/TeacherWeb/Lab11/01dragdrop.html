@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01dragdrop.html</title>
+    <style>
+        #dragItem{
+                   width:100px;height:30px;border:1px solid blue;background-color:beige;margin:10px
+	             }
+        .dragItemStyle{
+                        width:100px;height:30px;border:1px solid blue;background-color:beige;margin:10px
+	                   }
+
+        #dropZone,#dropZone1{
+                             width:150px;height:100px;border:1px solid blue;float:left
+	                        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("dragItem").addEventListener("dragstart", dragStartHandler);
+            document.getElementById("dropZone").addEventListener("dragover", dragoverHandler);
+            document.getElementById("dropZone").addEventListener("drop", dropHandler);
+            document.getElementById("dropZone1").addEventListener("dragover", dragoverHandler);
+            document.getElementById("dropZone1").addEventListener("drop", dropHandler);
+        });
+
+        function dragStartHandler(e) {
+            //儲存要拖放的資料
+        //    alert(e.target.id); //dragItem
+           e.dataTransfer.setData("text/plain",e.target.id);
+        }
+        function dragoverHandler(e) {
+            //取消預設動作
+           e.preventDefault();
+        }
+        function dropHandler(e) {
+            //取消預設動作
+            e.preventDefault();
+            //取出拖放資料
+            var eleID=e.dataTransfer.getData("text/plain");  //eleID=dragItem
+            // alert(eleID);  //dragItem
+            var eleObj=document.getElementById(eleID);  // <div id="dragItem" draggable="true">Drag me</div>
+            //建立div元素            
+            var eleDiv=document.createElement("div");  //<div></div>
+            //設定屬性及外觀
+            // alert(eleObj.innerHTML);  //Drag me
+            eleDiv.innerHTML=eleObj.innerHTML;  //<div>Drag me</div>
+            eleDiv.setAttribute("class","dragItemStyle"); //<div class="dragItemStyle">Drag me</div>
+            //新增到dropZone or dropZone1元素後面
+            // alert(e.currentTarget.id);
+            // e.currentTarget.appendChild(eleDiv); 
+            this.appendChild(eleDiv);
+        }
+    </script>
+</head>
+<body>
+    <!--
+      <div id="dragItem" draggable="true" ondragstart="dragStartHandler(event)">Drag me</div>
+      <div id="dropZone"  ondragover="dragoverHandler(event)" ondrop="dropHandler(event)"></div>
+      <div id="dropZone1"  ondragover="dragoverHandler(event)" ondrop="dropHandler(event)"></div>
+    -->
+    <div id="dragItem" draggable="true">Drag me</div>
+    <div id="dropZone"></div>
+    <div id="dropZone1"></div>
+</body>
+</html>

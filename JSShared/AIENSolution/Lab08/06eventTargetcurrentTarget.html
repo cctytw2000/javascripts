@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>06eventTargetcurrentTarget.html</title>
+    <script>
+        window.onload = function () {
+            document.getElementById("idp").onclick = clickP;  //註冊
+            document.getElementById("idbut").onclick = clickBut;  //註冊
+        };
+
+        function clickP(ns) {
+            //alert("p");
+            alert("p target=" + ns.target + "\n" +                        //[object HTMLInputElement]
+                "p currentTarget=" + ns.currentTarget + "\n");      //[object HTMLParagraphElement]
+        }
+
+        function clickBut(ns) {
+            //alert("input");
+            alert("input target=" + ns.target+"\n"+                        //[object HTMLInputElement]
+                "input currentTarget=" + ns.currentTarget + "\n");   //[object HTMLInputElement]
+        }
+    </script>
+</head>
+<body>
+    <p id="idp">
+       <input type="button" id="idbut" value="button" />            
+    </p>
+</body>
+</html>

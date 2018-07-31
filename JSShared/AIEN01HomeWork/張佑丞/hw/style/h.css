@@ -1,0 +1,99 @@
+* {
+    margin: 0px;
+    padding: 0;
+}
+.tttt {
+    margin: 20px;
+    width: 1024px;
+    margin: 20px auto;
+}
+
+.tttt nav ul {
+    overflow: auto;
+    background-color: #E8E7E3;
+    list-style-type: none;
+}
+.tttt nav ul li {
+    float: left;
+    width: 8em;
+}
+
+.tttt nav ul li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2.5em;
+    color: rgb(54, 54, 54);
+    font-family: "微軟正黑體";
+    font-weight: 900;
+    font-size: 18px;
+    
+
+}
+
+.tttt nav ul li a:hover {
+    background-color: rgb(63, 63, 63);
+    color: #E8E7E3;
+}
+
+.title {
+    background-color: #E8E7E3;
+    text-align: center;
+}
+
+.topp {
+    font-size: 50px;
+    font-family: "Arial";
+    margin-left: 15px;
+}
+
+article {
+    float: right;
+    width: 70%
+}
+
+aside {
+    float: left;
+    width: 28%;
+    border: 3px solid #E8E7E3;
+
+}
+
+.ardiv {
+    margin-top: 10px;
+    font-family: "微軟正黑體";
+    font-weight: bolder;            
+}
+footer {
+width:100%;
+clear:both;
+line-height:2.5em;		
+text-align:center;
+color:rgb(54, 54, 54);
+background-color:#E8E7E3;
+border-radius:15px;
+font-family: "微軟正黑體";
+margin-top: 15px;
+}
+dd{
+    margin-left: 20px;
+}
+.ardiv article ul{
+    margin: 10px
+}
+aside ul{
+    list-style-type: none;    
+}
+aside ul li a{
+    display: block;
+    text-decoration: none;
+    color: rgb(144, 11, 9);
+    line-height:2.5em;
+    padding-left: 10px;
+}
+aside ul li a:hover{
+
+    color: #E8E7E3;
+    background-color: rgb(144, 11, 9);
+
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+    <link rel="stylesheet" href="style/main.css">
+    <style>
+    </style>
+    <script>
+        function draw() {
+            // document.getElementById("article1").innerHTML("123")
+            document.write("<table>");
+            document.write("<tr>");
+            for (i = 1; i <= 9; i++) {
+                document.write("<td>");
+                for (j = 1; j <= 9; j++) {
+                    document.write(i + "*" + j + "=" + i * j + "<br>");
+                }
+                document.write("</td>");
+            }
+            document.write("</tr>");
+            document.write("</table>");
+        }
+    </script>
+    <style>
+        table {
+            /* background-color: aqua; */
+            border: black solid 3px;
+            border-collapse: collapse
+        }
+
+        tr {
+            background-color: bisque;
+            color: blue
+        }
+
+        td {
+            border: black solid 3px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">回首頁</a>
+                    </li>
+                    <li>
+                        <a href="nine.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="form.html">表單確認</a>
+                    </li>
+                    <li>
+                        <a href="star.html">星星</a>
+                    </li>
+                    <li>
+                        <a href="date.html">日期</a>
+                    </li>
+                    <li>
+                        <a href="">公司簡介</a>
+                    </li>
+                    <li>
+                        <a href="">聯絡我們</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="images/p3.jpg" width="100%">
+        </header>
+        <div class="content">
+            <article id="article1">
+                <h2 class="title">九九乘法表</h2>
+                <section>
+                    <script>draw()</script>
+                </section>
+            </article>
+            <aside>
+                <h2 class="title">最新消息</h2>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+            </aside>
+
+            <!-- content end -->
+        </div>
+        <footer>
+            <p>E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality
+                Art Technology CO. </p>
+        </footer>
+
+        <!--all page end -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework-2</title>
+    <link rel="stylesheet" href="main_hw.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+    <style>
+        .type1 {
+            width: 600px;
+            margin: 15px;
+            border-bottom: 1px solid mediumseagreen;
+            padding: 10px;
+            font-size:16px;
+        }
+        .type2 {
+            width: 600px;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+        }
+        .p1 {
+            color:#9d9d9d ;
+        }        
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("account").addEventListener("blur",chkName);
+            document.getElementById("pwd").addEventListener("blur",chkPassword); 
+            document.getElementById("date1").addEventListener("blur",chkDate); 
+        });
+
+        function chkName(){
+            var theName = document.getElementById("account").value ;
+            var theNameLen = theName.length ;
+            if(theName=="")
+                document.getElementById("idsp").innerHTML="<img src='images/error.png'><span style=color:red>不可為空白</span>";
+            else if (theNameLen>=2) {
+                var re = /^[\u4e00-\u9fff]{2,}$/;
+                    if(re.test(theName)) 
+                    document.getElementById("idsp").innerHTML="<img src='images/correct1.jpg'><span style=color:#00bb00>正確</span>";
+                    else
+                    document.getElementById("idsp").innerHTML="<img src='images/error.png'><span style=color:red>必須全部為中文</span>";
+                }
+            else
+                document.getElementById("idsp").innerHTML="<img src='images/error.png'><span style=color:red>至少兩個字以上</span>";
+        }
+
+        function chkPassword() {
+            var thePwd = document.getElementById("pwd").value ;
+            var thePwdLen = thePwd.length ;
+            if (thePwd == "")
+                document.getElementById("pwsp").innerHTML="<img src='images/error.png'><span style=color:red>不可為空白</span>";
+            else if (thePwdLen>=6){
+                var re = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!-*]).{6,}$/
+                if (re.test(thePwd))
+                document.getElementById("pwsp").innerHTML="<img src='images/correct1.jpg'><span style=color:#00bb00>正確</span>";
+                else
+                document.getElementById("pwsp").innerHTML="<img src='images/error.png'><span style=color:red>必須包含英文字母、數字、特殊字元[!@#$%^&*]</span>";
+            }
+            else 
+                document.getElementById("pwsp").innerHTML="<img src='images/error.png'><span style=color:red>至少6個字</span>";
+        }
+
+        function chkDate(){
+            var theDate = document.getElementById("date1").value ;
+            var re=/^[0-9]{4}[/][0-9]{1,2}[/][0-9]{1,2}$/;
+            // var theDateLen = theDate.length ;
+            if (theDate == "")
+                document.getElementById("daysp").innerHTML="<img src='images/error.png'><span style=color:red>不可為空白</span>";
+            else if (re.test(theDate)) {
+                var autod=new Date(theDate);
+                var thed=new String(theDate) ;
+                var dStrAry=thed.split("/");
+                if (dStrAry[2] == autod.getDate()){
+                    document.getElementById("daysp").innerHTML="<img src='images/correct1.jpg'><span style=color:#00bb00>正確</span>";
+                }
+                else
+                document.getElementById("daysp").innerHTML="<img src='images/error.png'><span style=color:red>不存在的日期</span>";
+            }
+            else
+            document.getElementById("daysp").innerHTML="<img src='images/error.png'><span style=color:red>格式為yyyy/mm/dd</span>";
+            }        
+    </script>
+</head>
+
+<body>
+
+    <div id="allpage">
+    <header>
+    <nav >
+        <ul class="menu">
+            <li><a href="homework-1.html">HW-1</a></li>
+            <li><a href="homework-2.html">HW-2</a></li>
+            <li><a href="homework-3.html">HW-3</a></li>
+            <li><a href="homework-4.html">HW-4</a></li>
+            <li><a href="homework-5.html">HW-5</a></li>             
+        </ul>
+    </nav>
+
+    <img src="images\jstips-animation.gIF"alt="logo" title="logo" width="1044" height="340">
+</header>
+<div class="content">
+<article>
+    <h2 class="title">Homework-2 製作表單並離開文字方塊時，顯示檢查結果:</h2>
+    <section>
+        <form action="" methid="get" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Form Check                    
+                </legend>
+                <div class=type1>
+                    <label class="t1" for="account">姓名：</label>
+                    <input type="text" id="account" name="account" placeholder="王小美" size="10" required>
+                    <span id="idsp"></span>
+                    <p class=p1>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</p>
+                </div>
+                <div class=type1>
+                    <label class="t1" for="pwd">密碼： </label>
+                    <input type="text" id="pwd" name="ped" placeholder="請輸入密碼" required>
+                    <span id="pwsp"></span>
+                    <p class=p1>(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])</p>
+                </div>
+                <div class=type1>
+                    <label class="t1" for="date1">日期：</label>
+                    <input type="text" id="date1" name="date1" placeholder="ex:2000/01/29" size="10" required>
+                    <span id="daysp"></span>
+                    <p class=p1>(格式西元年/月/日 yyyy/mm/dd)</p>
+                </div>
+                <div class=type2>
+                        <input type="submit" value="送出">
+                        <input type="reset" value="清除">
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</article>
+
+<aside>
+<h2 class="title">備註</h2>
+<dl>
+    <dt>班級 
+        <dd>AIEN 02</dd>
+    </dt>
+</dl>
+<dl>
+    <dt>課程
+        <dd>JavaScript</dd>
+    </dt>
+</dl>
+<dl>
+    <dt>指導老師
+        <dd>陳銀華 老師</dd>
+    </dt>
+    </dl>
+<dl>
+    <dt>學生
+        <dd>黃奕菁</dd>
+    </dt>
+</dl>
+</aside>
+
+    </div><!--end cintent-->
+<footer>
+        <p>E-amil:jnek23758@hotmail.com &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology CO. </p>
+    </footer>
+</div><!--end allpage-->  
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01functionMethod.html</title>
+    <script>
+        //Method 1 宣告函數
+        function fAdd1(a, b) {
+            return (a + b);
+        }
+        document.write("fAdd1(10,20)=" + fAdd1(10, 20) + "<br>");
+        
+
+        //Method 2 函數實字(函數常數,function literal)
+        var a = 10;
+        var fAdd2 = function (a, b) {
+            return (a + b);
+        }
+        document.write("fAdd2(10,30)=" + fAdd2(10, 30) + "<hr>");
+        //var a = 10;
+        //document.write(a + "<hr>");
+        document.write(fAdd2 + "<hr>");
+        var fAdd2 = fAdd1;
+        document.write(fAdd2 + "<hr>");
+
+        //document.write(fAdd2x + "<hr>");
+        document.write(window.alert + "<hr>");
+        //document.write(window.alertx + "<hr>");  //undefined
+
+        //==========方法製作
+        //object
+        var person = new Object();
+        person.name = "Mary";
+        person.ID = "A123456789";
+        person.age = 35;
+        person.full = function () { return this.name + "," + this.ID };
+        document.write(person.full() + "<hr>");
+        document.write("content=" + person.full + "<hr>");
+
+        function fPerson() {
+            return this.name + "," + this.age;
+        }
+        person.full = fPerson;
+        document.write(person.full() + "<hr>");
+        document.write("content=" + person.full + "<hr>");
+
+        //==========檢查是否有此方法，是否支援此方法
+        if (window.alert)  //是否支援此功能
+            alert("support");
+        else
+            alert("not support");
+       
+        
+        
+	</script>
+</head>
+<body>
+
+</body>
+</html>

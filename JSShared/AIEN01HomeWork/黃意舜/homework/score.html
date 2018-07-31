@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="viewport" content="width=device-width"/>
+<title>HomeWorkWeb </title>
+<!-- STYLES & JQUERY 
+================================================== -->
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/icons.css"/>
+<link rel="stylesheet" type="text/css" href="css/slider.css"/>
+<link rel="stylesheet" type="text/css" href="css/skinblue.css"/><!-- change skin color -->
+<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+<script src="js/jquery-1.9.0.min.js"></script><!-- the rest of the scripts at the bottom of the document -->
+</head>
+<body>
+<div class="boxedtheme">
+<!-- TOP LOGO & MENU
+================================================== -->
+<div class="grid">
+	<div class="row space-bot">
+		<!--Logo-->
+		<div class="c4">
+			<a href="index.html">
+			<h1>HomeWorkWeb</h1>>
+			</a>
+		</div>
+		<!--Menu-->
+		<div class="c8">
+			<nav id="topNav">
+			<ul id="responsivemenu">
+				<li class="active"><a href="index.html"><i class="icon-home homeicon"></i><span class="showmobile">Home</span></a></li>
+				<li><a href="table.html">Table 9X9</a>
+				<!-- <ul style="display: none;">
+					<li><a href="about.html">About</a></li>
+					<li><a href="services.html">Services</a></li>					
+					<li><a href="testimonials.html">Testimonials</a></li>								
+					<li><a href="faq.html">F.A.Q.s</a></li>					
+					<li><a href="gallery.html">Gallery</a></li>
+					<li><a href="timeline.html">Timeline</a></li>
+					<li class="last"><a href="404.html">404 Page</a></li>
+				</ul> -->
+				</li>
+				<li><a href="formcheck.html">Form Check</a>
+				
+				</li>
+				<li><a href="score.html">Score</a>
+				
+				</li>
+				<li><a href="#">Ads Carouse</a>
+				
+				</li>				
+				<li class="last"><a href="#">Calendar</a></li>
+				
+			</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        var stars = document.querySelectorAll("img.stars");
+        var starslen = stars.length;
+        for(i=0;i<starslen;i++){
+            
+            stars[i].addEventListener("mouseover",mouseover)
+            stars[i].addEventListener("mouseout",mouseout)
+            stars[i].addEventListener("click",click)
+            
+        }
+        document.getElementById("idbut").addEventListener("click",reset)
+    });
+
+// 滑鼠滑入    
+    function mouseover(){      
+        if(this.id.substr(5)){
+            for(j=1;j<=this.id.substr(5);j++){
+                document.images[this.id.substr(5)-j].src="images2/chngstar.gif";
+            }    
+            document.getElementById("thep").innerHTML="打分中....."+this.id.substr(5)+"顆星";
+        }     
+    }
+
+// 滑鼠滑出    
+    function mouseout(){
+        if(this.id.substr(5)){
+            for(j=1;j<=this.id.substr(5);j++)
+            document.images[this.id.substr(5)-j].src="images2/star.gif";
+        }
+            
+    }
+
+// 滑鼠點擊   
+    function click(){
+        if(this.id.substr(5)){
+            var a = this.id.substr(5);
+            for(j=0;j<a;j++){
+                document.images[j].setAttribute("id",String(j))
+                document.getElementById(j).src="images2/chngstar.gif"
+            }
+            for(k=a;k<5;k++){
+            document.images[k].setAttribute("id",String(k))
+            document.getElementById(k).src="images2/star.gif"
+            }           
+        }          
+        document.getElementById("thep").innerHTML="你給"+a+"顆星!"       
+    }
+
+// Reset
+    function reset(){
+        for(z=0;z<5;z++){
+            document.images[z].setAttribute("id","idImg"+String(z+1))
+            document.getElementById("idImg"+String(z+1)).src="images2/star.gif"
+        }
+        document.getElementById("thep").innerHTML="請打分數"
+    }
+
+</script>
+<style>
+		
+	#idform{
+        width:700px;
+        margin:100px auto;
+		/* background-color: white; */
+		font-size: 50px;
+		color: black;
+    }
+    #idleg{
+        text-align: center;
+	}
+	#idbut{
+		font-size: 30px;
+	}
+	
+</style>
+
+<div class="undermenuarea">
+	<div class="boxedshadow">
+	</div>
+	<!-- SLIDER AREA
+	================================================== -->
+	<div id="da-slider" class="da-slider">
+		<!--Slide 1-->
+		<div class="da-slide">
+				
+			<form id="idform">
+				<fieldset id="idfiel">
+					<legend id="idleg">Score</legend>
+					<img id="idImg1" class="stars" src="images2/star.gif">
+					<img id="idImg2" class="stars" src="images2/star.gif">
+					<img id="idImg3" class="stars" src="images2/star.gif">
+					<img id="idImg4" class="stars" src="images2/star.gif">
+					<img id="idImg5" class="stars" src="images2/star.gif"><br>
+					<p id="thep">請打分數<span id="idsp"></span></p>
+					<input type="button" id="idbut" value="重新計分">
+				</fieldset>
+			</form>
+		</div>
+		
+		<!--Slide 2-->
+		<!-- <div class="da-slide">
+			<h2>Responsive</h2>
+			<p>
+				 We produce comprehensive mapping of consumers' relationships with communications across bought, owned & earned media based on bespoke insight.
+			</p>
+			<a href="#" class="da-link" style="width:192px;">MEDIA DEVICES</a>
+			<div class="da-img">
+				<img src="http://placehold.it/238x420&text=Silhouette+here" alt="">
+			</div>
+		</div> -->
+		<!--Slide 3-->
+		<!-- <div class="da-slide">
+			<h2> Easy to modify </h2>
+			<p>
+				 We design, create and manage fully integrated social media platforms, online PR strategy and campaigns for our clients, ability to analyse, monitor and optimise brand presence.
+			</p>
+			<a href="#" class="da-link" style="width:230px;">fully supported</a>
+			<div class="da-img">
+				<img src="http://placehold.it/238x420&text=Silhouette+here" alt="">
+			</div>
+		</div>
+		<nav class="da-arrows">
+		<span class="da-arrows-prev"></span>
+		<span class="da-arrows-next"></span>
+		</nav> -->
+	</div>
+</div>
+<!-- UNDER SLIDER - BLACK AREA
+================================================== -->
+
+<!-- START content area
+================================================== -->
+
+
+<!-- JAVASCRIPTS
+================================================== -->
+<!-- all -->
+<script src="js/modernizr-latest.js"></script>
+
+<!-- menu & scroll to top -->
+<script src="js/common.js"></script>
+
+<!-- slider -->
+<script src="js/jquery.cslider.js"></script>
+
+<!-- cycle -->
+<script src="js/jquery.cycle.js"></script>
+
+<!-- carousel items -->
+<script src="js/jquery.carouFredSel-6.0.3-packed.js"></script>
+
+<!-- twitter -->
+<script src="js/jquery.tweet.js"></script>
+
+<!-- Call Showcase - change 4 from min:4 and max:4 to the number of items you want visible -->
+<script type="text/javascript">
+$(window).load(function(){			
+			$('#recent-projects').carouFredSel({
+				responsive: true,
+				width: '100%',
+				auto: true,
+				circular	: true,
+				infinite	: false,
+				prev : {
+					button		: "#car_prev",
+					key			: "left",
+						},
+				next : {
+					button		: "#car_next",
+					key			: "right",
+							},
+				swipe: {
+					onMouse: true,
+					onTouch: true
+					},
+				scroll : 2000,
+				items: {
+					visible: {
+						min: 4,
+						max: 4
+					}
+				}
+			});
+		});	
+</script>
+
+<!-- Call opacity on hover images from carousel-->
+<script type="text/javascript">
+$(document).ready(function(){
+    $("img.imgOpa").hover(function() {
+      $(this).stop().animate({opacity: "0.6"}, 'slow');
+    },
+    function() {
+      $(this).stop().animate({opacity: "1.0"}, 'slow');
+    });
+  });
+</script>
+</body>
+</html>

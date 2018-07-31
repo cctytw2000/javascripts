@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>02checkAge.html</title>
+    <script>
+        function checkAge() {
+            var theAgeObject = document.getElementById("idAge");  //element,object
+            //alert(typeof (theAgeObject));  //object
+            var theAgeObjectValue = theAgeObject.value;
+            //alert(typeof (theAgeObjectValue));  //string
+            //alert(theAgeObjectValue);  //12
+            var theAge = document.getElementById("idAge").value;            
+            //alert(theAge);
+
+            if (isNaN(theAge))
+                alert("please input number 0-9");
+            else
+                alert("Age=" + theAge);
+            
+
+        }
+       
+    </script>
+</head>
+<body>
+    <form name="myform">
+        Age:<input id="idAge" name="txtAge" type="text" size="3" maxlength="3" value="12" /><!-- 建立物件 -->
+        <br />
+        <input type="button" value="checkAge" onclick="checkAge();" />
+    </form>
+</body>
+</html>

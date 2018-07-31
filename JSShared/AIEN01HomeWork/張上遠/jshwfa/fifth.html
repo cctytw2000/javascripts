@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index-css.css">
+    <style>
+    </style>
+        <script>
+                // var d=new Date(2018,1,0);  //2月的第0天就是1月的最後一天
+                // alert(d);
+                document.addEventListener("DOMContentLoaded", function () {   
+                    // document.getElementById("idSelectYears").addEventListener("change",ch);
+                    document.getElementById("idSelectMonth").addEventListener("change",ch);
+                    document.getElementById("idClear").addEventListener("click",Clearf);
+        
+                    for (i = 2012; i <= 2020; i++) {   //新增年
+                        var opty = document.createElement("option");  //<option></option>
+                        opty.setAttribute("value", i);  //<option value="....></option>
+                        var optyTxt = document.createTextNode(i);  //1,2,....
+                        opty.appendChild(optyTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectYears').appendChild(opty);
+                    }
+        
+                    for (i = 1; i <= 12; i++) {   //新增月 
+                        var opt = document.createElement("option");  //<option></option>
+                        opt.setAttribute("value", i);  //<option value="....></option>
+                        var optTxt = document.createTextNode(i);  //1,2,....
+                        opt.appendChild(optTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectMonth').appendChild(opt);
+                    }
+                           
+                });
+                function ch(){
+                    //alert(this.id);
+                    var theYears=document.getElementById("idSelectYears").value;
+                    var theMonth=document.getElementById("idSelectMonth").value;
+                    // alert(theMonth);
+                    // document.write(theMonth);
+                    document.getElementById("idSelectDays").innerHTML="";            
+                    var dd= new Date(theYears,theMonth,0);
+                    var dayLmt=dd.getDate();
+                    // document.write(dayLmt);
+                    for (i = 1; i <= dayLmt; i++) {   //新增日
+                        var optd = document.createElement("option");  //<option></option>
+                        optd.setAttribute("value", i);  //<option value="....></option>
+                        var optdTxt = document.createTextNode(i);  //1,2,....
+                        optd.appendChild(optdTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectDays').appendChild(optd);
+                    }
+                }
+                function Clearf(){
+                    document.getElementById("idSelectYears").innerHTML="";
+                    document.getElementById("idSelectMonth").innerHTML="";
+                }
+            </script>
+</head>
+<body>
+    <div id="allpage">
+        <!-- Header -->
+        <header><nav>
+            <ul class="menu">
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="firstpage.html">Mutiplication table</a></li>
+                <li><a href="secondpage.html">Submit form</a></li>
+                <li><a href="thirdpage.html">Grading system</a></li>
+                <li><a href="fourthpage.html">Slide show</a></li>
+                <li><a href="fifth.html">Date selector</a></li>
+                <li><a href="">Contacts Us</a></li>
+            </ul>
+            <img src="images/space___big_physics_def_english.jpg" width="1024px">
+        </nav></header>
+        <!-- Header end -->
+        <!-- Contents -->
+        <div class="centre">
+            <article>
+                    <select id="idSelectYears"></select>
+                    <select id="idSelectMonth"></select>
+                    <select id="idSelectDays"></select>
+                    <!-- <select>
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="3">C</option>
+                    </select> -->
+                    <input type="button" value="clear" id="idClear">
+            </article>  
+        <hr>
+        <aside>
+        
+        </aside>
+        </div>
+        <!-- Contents end -->
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Html demo page</p>
+        </footer>
+        <!-- Footer end -->
+    </div>
+</body>
+</html>

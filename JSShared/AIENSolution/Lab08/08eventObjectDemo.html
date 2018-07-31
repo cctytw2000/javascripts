@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>08eventObjectDemo.html</title>
+    <script>
+        document.oncontextmenu = function (ns) {
+            //if (ns.preventDefault) 
+            //    ns.preventDefault(); //取消預設的動作
+            //else            
+            return false;  //取消預設的動作
+        }
+       
+    </script>
+</head>
+<body>
+    this is test line<br/>	
+    <img src="WindowObject/WinImages/101.gif" />
+	<a href="http://www.google.com" onclick="return true;">google</a>
+</body>
+</html>

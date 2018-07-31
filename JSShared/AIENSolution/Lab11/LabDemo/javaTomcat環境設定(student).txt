@@ -1,0 +1,21 @@
+1.安裝 tomcat
+ apache-tomcat-8.0.0-RC5-windows-x64.zip
+
+
+2.設定環境
+set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_45
+
+
+5.cd C:\TomCat\apache-tomcat-8.0.0-RC5-windows-x64\apache-tomcat-8.0.0-RC5\bin
+
+6.dos 命令下 startup
+
+7.sqlcmd -Usa -Ppassw0rd  確定 sql server sa password
+
+8. copy LabDemo_SQLJsp資料夾 to C:\TomCat\apache-tomcat-8.0.0-RC5-windows-x64\apache-tomcat-8.0.0-RC5\webapps
+
+9. attach db
+
+10. http://localhost:8080/LabDemo_SQLJsp/index.html
+
+

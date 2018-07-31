@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:800px;
+            margin:50px auto;
+        }
+        #spScore{
+            font-family:"標楷體";
+            font-size:30px;
+            float:left;
+        }
+        #idDivSco{
+            width:300px;
+            margin:30px auto;
+        }
+        #idBut{
+            float:right;
+            margin:5px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+
+            var imgStarList = document.querySelectorAll("img.clsImgStar");
+            var imgStarLen = imgStarList.length;
+            for(i=0;i<imgStarLen;i++){
+
+            document.getElementById("idImg"+i).addEventListener("mouseover",mouseover);
+            document.getElementById("idImg"+i).addEventListener("mouseout",mouseout);
+            document.getElementById("idImg"+i).addEventListener("click",click);
+             }
+        });
+        
+        var flag = false;
+        function mouseover(){
+            if (flag==false){
+                numStar = this.id.substr(5);
+                for (i=0;i<=numStar;i++){
+                document.getElementById("idImg"+i).src="image/chngstar.gif";
+                numScore = parseInt(numStar)+1;
+                document.getElementById("spScore").innerHTML=+numScore+"個燈";
+                }
+            }
+        }
+        function mouseout(){
+            if (flag==false){
+                numStar = this.id.substr(5);
+                for (i=0;i<=numStar;i++){
+                document.getElementById("idImg"+i).src="image/star.gif";
+                document.getElementById("spScore").innerHTML="請評分";
+                }
+            }  
+        }
+    
+        function click(){
+            if (flag==false){
+                numStar = parseInt(this.id.substr(5))+1;
+                document.getElementById("spScore").innerHTML="您給"+numStar+"顆星";
+                flag = true;
+                }
+        }
+
+        function reset(){
+            flag=false;
+            for (i=0;i<5;i++){
+                document.getElementById("idImg"+i).src="image/star.gif";
+            }
+            document.getElementById("spScore").innerHTML="請評分";
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <figure>
+        
+            <img class="clsImgStar" id="idImg0" src="image/star.gif" alt="star.gif" title="Star">
+            <img class="clsImgStar" id="idImg1" src="image/star.gif" alt="star.gif" title="Star">
+            <img class="clsImgStar" id="idImg2" src="image/star.gif" alt="star.gif" title="Star">
+            <img class="clsImgStar" id="idImg3" src="image/star.gif" alt="star.gif" title="Star">
+            <img class="clsImgStar" id="idImg4" src="image/star.gif" alt="star.gif" title="Star">
+            
+            <div id="idDivSco">
+            <span id="spScore">請評分</span>
+            <input id="idBut" type="button" value="重新評分" onclick ="reset()">
+            </div>
+
+            <!-- <figcaption>評分中</figcaption> -->
+
+        </figure>
+
+    </div>
+
+</body>
+</html>

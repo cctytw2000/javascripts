@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="codestyle/0426.css">
+    <title>帳號密碼驗證作業</title>
+    <style>
+        fieldset {
+            width: 700px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            border-radius: 15px;
+        }
+
+        .str1 {
+            width: 600px;
+            margin: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .submit {
+            width: 450px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        span {
+            font-size: 5px;
+        }
+    </style>
+    <script>
+        function checkName() {
+            var thename = document.getElementById("idname").value;
+            var namelen = thename.length;
+            var flaga = false;
+            var flagb = false;
+            if (thename == null)
+                document.getElementById("idspn").innerHTML = "<img src='error.png'>不能為空白"
+            else if (namelen < 2) {
+                document.getElementById("idspn").innerHTML = "<img src='error.png'>請輸入超過兩個字"
+            }
+            else {
+                for (var i = 0; i <= namelen; i++) {
+                    var namechar = thename.charCodeAt(i);
+                    if (namechar > 0x4E00 && namechar < 0x9FA5) {
+                        flaga = true;
+                    }
+                    if (flaga) {
+                        break;
+                    }
+                }
+                if (flaga) {
+                    document.getElementById("idspn").innerHTML = "<font color='blue'>格式正確"
+                }
+                else {
+                    document.getElementById("idspn").innerHTML = "<img src='error.png'>格式不正確"
+                }
+            }
+
+        }
+
+        function checkpassword() {
+            var thepwd = document.getElementById("idpwd").value;
+            var pwdlen = thepwd.length;
+            var strObj3 = new String("!@#$%^&*");
+            var flag1 = false;
+            var flag2 = false;
+            var flag3 = false;
+            if (thepwd == "")
+                document.getElementById("idsppd").innerHTML = "密碼不能為空白";
+            else if (pwdlen > 6) {
+                for (var i = 0; i <= pwdlen; i++) {
+                    var pwdchar = thepwd.charAt(i).toUpperCase();
+                    if (pwdchar >= "A" && pwdchar <= "Z") {
+                        flag1 = true;
+                    }
+                    else if (pwdchar >= "0" && pwdchar <= "9") {
+                        flag2 = true;
+                    }
+                    else if (pwdchar >= "!" && pwdchar <= "*") {
+                        flag3 = true;
+                    }
+                    if (flag1 && flag2 && flag3)
+                        break;
+                }
+                if (flag1 && flag2 && flag3)
+                    document.getElementById("idsppd").innerHTML = "<font color='blue'>密碼正確";
+                else
+                    document.getElementById("idsppd").innerHTML = "密碼是無效的";
+                //如果長度是否大於6，判斷是否包含字母、數字、特殊符號
+            }
+            else {
+                document.getElementById("idsppd").innerHTML = "密碼不能少於六個字元";
+            }
+
+        }
+
+
+        function checkdate() {
+            var thedate = document.getElementById("iddate1").value;
+            re = /^[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}$/
+            if (re.test(thedate)) {
+                var ddate = new Date(thedate);
+                if (ddate == "Invalid Date") {
+                    document.getElementById("idspd").innerHTML = "日期是無效的";
+                }
+                else {
+                    if (ddate.getDate() != thedate.split('/')[2]) {
+                        document.getElementById("idspd").innerHTML = "日期是無效的"; //這段判斷日期與轉換過的日期是否相同
+                    } else {
+                        document.getElementById("idspd").innerHTML = "<font color='blue'>日期妥當";
+                    }
+                }
+            } else {
+                document.getElementById("idspd").innerHTML = "日期格式不正確";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="#">首頁</a>
+                    </li>
+                    <li>
+                        <a href="hw-1.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="hw-2.html">帳號密碼驗證</a>
+                    </li>
+                    <li>
+                        <a href="hw-3.html">評分的星星</a>
+                    </li>
+                    <li>
+                        <a href="bootstrappractice.html">輪播的功能</a>
+                    </li>
+                    <li>
+                        <a href="hw-5w.html">日期的選擇</a>
+                    </li>
+                    <li>
+                        <a href="first.html">HTML作業</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="images/hw.jpg" width="1024" title="logo" alt="logo" height="300">
+        </header>
+        <form action="#" method="#">
+            <fieldset>
+                <legend>Form Check</legend>
+                <div class="str1">
+                    <label for="name" class="title">姓名: </label>
+                    <input type="text" id="idname" name="name" value="王建民" onclick="checkName();">
+
+                    <span id="idspn" style="color: red;"></span>
+                    <br>
+                    <label for="hint" style="font-size: 2px ; color: black">(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</label>
+                </div>
+
+                <div class="str1">
+                    <label for="pwd">密碼: </label>
+                    <input type="password" id="idpwd" name="pwd" value="" placeholder="請輸入密碼" onclick="checkpassword();">
+                    <span id="idsppd" style="color:red"></span>
+                    <br>
+                    <label for="pwdhint" style="font-size: 2px ; color: black">(1.不可空白，2.至少六個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])</label>
+                </div>
+
+                <div class="str1">
+                    <label for="date">日期: </label>
+                    <input type="text" id="iddate1" name="date1" value="" placeholder="ex:2000/2/29" onclick="checkdate();">
+                    <span id="idspd" style="color: red;"></span>
+                    <br>
+                    <label for="datehint" style="font-size: 2px ; color: black">格式:西元年/月/日yyyy/MM/dd</label>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="送出">
+                    <input type="reset" value="清除">
+                </div>
+            </fieldset>
+        </form>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+    <link rel="stylesheet" href="style/main.css">
+    <style>
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("account").addEventListener('blur', leaveName);
+            document.getElementById("mypassword").addEventListener('blur', leavePassword)
+            document.getElementById("date").addEventListener('blur', leavedate)
+        })
+        // 姓名
+        function leaveName() {
+            name = document.getElementById("account").value
+            reName = /^[\u4E00-\u9FFF]{2,}$/;
+
+            if (name == "") {
+                document.getElementById("nameSpan").innerHTML = "<img src='images/error.png'> 請勿輸入空白!!"
+            } else if (reName.test(name)) {
+                document.getElementById("nameSpan").innerHTML = "<img src='images/correct.jpg'>正確"
+            } else {
+                document.getElementById("nameSpan").innerHTML = "<img src='images/error.png'> 請輸入2個以上中文字!!"
+            }
+        }
+
+        // 密碼
+        function leavePassword() {
+            password = document.getElementById("mypassword").value
+            rePwd = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!-*]).{6,}$/
+            if (password == "") {
+                document.getElementById("pwdSpan").innerHTML = "<img src='images/error.png'> 請勿輸入空白!!"
+            } else if (rePwd.test(password)) {
+                document.getElementById("pwdSpan").innerHTML = "<img src='images/correct.jpg'>正確"
+            } else {
+                document.getElementById("pwdSpan").innerHTML = "<img src='images/error.png'> 至少6個字且須包含英文字母.數字.特殊字元[!@#$%^&*]!!"
+            }
+        }
+
+        // 日期
+        function leavedate() {
+            myDate = document.getElementById("date").value
+            redate = /^[0-9]{4}[/][0-9]{1,2}[/][0-9]{1,2}$/
+            if (myDate == "") {
+                document.getElementById("dateSpan").innerHTML = "<img src='images/error.png'> 請勿輸入空白!!"
+            } else if (redate.test(myDate)) {
+                computerDate = new Date(myDate);
+                myDate = new String(myDate);
+                listDate = myDate.split("/");
+                if (listDate[2] == computerDate.getDate()) {
+                    document.getElementById("dateSpan").innerHTML = "<img src='images/correct.jpg'>正確"
+                } else {
+                    document.getElementById("dateSpan").innerHTML = "<img src='images/error.png'> 該日期不存在!!"
+                }
+
+            } else {
+                document.getElementById("dateSpan").innerHTML = "<img src='images/error.png'> 日期格式錯誤(yyyy/MM/dd)!!"
+            }
+        }
+
+    </script>
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">回首頁</a>
+                    </li>
+                    <li>
+                        <a href="nine.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="form.html">表單確認</a>
+                    </li>
+                    <li>
+                        <a href="star.html">星星</a>
+                    </li>
+                    <li>
+                        <a href="date.html">日期</a>
+                    </li>
+                    <li>
+                        <a href="">公司簡介</a>
+                    </li>
+                    <li>
+                        <a href="">聯絡我們</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="images/p3.jpg" width="100%">
+        </header>
+        <div class="content">
+            <article id="article1">
+                <h2 class="title">表單確認</h2>
+                <section>
+                    <fieldset>
+                        <legend>Form Check</legend>
+                        <!--姓名-->
+                        <div class="bigDiv">
+                            <label>姓名:</label>
+                            <input type="text" id="account" size="10">
+                            <span id="nameSpan"></span>
+                            <div>
+                                <p>1.不可空白2.至少2個字以上3.必須全部為中文字</p>
+                            </div>
+                        </div>
+                        <!--密碼-->
+                        <div class="bigDiv">
+                            <label>密碼:</label>
+                            <input type="password" id="mypassword" size="10">
+                            <span id="pwdSpan"></span>
+                            <div>
+                                <p>1.不可空白2.至少6個字且須包含英文字母.數字.特殊字元[!@#$%^&*]</p>
+                            </div>
+
+                        </div>
+                        <!--日期-->
+                        <div class="bigDiv">
+                            <label>日期:</label>
+                            <input type="text" id="date" size="10">
+                            <span id="dateSpan"></span>
+                            <div>
+                                <p>格式:西元年/月/日 yyyy/MM/dd</p>
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+                </section>
+            </article>
+            <aside>
+                <h2 class="title">最新消息</h2>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+            </aside>
+
+            <!-- content end -->
+        </div>
+        <footer>
+            <p>E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality
+                Art Technology CO. </p>
+        </footer>
+
+        <!--all page end -->
+    </div>
+
+</body>
+
+</html>

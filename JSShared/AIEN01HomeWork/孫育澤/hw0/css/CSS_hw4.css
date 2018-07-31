@@ -1,0 +1,45 @@
+#idCalender{
+    width:800px;
+    height:400px;
+    margin:auto;
+    padding:15px;
+    border: 3px double whitesmoke;
+}
+
+.cSelCalen1{
+    width:100px;
+    margin:2px;
+    padding:1px;
+    float:left;
+}
+
+.cSelCalen2{
+    width:100px;
+    margin:2px;
+    padding:1px;
+    float:left;
+}
+
+.cSelCalen3{
+    width:100px;
+    margin:2px;
+    padding:1px;
+    float:left;
+}
+
+#idH1Calen{
+    text-align: left;
+    font-size: 2em;
+}
+
+#idSpnCalen2{
+    width:350px;
+    height:300px;
+    margin:2px;
+    padding:5px;
+    float:right;
+    color:whitesmoke;
+    font-size:20px;
+    text-align: left;
+    border: 3px double whitesmoke;
+}

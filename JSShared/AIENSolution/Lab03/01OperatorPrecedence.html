@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01OperatorPrecedence.html</title>
+    <script>
+        var a = 1;
+        a++;
+        document.write("a=" + a + "<br>");  //2
+        a = 1;
+        ++a;
+        document.write("a=" + a + "<br>"); //2
+
+        a = 1;
+        a = a + 1;
+        document.write("a=" + a + "<br>"); //2
+
+        //var x = 10;
+        //var y = "10";
+        var x = 10, y = "10";
+
+        //document.write(x == y);
+        //document.write("<br>");
+        console.log(x == y);         //比對值  true
+        console.log(x === y);      //比對值及資料型態  false
+    </script>
+</head>
+<body>
+
+</body>
+</html>

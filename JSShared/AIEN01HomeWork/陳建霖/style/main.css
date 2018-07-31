@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#allpage {
+    width: 1024px;
+    margin: auto;
+}
+
+.menu {
+    overflow: auto;
+    width: 100%;
+    background-color: #66B3FF;
+    list-style-type: none;
+    border-bottom: 3px solid #cccccc;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.menu li {
+    float: left;
+    width: 7em;
+    border-right: 1px solid #cccccc;
+}
+
+.menu li a {
+    display: block;
+    width: 100%;
+    line-height: 2.5em;
+    color: #333333;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menu li a:hover {
+    color: #FFFFFF;
+    background-color: #0080FF;
+}
+
+.content {
+    width: 100%;
+    overflow: auto;
+
+}
+
+article {
+    width: 75%;
+    float: left;
+}
+
+aside {
+    width: 20%;
+    float: right;
+}
+
+.title {
+    background-color: #0066CC;
+    line-height: 2.5em;
+    color: #f0f0f0;
+    padding-left: 20px;
+}
+
+article section {
+    margin: 16px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px
+}
+
+article section p {
+    margin: 10px 0;
+}
+
+.list1 {
+    list-style: decimal inside;
+}
+
+aside dl {
+    margin: 16px;
+}
+footer{
+    width:100%;
+    clear: both;
+    line-height: 2.5em;
+    text-align: center;
+    color:#FFFFFF;
+    background-color: #66B3FF;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}

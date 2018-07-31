@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index-css.css">
+    <style>
+    </style>
+    <script>
+            document.addEventListener("DOMContentLoaded",function(){
+                var imgs=document.querySelectorAll(".idimg");
+                
+                var imgsln=imgs.length;
+                // document.write(imgsln);
+                
+                for(i=0;i<imgsln;i++){
+                // document.write(i);                
+                imgs[i].addEventListener("mouseover",mouseOver);
+                imgs[i].addEventListener("mouseout",mouseOut);
+                imgs[i].addEventListener("click",Click);
+                }
+                // document.getElementById("").addEventListener("mouseout",mouseOut);
+                // document.getElementById("").addEventListener("click",Click);                       
+            })    
+            
+            function mouseOver(){
+                var points=this.id[3]*1+1;
+                // document.write(document.getElementById("img0").alt);
+                // document.write(points);
+                for (i=1;i<=points;i++){
+                document.images[i].src="images/chngstar.gif";
+            }
+            }
+    
+            function mouseOut(){
+                var points=this.id[3]*1+1;            
+                for (i=1;i<=points;i++){
+                document.images[i].src="images/star.gif";
+            }
+            }
+    
+            function Click(){
+                var points=this.id[3]*1+1;
+                document.getElementById("grtex").innerHTML="The score you give is: "+points;
+                for (i=1;i<6;i++){         
+                document.images[i].id="img";
+            }
+            }
+            
+        </script>
+</head>
+<body>
+    <div id="allpage">
+        <!-- Header -->
+        <header><nav>
+            <ul class="menu">
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="firstpage.html">Mutiplication table</a></li>
+                <li><a href="secondpage.html">Submit form</a></li>
+                <li><a href="thirdpage.html">Grading system</a></li>
+                <li><a href="fourthpage.html">Slide show</a></li>
+                <li><a href="fifth.html">Date selector</a></li>
+                <li><a href="">Contacts Us</a></li>
+            </ul>
+            <img src="images/space___big_physics_def_english.jpg" width="1024px">
+        </nav></header>
+        <!-- Header end -->
+        <!-- Contents -->
+        <div class="centre">
+            <article>
+                <img id="img0" class="idimg" src="images/star.gif" alt="0">
+                <img id="img1" class="idimg" src="images/star.gif" alt="1">
+                <img id="img2" class="idimg" src="images/star.gif" alt="2">
+                <img id="img3" class="idimg" src="images/star.gif" alt="3">
+                <img id="img4" class="idimg" src="images/star.gif" alt="4">
+                <br><br><br>
+                <h3 id="grtex"></h3>
+            </article>  
+        <hr>
+        <aside>
+        
+        </aside>
+        </div>
+        <!-- Contents end -->
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Html demo page</p>
+        </footer>
+        <!-- Footer end -->
+    </div>
+</body>
+</html>

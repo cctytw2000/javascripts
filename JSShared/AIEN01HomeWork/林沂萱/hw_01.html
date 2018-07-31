@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>hw_01</title>
+    <link rel="stylesheet" href = "template.css">
+    <style>
+        .hw_1 {
+            border: 3px solid #C05640;
+            border-collapse: collapse;
+            background-color: #edd170;
+            font-family:"微軟正黑體";
+            font-size: 16px;
+            line-height: 28px;
+            margin: 20px auto;
+        }
+        .td1 {
+            border-right: 1px dashed #C05640;
+            width: 100px;
+            text-align:center;
+        }
+    </style>
+</head>
+<div class = "allpage">
+    <header>
+        <div class = "title">
+            <h2>AIEN0215 -- Lin, YiHsuan</h2>
+            <h4 class = "date"> May, 2018</h4>
+        </div>
+        <nav>
+            <ul>
+                <li><a href = "hw_01.html">hw_1 -- 九九乘法表</a></li>
+                <li><a href = "hw_02.html">hw_2 -- 表單驗證</a></li>
+                <li><a href = "hw_03.html">hw_3 -- 星星評分</a></li>
+                <li><a href = "hw_04.html">hw_4 -- 廣告輪播</a></li>
+                <li><a href = "hw_05.html">hw_5 -- 日曆製作</a></li>
+            </ul>  
+        </nav>
+    </header>
+    <div class = "content">
+        <table class = "hw_1">
+        <caption>九九乘法表</caption>
+            <script>
+                for (j=1; j<10; j++){
+                    document.write("<tr>")
+                    for (i=2; i<10; i++){
+                        document.write("<td class = 'td1'>" + i + " * " + j + " = " + (i*j) + "</td>")
+                    } document.write("</tr>")
+                }
+            </script>
+        </table>
+    </div>
+    <footer>
+        <h4 class = "contact"> e-mail : b01204002@gmail.com</h4>
+    </footer>
+</div>
+</html>

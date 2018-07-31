@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="hwstyle.css">
+    <style>
+    .tx1{ width:380px;
+          border-bottom:1px solid gray;
+          margin: 20px;
+          padding:5px;
+    }
+
+    #frm{
+        margin:50px auto;
+        
+        width:450px;
+    }
+
+    fieldset{
+        width:450px;
+        border-radius:20px;
+        margin:20px;
+        border:1px solid green;
+        padding-left:20px;
+    }
+    .sub{
+        width:450px;
+        text-align:center;
+        padding:20px;
+    }
+    p{
+        font-size:10px;
+        color:gray;
+        padding:5px;
+    }
+    span{
+        font-size:10px;
+        font-style:italic;
+        
+    }
+
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            document.getElementById("idname").addEventListener("blur",chkName);
+            // document.getElementById("idname").addEventListener("input",chkName);
+            document.getElementById("idpwd").addEventListener("blur",chkPassword);
+            // document.getElementById("idpwd").addEventListener("input",chkPassword);
+            document.getElementById("iddate").addEventListener("blur",chkDate);
+            // document.getElementById("iddate").addEventListener("input",chkDate);
+        });
+
+        var flagName = false;
+        var flagPwd = false;
+        var flagDate = false;
+        function chkName(){
+            var getName = document.getElementById("idname").value;
+            re=/[^u4E00-u9FFF]{2,}$/
+            if(re.test(getName)){
+            document.getElementById("idna").innerHTML=
+                "<img src='image/corr.jpg' width =10 height=10>格式正確".fontcolor("black") ;
+                flagName = true;}
+            else 
+                document.getElementById("idna").innerHTML=
+                "<img src='image/err.jpg' width =10 height=10 >格式錯誤，請重新輸入".fontcolor("red");
+        }
+
+        function chkPassword(){
+            var getPwd = document.getElementById("idpwd").value;
+            re=/^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*\W).{6,}$/
+            if(re.test(getPwd)){
+            document.getElementById("idps").innerHTML=
+                "<img src='image/corr.jpg' width =10 height=10>格式正確".fontcolor("black");
+                flagPwd = true;}
+            else 
+            document.getElementById("idps").innerHTML=
+                "<img src='image/err.jpg' width =10 height=10 >格式錯誤，請重新輸入".fontcolor("red");
+        }
+        
+        function chkDate(){
+            var monthDay = [31,28,31,30,31,30,31,31,30,31,30,31];
+            var theDate = document.getElementById("iddate").value;
+            re=/^[1-2]{1}\d{3}\/\d{1,2}\/\d{1,2}$/
+            // var t = Date.parse(getDate);
+            //     if(isNaN(t)){
+            if(re.test(theDate)){
+                var dateList =theDate.split('/');
+                var dateYear = parseInt(dateList[0]);
+                var dateMonth = parseInt(dateList[1]);
+                var dateDay = parseInt(dateList[2]);
+                var leapDay = new Date(dateYear,1,29).getDate() ===29;
+                if(leapDay)
+                    monthDay[1]=29;    
+                if (dateDay <= monthDay[dateMonth -1]){
+                document.getElementById("idda").innerHTML=
+                "<img src='image/corr.jpg' width =10 height=10>格式正確".fontcolor("black");
+                flagDate = true;
+                }
+                else{
+                document.getElementById("idda").innerHTML=
+                "<img src='image/err.jpg' width =10 height=10 >格式錯誤，請重新輸入".fontcolor("red"); 
+                }
+                }
+            else{
+            document.getElementById("idda").innerHTML=
+            "<img src='image/err.jpg' width =10 height=10 >格式錯誤，請重新輸入".fontcolor("red"); 
+            }
+             
+                  
+                
+        }
+        function resetF(){
+            document.getElementById("idna").innerHTML="";
+            document.getElementById("idps").innerHTML="";
+            document.getElementById("idda").innerHTML="";
+            flagName = false;
+            flagPwd = false;
+            flagDate = false;
+        }
+
+        function sbF(){
+            if(flagName == true && flagPwd == true && flagDate == true){
+                return(true)}
+            else
+                return(false)
+        }
+    </script>
+</head> 
+
+<body>
+    <div id="frm">
+    <form action="#" method="GET" enctype>
+        <fieldset>
+            <legend >Form Check</legend>
+            <div class="tx1">
+                <label for="" class="lab">姓名：</label>
+                <input type="text" name="na"  id="idname" placeholder="請輸入姓名" size="10" autofocus autocomplete >
+                <span id="idna"></span>
+                <p>(1.不可空白，2.至少兩個字以上，3.必需全部為中文字</p>
+            </div>
+            <div class="tx1">
+                <label for="" class="lab">密碼：</label>
+                <input type="password" name="pwd" id="idpwd" placeholder="請輸入密碼" maxlength="20">
+                <span id="idps"></span>
+                <p>(1.不可空白，2.至少6字個且必須包含英文字母、數字、特殊字元</p>
+            </div>
+            <div class="tx1">
+                <label for="" class="lab">日期：</label>
+                <input type="text" name="dat" id="iddate" placeholder="ex:2018/5/1">
+                <span id="idda"></span>
+                <p>格式：西元年/月/日 yyyy/mm/dd </p>
+
+            </div>
+
+            <div class="sub">
+                    <input type="submit" value="送出" id="idsb" onclick="return sbF()" >
+                    <input type="reset" value="清除" onclick="resetF()">
+                    </div>
+        </fieldset>
+
+    </form>
+</div>
+</body>
+</html>

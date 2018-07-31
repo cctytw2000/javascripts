@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWork3</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        var stars = document.querySelectorAll("img.stars");
+        var starslen = stars.length;
+        for(i=0;i<starslen;i++){
+            
+            stars[i].addEventListener("mouseover",mouseover)
+            stars[i].addEventListener("mouseout",mouseout)
+            stars[i].addEventListener("click",click)
+            
+        }
+        document.getElementById("idbut").addEventListener("click",reset)
+    });
+
+// 滑鼠滑入    
+    function mouseover(){      
+        if(this.id.substr(5)){
+            for(j=1;j<=this.id.substr(5);j++){
+                document.images[this.id.substr(5)-j].src="images2/chngstar.gif";
+            }    
+            document.getElementById("thep").innerHTML="打分中....."+this.id.substr(5)+"顆星";
+        }     
+    }
+
+// 滑鼠滑出    
+    function mouseout(){
+        if(this.id.substr(5)){
+            for(j=1;j<=this.id.substr(5);j++)
+            document.images[this.id.substr(5)-j].src="images2/star.gif";
+        }
+            
+    }
+
+// 滑鼠點擊   
+    function click(){
+        if(this.id.substr(5)){
+            var a = this.id.substr(5);
+            for(j=0;j<a;j++){
+                document.images[j].setAttribute("id",String(j))
+                document.getElementById(j).src="images2/chngstar.gif"
+            }
+            for(k=a;k<5;k++){
+            document.images[k].setAttribute("id",String(k))
+            document.getElementById(k).src="images2/star.gif"
+            }           
+        }          
+        document.getElementById("thep").innerHTML="你得了"+a+"顆星!"       
+    }
+
+// Reset
+    function reset(){
+        for(z=0;z<5;z++){
+            document.images[z].setAttribute("id","idImg"+String(z+1))
+            document.getElementById("idImg"+String(z+1)).src="images2/star.gif"
+        }
+        document.getElementById("thep").innerHTML="請打分數"
+    }
+
+</script>
+<style>
+    form{
+        width:700px;
+        margin:100px auto;
+    }
+    legend{
+        text-align: center;
+    }
+</style>
+<body>
+    <form>
+        <fieldset>
+            <legend>Score</legend>
+            <img id="idImg1" class="stars" src="images2/star.gif">
+            <img id="idImg2" class="stars" src="images2/star.gif">
+            <img id="idImg3" class="stars" src="images2/star.gif">
+            <img id="idImg4" class="stars" src="images2/star.gif">
+            <img id="idImg5" class="stars" src="images2/star.gif"><br>
+            <p id="thep">請打分數<span id="idsp"></span></p>
+            <input type="button" id="idbut" value="重新計分">
+        </fieldset>
+    </form>
+</body>
+</html>

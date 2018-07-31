@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>九九乘法表</title>
+    <link rel="stylesheet" href="style/str1.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="zero.html">回首頁</a>
+                    </li>
+                    <li>
+                        <a href="first.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="second.html">Form Check</a>
+                    </li>
+                    <li>
+                        <a href="third.html">評點製作</a>
+                    </li>
+                    <li>
+                        <a href="fourth.html">廣告輪播</a>
+                    </li>
+                    <li>
+                        <a href="fifth.html">製作年日曆</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="image/homework.jpg" alt="logo" title="logo">
+        </header>
+        <div class="content">
+            <article>
+                <h2 class="title">使用Table印出九九乘法表</h2>
+            </article>
+            <script>
+                document.write("<table>");
+                document.write("<caption><h2>九九乘法表</h2></caption>");
+                for (var i = 2; i < 10; i++) {
+                    document.write("<tr>");
+                    for (var j = 2; j < 10; j++)
+                        document.write("<td>" + j + "*" + i + "=" + i * j + "</td>");
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

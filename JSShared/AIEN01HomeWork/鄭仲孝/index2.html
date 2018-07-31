@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html html lang="zh-tw">
+<head>
+  <title>Homework2</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <style>
+    
+    article {
+      height: 600px;
+      margin-left: 400px;
+      margin-top: 80px;
+    }
+    fieldset {
+      height: 250px;
+      width: 450px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("idName").addEventListener("blur", chkName);
+      document.getElementById("idPwd").addEventListener("blur", chkPassword);
+      document.getElementById("idDate").addEventListener("blur", chkDate);
+    });
+
+    function all_clean() {
+      document.getElementById("idName").value = "";
+      document.getElementById("idPwd").value = "";
+      document.getElementById("idDate").value = "";
+    }
+    function chkName() {
+      var theName = document.getElementById("idName").value;
+      var re = /^[\u4e00-\u9fa5]{2,}$/;
+      if (theName.length >= 2)
+        if (re.test(theName))
+          document.getElementById("idsp").innerHTML =
+            "輸入正確";
+        else
+          document.getElementById("idsp").innerHTML =
+            "<img src='Images/error.png'>輸入錯誤";
+      else if (theName.length == "")
+        document.getElementById("idsp").innerHTML =
+          "<img src='Images/error.png'>不可空白";
+    }
+    chkName();
+
+    function chkPassword() {
+      var thePassword = document.getElementById("idPwd").value;
+      var re = /^(?=.*[0-9])(?=.*[A-Za-z])(?=.*[!@#\$%\^&\*])(?!.*[\u4e00-\u9fa5])(?!.*[\s]).{6,}$/;
+      if (thePassword.length >= 6)
+        if (re.test(thePassword))
+          document.getElementById("idpwd1").innerHTML = "輸入正確";
+        else
+          document.getElementById("idpwd1").innerHTML =
+            "<img src='Images/error.png'>密碼格式有誤";
+      else if (thePassword.length < 6)
+        document.getElementById("idpwd1").innerHTML = "<img src='Images/error.png'>至少六個字";
+    }
+    chkPassword();
+
+    function chkDate() {
+            var thedate = document.getElementById("idDate").value;
+            re = /^[0-9]{4}\/[0-9]{1,2}\/[0-9]{1,2}$/;
+            if(re.test(thedate)){
+                var thisDate = new Date(thedate);
+                if(thisDate == "Invalid Date"){
+                    document.getElementById("idt").innerHTML="<img src='Images/error.png'>日期格式yyyy/MM/dd";
+                }
+                else{
+                    if(thisDate.getDate() == thedate.split('/')[2]){
+                      document.getElementById("idt").innerHTML="正確";
+                    }
+                    else{
+                      document.getElementById("idt").innerHTML="<img src='Images/error.png'>日期格式yyyy/MM/dd";
+                  }        
+                }
+        }else{
+            document.getElementById("idt").innerHTML="<img src='Images/error.png'>日期格式yyyy/MM/dd";
+        }
+        }
+        chkDate();
+
+  </script>
+</head>
+
+<body>
+
+  <div id="banner">
+    <p>
+      <a href="#">
+        <img src="images/home.gif" alt="homepage">
+      </a> |
+      <a href="">
+        <img src="images/mail.gif" alt="contact">
+      </a>
+    </p>
+    <h1>JaveScript Homework ...</h1>
+  </div>
+
+  <div id="menu">
+    <ul id="nav">
+      <li id="home">
+        <a href="index.html">homework1</a>
+      </li>
+      <li id="who">
+        <a href="index2.html">homework2</a>
+      </li>
+      <li id="prod">
+        <a href="#">homework3</a>
+      </li>
+      <li id="serv">
+        <a href="#">homework4</a>
+      </li>
+      <li id="cont">
+        <a href="index5.html">homework5</a>
+      </li>
+    </ul>
+  </div>
+  <article>
+    <fieldset>
+      <legend>Form check</legend>
+
+      <label>
+        <br>
+        姓名:
+        <input type="text" id="idName" size="10" />
+        <span id="idsp" style="color:red"></span>
+        <br>
+        <p style="color: #D3D3D3;font-size:3px;line-height: 1px">(1.不可空白，2.至少兩個字以上，3.必須全部為中文)</p>
+        <p style="border-bottom:1px solid grey"></p>
+        密碼:
+        <input type="password" id="idPwd" size="10" />
+        <span id="idpwd1" style="color:red"></span>
+        <br>
+        <p style="color: #D3D3D3;font-size:3px;line-height: 1px">(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])</p>
+        <p style="border-bottom:1px solid grey"></p>
+        日期:
+        <input type="text" id="idDate" size="15" />
+        <span id="idt" style="color:red"></span>
+        <br>
+        <p style="color: #D3D3D3;font-size:3px;line-height: 1px">(格式:西元年/月/日 yyyy/MM/dd)
+          <p style="border-bottom:1px solid grey"></p>
+
+          <input type="submit" value="送出" onclick="">
+          <input type="reset" value="清除" onclick="all_clean()">
+      </label>
+    </fieldset>
+  </article>
+  <div id="footer">
+    <p>
+      <a href="#">homework</a> |
+      <a href="harnk0916@yahoo.com.tw">contact</a> | &copy; 2007 Anyone | Design by
+      <a href="http://www.mitchinson.net"></a>
+    </p>
+  </div>
+</body>
+</html>

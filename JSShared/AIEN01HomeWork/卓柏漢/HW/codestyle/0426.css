@@ -1,0 +1,112 @@
+/*CSS樣式*/
+@font-face{
+    src: url(../fonts/GamjaFlower.ttf);
+    font-family: fontzzz;
+}
+body {
+	    font-family: fontzzz;
+		color:#333333;
+		background-image: url(../images/back4.jpg);
+		}
+
+* {margin:0;
+   padding:0;
+   }
+
+#allpage {  
+	        font-family: 華康細圓體;
+			width:1024px;
+			margin:0 auto;
+			}
+
+.menu {
+		font-weight: 600;
+		font-size: 15px;
+		overflow:auto;
+		width:100%;
+		list-style-type:none;
+		background-color: rgb(0, 162, 255);
+		border-bottom:5px solid #cccccc;
+		border-top-right-radius:15px;
+		border-top-left-radius:15px;
+		}
+
+.menu li{
+         float:left;         
+         width:7em;      /*為了讓連結區域能依字型大小的變化自動放大,因此在指定width屬性時採用em為單位*/
+         border-right:1px solid #cccccc;                 	    
+         }
+
+.menu li a{
+         display:block;
+         width:100%;        	     
+         line-height:2.5em;/*讓文字上下空出適當的空白,不用padding屬性,直接將行Box的高度設的高一些*/
+         color:#3d1515;
+         text-decoration:none;         
+         text-align:center;         	     
+         }
+         
+.menu li a:hover {color:#FFFFFF;
+			   background-color:rgba(153, 0, 255, 0.514);
+}
+
+.content {
+			overflow:auto;			
+			width:100%;
+			padding-bottom:20px;
+			}
+			
+article {
+		    float:left;			
+            width:75%;
+			}
+
+aside {
+		float:right;
+        width:20%;
+		
+		}
+
+/* .title {
+		background-color:#0066CC;
+		line-height:2.5em;
+		color:#F0F0F0;
+		padding-left:20px;
+		}		 */
+
+article section {
+			margin:16px;
+			border-bottom:1px solid #cccccc;
+			padding-bottom:10px;
+			line-height: 25px;
+			}
+			
+article section p {
+			margin:10px 0;
+			}
+			
+		
+.list1  {		
+		list-style:decimal inside;
+		list-style-type: upper-roman;
+		}
+
+aside dl {
+		margin:20px;
+		line-height: 30px;
+		}
+/* aside dl,dt{
+
+} */
+footer {
+		font-family: fontzzz;
+		font-size: 18px;
+		width:100%;
+		clear:both;
+		line-height:2.5em;		
+		text-align:center;
+		color:#ffffff;
+		background-color:#66B3FF;
+		border-bottom-right-radius:15px;
+		border-bottom-left-radius:15px;
+		}

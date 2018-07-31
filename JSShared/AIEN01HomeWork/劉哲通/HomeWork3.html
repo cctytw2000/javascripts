@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <div id="allpage">
+        <header>
+            
+            <nav>
+                <ul class="menu">
+                <li><a href="index.html">回首頁</a></li>
+                <li><a href="Homework1.html">九九乘法表</a></li>
+                <li><a href="Homework2.html">表單製作</a></li>
+                <li><a href="HomeWork3.html">評點製作</a></li>
+                <li><a href="">主要客戶</a></li>
+                <li><a href="">公司簡介</a></li>
+                <li><a href="">聯絡我們</a></li>
+                </ul>
+            </nav>            
+            <img style="width:1024px;height:150px" src='Images/logo.jpg'>
+        </header>
+        <div class="content">
+        <article>
+            <h2 class="title">評點製作</h2>
+            <section>
+                    <script>
+                            document.title="HW3";
+                            document.addEventListener("DOMContentLoaded", function () {
+                            stars = document.querySelectorAll("img.imgbut")
+                            starsLen = stars.length;
+                            for(var i=0;i<starsLen;i++){
+                         stars[i].addEventListener("mouseover",mouseOver);  //事件繫結，滑鼠滑入
+                         stars[i].addEventListener("mouseout",mouseOut);
+                         stars[i].addEventListener("click",Click);
+                          }  });
+                         function mouseOver() {        
+                             for(var j=0;j<6;j++){       
+                             if(this.id-1==j)
+                             for(k=1;k<=this.id;k++){
+                                 document.images[this.id-k+1].src = "Images/chngstar.gif";       
+                              }}
+                               theP = document.getElementById("txt");
+                              var txtP = document.createTextNode("打分中..."+(k-1));
+                              theP.removeChild(theP.firstChild);
+                              theP.appendChild(txtP);   
+                            }
+                         function mouseOut() {            
+                            document.images[this.id].src = "Images/star.gif";
+                            txtP2 = document.createTextNode("打分中..."+(k-2));
+                            theP.removeChild(theP.firstChild);
+                            theP.appendChild(txtP2)
+                            }
+                         function Click() {
+                            for(var i=0;i<starsLen;i++){
+                            stars[i].removeEventListener("mouseover",mouseOver);
+                            stars[i].removeEventListener("mouseout",mouseOut);
+                            }
+                            var txtP1 = document.createTextNode("你給"+(k-1)+"顆星")
+                            theP.removeChild(theP.firstChild);
+                            theP.appendChild(txtP1)
+                            }
+                         </script>
+                        <img id="1" class="imgbut" src="Images/star.gif">
+                        <img id="2" class="imgbut" src="Images/star.gif">
+                        <img id="3" class="imgbut" src="Images/star.gif">
+                        <img id="4" class="imgbut" src="Images/star.gif">
+                        <img id="5" class="imgbut" src="Images/star.gif"><br>
+                        <p id="txt">打分中...</p>
+                        
+            </section>
+        </article>
+        <aside>
+                <h2 class="title">最新消息</h2>
+                 <dl>   
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                 </dl>
+                 <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>   
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>   
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+               </dl>
+        </aside>
+    </div>
+    <footer>
+            E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology CO. 
+    </footer>
+    </div>
+</body>
+
+ 
+</html>

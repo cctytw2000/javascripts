@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="codestyle/0426.css">
+    <title>九九乘法表作業</title>
+    <style>
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            background-color: lightgrey;
+        }
+
+        table td {
+            border-right-style: solid;
+            border-right-color: gray;
+            border-bottom-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="#">首頁</a>
+                    </li>
+                    <li>
+                        <a href="hw-1.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="hw-2.html">帳號密碼驗證</a>
+                    </li>
+                    <li>
+                        <a href="hw-3.html">評分的星星</a>
+                    </li>
+                    <li>
+                        <a href="bootstrappractice.html">輪播的功能</a>
+                    </li>
+                    <li>
+                        <a href="hw-5w">日期的選擇</a>
+                    </li>
+                    <li>
+                        <a href="first.html">HTML作業</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="images/hw.jpg" width="1024" title="logo" alt="logo" height="300">
+        </header>
+        <center>
+            <table>
+                <script>
+
+                    for (var i = 1; i <= 10; i++) {
+                        document.write("<tr>")
+                        for (var j = 1; j <= 10; j++) {
+                            document.write("<td>" + i + "*" + j + "=" + i * j + "</td>");
+                        } document.write("</tr>")
+                    }
+                </script>
+            </table>
+        </center>
+</body>
+
+</html>

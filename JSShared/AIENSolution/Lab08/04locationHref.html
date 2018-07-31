@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>04locationHref.html</title>
+    <script>
+        //http://www.w3schools.com/jsref/dom_obj_select.asp
+        var linker = new Array();
+        linker[0] = "#";  //連結到自己
+        linker[1] = "http://www.iiiedu.org.tw/taipei/";
+        linker[2] = "http://tw.yahoo.com";
+        linker[3] = "http://www.google.com";
+        //var linker = ["#", "http://www.iiiedu.org.tw/taipei/", "http://tw.yahoo.com", "http://www.google.com"];
+        function redirect(x) {
+            //alert(x);
+            location.href = linker[x];
+        }
+    </script>
+</head>
+<body>
+    <select onchange="redirect(this.selectedIndex);" >
+		<option>selected</option>
+		<option>IIIEDU</option>
+		<option>YAHOO</option>
+		<option>GOOGLE</option>			
+	</select>
+</body>
+</html>

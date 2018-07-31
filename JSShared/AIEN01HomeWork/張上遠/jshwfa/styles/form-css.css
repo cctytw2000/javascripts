@@ -1,0 +1,30 @@
+fieldset {
+    width:500px;
+    border:1px solid #acd6ff;
+    border-radius:15px;
+    margin:15px;
+}
+.st1 {
+    width:450px;
+    border-bottom:1px solid	#e0e0e0;
+    margin:20px;
+    padding-bottom:10px;
+}
+.sub {
+    width:450px;
+    margin:20px;
+    text-align:center;
+}
+.t1 {
+    width:100px;
+    float:left;
+    text-align:right;
+    /* border:1px solid red; */
+    padding-right:3px;
+}
+textarea {
+    resize:none;
+}
+em {
+    color:red;
+}

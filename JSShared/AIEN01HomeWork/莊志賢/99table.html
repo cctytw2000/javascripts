@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格練習</title>
+    <style>
+        #table1 {
+            width:600px;
+            border:2px solid 	#007979;
+            border-collapse:collapse;
+        }
+        td,th {
+            border-right-style:solid;
+            border-width:2px;
+            border-right-color:#007979;
+            
+        }
+        
+        tbody {
+            background-color:aquamarine;
+            text-align:center;
+        }
+        
+    </style>
+   <script>
+   
+   </script>
+
+</head>
+<body>
+    <table id="table1">
+        <caption><h3>99法表格練習</h3></caption>
+        
+    <tbody>
+            <script> 
+                   for (a=1;a<=9;a++){
+        document.write("<tr>");
+               for (b=1;b<=9;b++)
+                      document.write("<td>"+b+"x"+a+"="+b*a+"</td>");
+        document.write("</tr>");}
+       </script>
+</tbody> 
+</table>    
+</body>
+</html>

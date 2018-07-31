@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="st2.css">
+    <style>
+    * {padding:0;
+    margin:0}
+    #allpage{width:1024px;margin:auto}
+    .ul{overflow:auto;
+          list-style-type:none;
+          width:100%;
+          border:1px solid black;
+          border-bottom:1px solid gray;
+          border-top-right-radius: 15px;
+          border-top-left-radius:15px;
+          
+          }
+    .ul li{
+            float:left;
+            width:139.01px;
+            border-right:1px solid black;
+            
+         }
+     .ul li a{
+         text-decoration:none;text-align:center;line-height:2.5em;display:block;color:brown
+     }        
+     .ul li a:hover{color:white;
+     background-color:blanchedalmond
+
+     }    
+     .title {
+		background-color:black;
+		line-height:2.5em;
+		color:#F0F0F0;
+		padding-left:20px;
+        text-align:center;
+        overflow:auto;
+		}
+        
+        .title1 {
+		background-color:#0066CC;
+		line-height:2.5em;
+		color:#F0F0F0;
+		width:100%;
+        text-align:center;
+		}
+      article section {
+			margin:16px;
+			border-bottom:1px solid #cccccc;
+			padding-bottom:10px;
+			}
+      article section p {
+			margin:10px 0;
+			}
+      .list1  {		
+		list-style:decimal inside;
+
+		}
+        aside dl{
+            margin:16px
+        }
+        .content{
+            width:100%;
+            overflow:auto;
+            padding-bottom:20px;;
+                 }
+        /* article{float:left;
+        width:75%}          */
+        
+        footer {
+		width:100%;
+		line-height:2.5em;		
+		text-align:center;
+		color:#ffffff;
+		background-color:blue;
+		border-bottom-right-radius:15px;
+		border-bottom-left-radius:15px;
+        }
+         table {
+             border:3px solid blue;width:300px;height:300px;margin:200px auto;border-collapse:collapse;background-color: aqua;padding:0px
+         }
+         table td{
+             border-right:3px solid blue ; text-align:center
+             }
+        
+		
+
+         </style>
+</head>
+<body>
+    <div id="allpage">
+<hedaer >
+    <nav>
+        
+        <ul class="ul">
+            <li ><a href="hwmodule.html">作業一</a></li>
+            <li><a href="page2.html">解決方案</a></li>
+            <li><a href=>實績介紹</a></li>
+            <li><a href=>合作夥伴</a></li>
+            <li><a href=>主要客戶</a></li>
+            <li><a href=>公司簡介</a></li>
+            <li style= "border-right:white"><a href=>聯絡我們</a></li>
+        </ul>
+        <img src="images.png" title="logo" style= "width:100% ;height:150PX">
+   
+    </nav>
+    
+    </hedaer>
+    <div class="content">
+        
+            <h2 class="title">九九乘法表</h2>
+            <section>
+                    <script>  
+                            document.write('<table>')
+                            document.write('<thead>')
+                            // document.write('<caption>九九乘法表</caption>')
+                            document.write('<tbody>')
+            
+                            
+                              for(var i=2;i<10;i++)
+                              {   
+                             document.write("<tr>");
+                              for(var j=1;j<10;j++)
+                                {
+                               
+                                document.write("<td>"+ i+"*"+j+"="+i*j+"</td>");
+                                  }
+                                    document.write("</tr>");
+                            }
+                         
+                            document.write('</tbody>')
+                            document.write('</thead>')
+                            document.write('</table>')
+                    </script>
+            
+          </section>  
+        </div>  
+    
+        
+
+</div>
+</body>
+</html>

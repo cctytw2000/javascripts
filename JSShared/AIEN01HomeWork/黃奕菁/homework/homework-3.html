@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework-3</title>
+    <link rel="stylesheet" href="main_hw.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+    <style>
+    </style>
+    <script>
+    window.onload = function(){
+        var star = document.getElementsByTagName('img');
+        var oDiv = document.getElementById('starBox');
+        var temp = 0; 
+
+    for(var i = 0; i < 6; i++){
+        star[i].index = i;
+         
+        star[i].onmouseover = function(){
+            clear();
+            for(var j = 1; j < this.index + 1; j++){
+                star[j].src = "images/chngstar.gif" ;
+                document.getElementById('starNotice').innerHTML = '打分中......'+j + '顆星';
+            }
+        }
+         
+        star[i].onmouseout = function(){
+            for(var j = 1; j < this.index + 1; j++){
+                star[j].src = "images/star.gif";
+            }
+            current(temp);
+        }
+        //顯示點擊文字 
+        star[i].onclick = function(){
+            temp = this.index ;
+            if (this.index==0){
+                document.getElementById('starNotice').innerHTML =' ';
+                }
+            else 
+            document.getElementById('starNotice').innerHTML ='你給了' + temp + ' 顆星';
+            current(temp);          
+        }
+    }
+    //清除所有
+    function clear(){
+        for(var i = 1, len = star.length; i < len; i++){
+            star[i].src = "images/star.gif";
+        }
+    }
+    //顯示目前第几颗星
+    function current(temp){
+        for(var i = 1; i <= temp; i++){
+            star[i].src = "images/chngstar.gif";
+        }
+    };
+}
+
+    </script>
+</head>
+
+<body>
+
+    <div id="allpage">
+    <header>
+    <nav >
+        <ul class="menu">
+            <li><a href="homework-1.html">HW-1</a></li>
+            <li><a href="homework-2.html">HW-2</a></li>
+            <li><a href="homework-3.html">HW-3</a></li>
+            <li><a href="homework-4.html">HW-4</a></li>
+            <li><a href="homework-5.html">HW-5</a></li>              
+        </ul>
+    </nav>
+
+    <img src="images\jstips-animation.gIF"alt="logo" title="logo" width="1044" height="340">
+</header>
+<div class="content">
+<article>
+    <h2 class="title">Homework-3 評點製作</h2>
+    <section>
+        <div id="starBox">
+            <img class="imgstar" id="idimg1" src="images/star.gif" />
+            <img class="imgstar" id="idimg2" src="images/star.gif" />
+            <img class="imgstar" id="idimg3" src="images/star.gif" />
+            <img class="imgstar" id="idimg4" src="images/star.gif" />
+            <img class="imgstar" id="idimg5" src="images/star.gif" />
+            </div>
+            <p id="starNotice"></p>
+    </section>
+</article>
+
+<aside>
+<h2 class="title">備註</h2>
+<dl>
+    <dt>班級 
+        <dd>AIEN 02</dd>
+    </dt>
+</dl>
+<dl>
+    <dt>課程
+        <dd>JavaScript</dd>
+    </dt>
+</dl>
+<dl>
+    <dt>指導老師
+        <dd>陳銀華 老師</dd>
+    </dt>
+    </dl>
+<dl>
+    <dt>學生
+        <dd>黃奕菁</dd>
+    </dt>
+</dl>
+</aside>
+
+    </div><!--end cintent-->
+<footer>
+        <p>E-amil:jnek23758@hotmail.com &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology CO. </p>
+    </footer>
+</div><!--end allpage-->  
+
+</body>
+</html>

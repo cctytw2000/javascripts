@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework-Web</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        #table1{
+            border:3px solid blue;
+            border-collapse: collapse
+        }
+        td{
+            border:2px solid blue;
+            background-color:rgba(208, 234, 236, 0.979);
+            color:red;
+            font-size: 40px
+        }
+    </style>
+    <script>
+        function fmulti(i){
+            for(var j = 1; j < 10 ; j++)
+            document.write(i+"*"+j+"="+i*j+"<br>")
+            }
+    </script>
+</head>
+<body>
+    <div id = "allpage">
+        <header class = "head">
+            <img src="picture/computer.png">
+            <h2 style="float:left;">HOMEWORK</h2>
+            <h2 style="color:rgb(0, 174, 255)">WEB</h2>
+            <div>THE WEBSITE FOR JAVASCRIPT HOMEWORK.</div>
+        </header>
+        <div>
+            <article>
+                <nav>
+                    <ul class = "menu">
+                        <li><a href="homepage.html">HOMEPAGE</a></li>
+                        <li><a href="timestable.html">TIMESTABLE</a></li>
+                        <li><a href="formcheck.html">FORMCHECK</a></li>
+                        <li><a href="score.html">SCORE</a></li>
+                        <li><a href="carousel.html">CAROUSEL</a></li>
+                        <li><a href="">CALENDAR</a></li>
+                    </ul>
+                </nav>
+            </article>
+        </div>
+        <div class = "di1">
+            <table id = table1 style="float: left;margin-top:150px;margin-left:250px ">
+                <tr>
+                    <td><script>fmulti(2)</script></td>
+                    <td><script>fmulti(3)</script></td>
+                    <td><script>fmulti(4)</script></td>
+                    <td><script>fmulti(5)</script></td>
+                    <td><script>fmulti(6)</script></td>
+                    <td><script>fmulti(7)</script></td>
+                    <td><script>fmulti(8)</script></td>
+                    <td><script>fmulti(9)</script></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

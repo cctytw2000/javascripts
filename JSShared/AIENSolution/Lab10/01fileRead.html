@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01fileRead.html</title>
+    <script>
+        function fileViewer() {
+            var theFiles = document.getElementById("file1").files;
+            for (var i = 0; i < theFiles.length; i++) {
+                //alert(theFiles[i].name);
+
+                var reader = new FileReader();
+                reader.readAsText(theFiles[i], "UTF-8");
+                reader.onload = function (e) {
+                    //alert(e.target);
+                    alert(e.target.result);
+                    var fileContent = e.target.result;
+                    //document.getElementById("show").innerHTML = fileContent;
+
+                    document.getElementById("show").insertAdjacentHTML("BeforeEnd", fileContent);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="file" id="file1" multiple="multiple"  onchange="fileViewer();"/><br/>
+    <textarea cols="60" rows="20" id="show"></textarea>
+
+</body>
+</html>

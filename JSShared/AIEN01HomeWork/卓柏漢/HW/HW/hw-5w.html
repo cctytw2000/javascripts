@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="codestyle/0426.css">
+    <title>Document</title>
+    <style>
+    fieldset {
+            width: 700px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            border-radius: 15px;
+        }
+
+        .str1 {
+            width: 600px;
+            margin: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .submit {
+            width: 450px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        span {
+            font-size: 5px;
+        }
+
+    </style>
+    <script>
+        var d = new Date(2018, 1, 0);  //2月的第0天就是1月的最後一天
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("idSelectYear").addEventListener("change", chy);
+            document.getElementById("idSelectMonth").addEventListener("change", chm);
+            document.getElementById("idSelectDate").addEventListener("change", chd);
+
+            for (x = 2010; x <= 2020; x++) {   //新增年
+                var opt = document.createElement("option");  //<option></option>
+                opt.setAttribute("value", x);  //<option value="....></option>
+                var optTxt = document.createTextNode(x);  //1,2,....
+                opt.appendChild(optTxt);  //<option value="....>1</option>
+                // opt.value = i;
+                // opt.innerHTML = i;
+                document.getElementById('idSelectYear').appendChild(opt);
+            }
+            for (i = 1; i <= 12; i++) {   //新增月 
+                var opt = document.createElement("option");  //<option></option>
+                opt.setAttribute("value", i);  //<option value="....></option>
+                var optTxt = document.createTextNode(i);  //1,2,....
+                opt.appendChild(optTxt);  //<option value="....>1</option>
+                // opt.value = i;
+                // opt.innerHTML = i;
+                document.getElementById('idSelectMonth').appendChild(opt);
+
+            }
+
+
+
+
+        });
+        function chm() {
+            //alert(this.id);
+            document.getElementById("idSelectDate").innerHTML="";
+            var theMonth = document.getElementById("idSelectMonth").value;
+            alert(theMonth);
+            chd();
+            }
+        function chy() {
+            //alert(this.id);
+            document.getElementById("idSelectDate").innerHTML="";
+            var theYear = document.getElementById("idSelectYear").value;
+            alert(theYear);
+            chd();
+            
+        }
+        function chd() {
+                
+                var a = document.getElementById("idSelectYear").value;
+                var b = document.getElementById("idSelectMonth").value;
+               
+            if (a == 2012 || a == 2016 || a == 2020) {
+                
+                if (b == 2) {
+                    for (i = 1; i <= 29; i++) {   //新增日
+                        
+                        var opt = document.createElement("option");  //<option></option>
+                        opt.setAttribute("value", i);  //<option value="....></option>
+                        var optTxt = document.createTextNode(i);  //1,2,....
+                        opt.appendChild(optTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectDate').appendChild(opt);
+                    }
+                }
+                else if (b == 1 || b == 3 || b == 5 || b == 7 || b == 8 || b == 10 || b == 12) {
+                    for (i = 1; i <= 31; i++) {   //新增日
+                        
+                        var opt = document.createElement("option");  //<option></option>
+                        opt.setAttribute("value", i);  //<option value="....></option>
+                        var optTxt = document.createTextNode(i);  //1,2,....
+                        opt.appendChild(optTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectDate').appendChild(opt);
+                    }
+                } else if (b == 4 || b == 6 || b == 9 || b == 11) {
+                    for (i = 1; i <= 30; i++) {   //新增日
+                        
+                        var opt = document.createElement("option");  //<option></option>
+                        opt.setAttribute("value", i);  //<option value="....></option>
+                        var optTxt = document.createTextNode(i);  //1,2,....
+                        opt.appendChild(optTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectDate').appendChild(opt);
+                    }
+                }
+            } else {
+                if (b == 2) {
+                    for (i = 1; i <= 28; i++) {   //新增日
+                        
+                        var opt = document.createElement("option");  //<option></option>
+                        opt.setAttribute("value", i);  //<option value="....></option>
+                        var optTxt = document.createTextNode(i);  //1,2,....
+                        opt.appendChild(optTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectDate').appendChild(opt);
+                    }
+                }
+                else if (b == 1 || b == 3 || b == 5 || b == 7 || b == 8 || b == 10 || b == 12) {
+                    for (i = 1; i <= 31; i++) {   //新增日
+                        
+                        var opt = document.createElement("option");  //<option></option>
+                        opt.setAttribute("value", i);  //<option value="....></option>
+                        var optTxt = document.createTextNode(i);  //1,2,....
+                        opt.appendChild(optTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectDate').appendChild(opt);
+                    }
+                } else {
+                    for (i = 1; i <= 30; i++) {   //新增日
+                        
+                        var opt = document.createElement("option");  //<option></option>
+                        opt.setAttribute("value", i);  //<option value="....></option>
+                        var optTxt = document.createTextNode(i);  //1,2,....
+                        opt.appendChild(optTxt);  //<option value="....>1</option>
+                        // opt.value = i;
+                        // opt.innerHTML = i;
+                        document.getElementById('idSelectDate').appendChild(opt);
+                    }
+                }
+
+            }
+            var theDay = document.getElementById("idSelectDate").value;
+            
+            alert(theDay);
+
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+        <div id="allpage">
+                <header>
+                    <nav>
+                        <ul class="menu">
+                            <li>
+                                <a href="#">首頁</a>
+                            </li>
+                            <li>
+                                <a href="hw-1.html">九九乘法表</a>
+                            </li>
+                            <li>
+                                <a href="hw-2.html">帳號密碼驗證</a>
+                            </li>
+                            <li>
+                                <a href="hw-3.html">評分的星星</a>
+                            </li>
+                            <li>
+                                <a href="bootstrappractice.html">輪播的功能</a>
+                            </li>
+                            <li>
+                                <a href="hw-5w">日期的選擇</a>
+                            </li>
+                            <li>
+                                <a href="first.html">HTML作業</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <img src="images/hw.jpg" width="1024" title="logo" alt="logo" height="300">
+                </header>
+    <select id="idSelectYear"></select>
+    <select id="idSelectMonth"></select>
+    <select id="idSelectDate"></select>
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01functionMethod.html</title>
+    <script>
+        //==========定義函數==================
+        //方法一宣告式函數，定義帶參數的函數
+        function fAdd1(a,b){
+        //    alert(b);  //undefine
+           return(a+b);
+        }
+       
+        //==========函式呼叫==================
+        //呼叫帶參數的函數
+        document.write("fAdd1(10,20)="+fAdd1(10,20)+"<br>");
+
+        //JavaScript沒有規定function的參數及呼叫function時給予的參數數量必須要一致
+        //少掉的參數為undefined，而多的參數會被忽略
+        // document.write("fAdd1(10)="+fAdd1(10)+"<br>");
+        // document.write("fAdd1(10,50,30)="+fAdd1(10,50,30)+"<br>");
+
+        //==========定義函數==================
+        //方法二函數實字
+        var fAdd2=function(a,b){
+            return (a+b)
+        }
+        document.write("fAdd2(10,60)="+fAdd2(10,60)+"<br>")
+
+        //列印函數內容
+        document.write("fAdd2="+fAdd2+"<br>");
+        fAdd2=fAdd1;
+        document.write("fAdd2="+fAdd2+"<br>");
+
+        //==========方法製作==================
+        //定義物件        
+        var cars={brand:"audi","max speed":300};
+
+        //定義物件方法一(使用函數實字)
+        cars.print1=function(){return this.brand+","+this["max speed"]}  //audi,300
+
+        //定義物件方法二(使用宣告式函數)
+        function print2f(){
+            return this.brand+"-"+this["max speed"]
+        }
+        cars.print2=print2f;
+        //方法呼叫
+        document.write(cars.print1()+"<br>");
+        document.write(cars.print2()+"<br>");
+
+        //==========檢查是否有此方法，是否支援此方法，已達到跨瀏覽器功能==================
+        document.write(cars.print1)
+
+        if(cars.print1x)
+            alert(true);  //有此方法
+        else
+            alert(false);
+        // alert(window.alertx);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

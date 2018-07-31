@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>05DateObject.html</title>
+    <script>
+        //建立日期物件語法 1
+        // var d = new Date();  //() current, now
+
+        //建立日期物件語法 3
+        // var d=new Date("2018/4/30");
+        //建立日期物件語法 4
+        var d=new Date(2018,3,30);
+        var theYear = d.getFullYear() - 1911;
+        var theMonth = d.getMonth() + 1;
+        var theDate = d.getDate();
+        // document.write(d);
+        document.write("民國" + theYear + "年" + theMonth + "月" + theDate + "日" + "<br>");
+
+        //================
+        //昨天=今天 - 1天
+        //昨天毫秒數=今天毫秒數 - 1天毫秒數
+        //昨天毫秒數=new Date().getTime() - 24 * 60 * 60 * 1000
+        //昨天=new Date(昨天毫秒數)
+        //================
+        //建立日期物件語法 2
+        var y=new Date(new Date().getTime() - 24 * 60 * 60 * 1000);
+        // alert(y);
+        var exp = new Date(); 
+        //alert(exp);
+        exp.setTime(exp.getTime() - (24 * 60 * 60 * 1000));
+        // alert(exp);
+        
+        // var dStr="2000/1/32";        
+        // var d=new Date(dStr);
+        // var dStrAry=dStr.split("/");  //29
+        // var dd=d.getDate();  //1
+        // alert("dStrAry[2]="+dStrAry[2]+"\n"+"dd="+dd);
+        // alert(d);
+
+        var d=new Date(2000,2,32);
+        alert(d);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+    <link rel="stylesheet" href="style/main.css">
+    <style>
+        #starDiv {
+            display: inline-block;
+            clear: both;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", drawStar)
+        myClick = false
+
+
+        function drawStar() {
+            freezeDiv = document.getElementById("starDiv");
+            star = 5
+
+            for (i = 0; i < star; i++) {
+                while (1) {
+                    if (freezeDiv.childNodes[0]) {
+                        if (freezeDiv.childNodes[0].nodeName == "DIV") {
+                            freezeDiv = freezeDiv.childNodes[0]
+                        } else if (freezeDiv.childNodes[1]) {
+                            freezeDiv = freezeDiv.childNodes[1]
+                        } else {
+                            break
+                        }
+                    } else {
+                        break;
+                    }
+                }
+                stDiv = document.createElement("div");
+                stDiv.setAttribute("class", "imgDiv");
+                stDiv.setAttribute("style", "display:inline-block")
+                starImg = document.createElement("img");
+                starImg.setAttribute("src", "images/star.gif");
+                starImg.setAttribute("class", "whiteStar");
+                starImg.setAttribute("id", i)
+                stDiv.appendChild(starImg)
+                freezeDiv.appendChild(stDiv)
+
+            }
+            // alert(document.getElementsByClassName("imgDiv").length)
+            for (i = 0; i < star; i++) {
+                document.getElementsByClassName("imgDiv")[i].addEventListener("mouseover", changecolor)
+                document.getElementsByClassName("imgDiv")[i].addEventListener("mouseout", whitecolor)
+                document.getElementsByClassName("imgDiv")[i].addEventListener("click", clickstar)
+            }
+        }
+        function changecolor(event) {
+            var clicking = event.currentTarget
+            var starNum = event.target
+            if (myClick == false) {
+                clicking.childNodes[0].src = "images/chngstar.gif"
+                starNum = parseInt(starNum.id) + 1
+                document.getElementById("starWord").innerHTML = "星星數量:" + starNum
+            }
+
+        }
+        function whitecolor(event) {
+            if (myClick == false) {
+                var clicking = event.currentTarget
+                clicking.childNodes[0].src = "images/star.gif"
+                document.getElementById("starWord").innerHTML = ""
+            }
+
+        }
+        function clickstar(event) {
+            var starNum = event.target
+            myClick = true
+            starNum = parseInt(starNum.id) + 1
+            document.getElementById("starWord").innerHTML = "您選的是" + starNum + "顆星"
+        }
+    </script>
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">回首頁</a>
+                    </li>
+                    <li>
+                        <a href="nine.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="form.html">表單確認</a>
+                    </li>
+                    <li>
+                        <a href="star.html">星星</a>
+                    </li>
+                    <li>
+                        <a href="date.html">日期</a>
+                    </li>
+                    <li>
+                        <a href="">公司簡介</a>
+                    </li>
+                    <li>
+                        <a href="">聯絡我們</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="images/p3.jpg" width="100%">
+        </header>
+        <div class="content">
+            <article id="article1">
+                <h2 class="title">表單確認</h2>
+                <section>
+
+                    <div id="starDiv"></div>
+                </section>
+                <section>
+                    <div id="starWord"></div>
+                </section>
+            </article>
+            <aside>
+                <h2 class="title">最新消息</h2>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+            </aside>
+
+            <!-- content end -->
+        </div>
+        <footer>
+            <p>E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality
+                Art Technology CO. </p>
+        </footer>
+
+        <!--all page end -->
+    </div>
+
+</body>
+
+</html>

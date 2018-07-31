@@ -1,0 +1,43 @@
+
+h2{
+    color: red;
+    text-decoration: underline;
+    font-family: testText;
+}
+.c1{
+    color: blue;
+    text-decoration: overline;
+}
+
+h3.c1{
+    color: brown;
+    /* text-decoration: overline; */
+}
+#tst1{
+    color: rgb(0, 255, 76);
+    text-decoration: line-through;
+}
+h3#tst1{
+    color: rgba(255, 0, 179, 0.993);
+    text-decoration: overline;
+}
+
+ul li a:link{
+    text-decoration: none;
+}
+ul > li > a:visited{
+    color: red;
+    font-size: large;
+}
+#txt a:hover{
+    text-decoration: underline;
+    color: silver;
+}
+a:active{
+    color: goldenrod;
+    font-size: larger;
+}
+@font-face{
+    font-family: testText;
+    src: url(../font/Pacifico.ttf)
+}

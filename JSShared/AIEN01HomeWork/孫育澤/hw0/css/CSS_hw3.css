@@ -1,0 +1,18 @@
+ .myStar{
+    width:100px;
+    margin:1px;
+    padding:1px;
+}
+
+.judgementImg{
+    width:550px;
+    margin:auto;
+    padding-top:100px;
+}
+
+.judgement{
+    width:550px;
+    margin:auto;
+    padding-top:15px;
+    text-align: center;
+} 

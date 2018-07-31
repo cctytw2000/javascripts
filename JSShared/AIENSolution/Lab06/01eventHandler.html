@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>01eventHandler.html</title>
+    <script>
+        function f1() {
+            alert("HTML屬性事件處理程序 方法 1");
+        }
+
+        function f2() {
+            alert("JavaScript屬性事件處理程序 方法 2");
+        }
+
+        function f3() {
+            alert("W3C DOM處理程序 方法 3");
+        }
+        //function init() {
+        //    document.getElementById("m2").onclick = f2;  //註冊
+        //    document.getElementById("m3").addEventListener("click", f3, false);//註冊
+        //}
+        //window.onload = init;//1. body content , 2. init(); 
+        window.onload = function () {
+                document.getElementById("m2").onclick = f2;  //註冊
+                document.getElementById("m3").addEventListener("click", f3, false);//註冊
+        }
+    </script>
+</head>
+    <body>       
+    <!-- HTML屬性事件處理程序 方法 1  -->
+    <h1 id="m1" onclick="f1();">method 1</h1>
+
+    <!-- JavaScript屬性事件處理程序 方法 2 -->
+    <h1 id="m2">method 2</h1>
+    <script>
+        //document.getElementById("m2").onclick = f2;  //註冊(registered)，綁定(binding)
+    </script>
+
+    <!-- W3C DOM處理程序 方法 3 -->
+    <h1 id="m3">method 3</h1>
+    <script>
+        //document.getElementById("m3").addEventListener("click", f3, false);//註冊(registered)，綁定(binding)       
+    </script>
+</body>
+</html>

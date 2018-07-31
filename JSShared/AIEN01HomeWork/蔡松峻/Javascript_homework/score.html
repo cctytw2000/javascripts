@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index_css.css">
+    <style>
+        .tb {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="form.html">表單檢核</a>
+                    </li>
+                    <li>
+                        <a href="score.html">評分</a>
+                    </li>
+                    <li>
+                        <a href="#">合作夥伴</a>
+                    </li>
+                    <li>
+                        <a href="#">主要客戶</a>
+                    </li>
+                    <li>
+                        <a href="#">公司簡介</a>
+                    </li>
+                    <li>
+                        <a href="#">聯絡我們</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="img/logo.png" alt="" width="1024">
+        </header>
+
+        <div class="content">
+            <article>
+                <h2 class="title">評分</h2>
+                <section>
+                    <h2></h2>
+                    <div id="starlist">
+
+
+                    </div>
+                    <div id="commttext">
+
+                    </div>
+
+                </section>
+
+            </article>
+
+            <aside>
+
+            </aside>
+
+        </div>
+
+
+        <footer>
+            蔡松峻
+        </footer>
+    </div>
+
+    <script>
+        var starpos = "s0";
+        var score = 0;
+        var total = 10;
+
+        function mouseover() {
+
+            numstar = parseInt(this.id.substr(1));
+            for (index = 0; index < total; index++) {
+
+
+                if (index <= numstar) {
+                    id_chimg = this.id.substr(0, 1) + index;
+                    document.getElementById(id_chimg).src = "Images/chngstar.gif";
+                    // console.log(score);
+                    document.getElementById(id_chimg).addEventListener("mouseout", mouseout);
+                    document.getElementById("commttext").innerHTML = "<span> 計分中" + (numstar+1) + "....</span>";
+                } else {
+                    id_chimg_d = this.id.substr(0, 1) + index;
+                    document.getElementById(id_chimg_d).src = "Images/star.gif";
+                }
+
+            }
+
+
+        }
+
+        function mouseout() {
+            // re = /chngstar.gif/;
+            // if (re.test(document.getElementById(this.id).src) && this.id == "s0") {
+            //     document.getElementById(this.id).src = "Images/star.gif";
+            // } else if (re.test(document.getElementById(this.id).src) == false && this.id == "s0") {
+            //     document.getElementById(this.id).src = "Images/chngstar.gif";
+            // } 
+            re = /chngstar.gif/;
+            for (ic = 0; ic < total; ic++) {
+                // alert(document.getElementById("s"+i).src);
+                if (re.test(document.getElementById("s" + ic).src)) {
+                    document.getElementById("s" + ic).src = "Images/star.gif";
+                }
+            }
+            document.getElementById("commttext").innerHTML = "<span> </span>";
+
+
+        }
+
+        function getscore(nsEvent) {
+            
+            score = parseInt(this.id.substr(1)) + 1;
+            // console.log(score);
+            document.getElementById(this.id).removeEventListener("mouseout", mouseout);
+            document.getElementById("commttext").innerHTML = "<span> 你給" + score + "分</span>";
+        }
+
+
+
+        for (i = 0; i < total; i++) {
+            var myID = "s" + i;
+            document.getElementById("starlist").innerHTML += "<img src='Images/star.gif' class='st' id='" + myID + "'>";
+        }
+
+        for (i = 0; i < total; i++) {
+            var myID = "s" + i;
+            document.getElementById(myID).addEventListener("mouseover", mouseover);
+            document.getElementById(myID).addEventListener("click", getscore);            
+            
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

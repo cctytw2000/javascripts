@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index-css.css">
+    <style>
+            .main-body{
+        text-align: center;
+        margin: 30px 40px;
+        font-size: 20px;
+        /* border:1px dashed gray; */
+        padding:0px 30px;
+        margin:3%;
+    }
+    .infobox{
+        float:right;
+        border: 1px solid gray;
+        width:500px;
+        margin:20px 15px 15px 20px ;
+        font-size: 18px;
+        border-collapse: collapse;
+    }
+    td{
+        border:1px solid gray;
+        padding: 4px;        
+    }
+    tbody td:hover{
+        background:bisque;
+    }
+    tbody{
+        text-align: left;
+        font-size: 15px;
+    }
+    </style>
+</head>
+<body>
+    <div id="allpage">
+        <!-- Header -->
+        <header><nav>
+            <ul class="menu">
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="firstpage.html">Mutiplication table</a></li>
+                <li><a href="secondpage.html">Submit form</a></li>
+                <li><a href="thirdpage.html">Grading system</a></li>
+                <li><a href="fourthpage.html">Slide show</a></li>
+                <li><a href="fifth.html">Date selector</a></li>
+                <li><a href="">Contacts Us</a></li>
+            </ul>
+            <img src="images/space___big_physics_def_english.jpg" width="1024px">
+        </nav></header>
+        <!-- Header end -->
+        <!-- Contents -->
+        <div class="centre">
+            <article>
+                    <table class="infobox">
+                            <caption style="border:slategrey;background:brown;color:beige;">
+                            <h3 style="margin:5px;">Mutiplication table</h3></caption>
+                            <thead>
+                            <tr><th colspan="8">Observation data</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <script>    
+                                    for (j=2;j<10;j++){
+                                        document.write("<td>")
+                                        for(i=1;i<10;i++){
+                                            document.write(j,"x",i," = ",i*j,"<br>")
+                                        }
+                                    }
+                                </script>
+                                </tr>
+                            </tbody>
+                        </table>
+            </article>  
+        <hr>
+        <aside>
+        
+        </aside>
+        </div>
+        <!-- Contents end -->
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Html demo page</p>
+        </footer>
+        <!-- Footer end -->
+    </div>
+</body>
+</html>

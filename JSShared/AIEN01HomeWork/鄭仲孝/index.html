@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html html lang="zh-tw">
+<head>
+<title>Homework</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <style>
+    article {
+      height: 700px;
+      margin-left: 400px;
+      margin-top: 100px;
+
+    }
+
+    table {
+      width: 600px;
+      height: 300px;
+      background-color: wheat;
+      border: 2px solid black;
+      border-collapse: collapse;
+      font: 1.5em sans-serif;
+    }
+
+    td {
+      border-left-style: solid;
+      border-bottom-color: wheat;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="banner">
+    <p>
+      <a href="#">
+        <img src="images/home.gif" alt="homepage">
+      </a> |
+      <a href="mailto:denise@mitchinson.net">
+        <img src="images/mail.gif" alt="contact">
+      </a>
+    </p>
+    <h1>JaveScript Homework ...</h1>
+  </div>
+  <div id="menu">
+    <ul id="nav">
+      <li id="home" class="activelink">
+        <a href="index.html">homework1</a>
+      </li>
+      <li id="who">
+        <a href="index2.html">homework2</a>
+      </li>
+      <li id="prod">
+        <a href="#">homework3</a>
+      </li>
+      <li id="serv">
+        <a href="#">homework4</a>
+      </li>
+      <li id="cont">
+        <a href="index5.html">homework5</a>
+      </li>
+    </ul>
+  </div>
+  <article>
+    <script>
+      document.write("<table><h1>99乘法表</h1>");
+      for (var i = 1; i < 10; i++) {
+        document.write("<tr>");
+        for (var j = 2; j < 10; j++) {
+          document.write("<td>");
+          document.write(j + "X" + i + "=" + i * j);
+          document.write("</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </article>
+  <div id="footer">
+    <p>
+      <a href="#">homework</a> |
+      <a href="harnk0916@yahoo.com.tw">contact</a> | &copy; 2007 Anyone | Design by
+      <a href="http://www.mitchinson.net"></a>
+    </p>
+  </div>
+</body>
+
+</html>

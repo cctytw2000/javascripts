@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>03dragImage.html</title>
+    <style type="text/css">
+        #dropZone  {
+                     width:600px;height:300px;border:1px solid blue;float:left
+	                }
+        .thumb{
+ 	            height:75px;margin:5px;
+	            }
+    </style>
+    <script>
+        function dragoverHandler(e) {
+            e.preventDefault();
+        }
+
+        function dropHandler(e) {
+            e.preventDefault();
+
+            var theFiles = e.dataTransfer.files;
+            for (var i = 0; i < theFiles.length; i++) {
+
+                var reader = new FileReader();
+                reader.readAsDataURL(theFiles[i]);
+                reader.onload = function (e) {
+                    var fileContent = e.target.result;
+
+                    var imgObj = document.createElement("img");  //<img>
+                    imgObj.setAttribute("src", fileContent);  //<img src="....
+                    imgObj.setAttribute("class", "thumb"); //<img src="... class="....
+
+                    document.getElementById("dropZone").appendChild(imgObj);
+                }
+            }
+           
+        }
+    </script>
+</head>
+<body>
+    <div id="dropZone"  ondragover="dragoverHandler(event)" ondrop="dropHandler(event)"></div>
+</body>
+</html>

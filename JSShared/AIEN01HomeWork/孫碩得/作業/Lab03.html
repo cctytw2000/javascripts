@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作業三</title>
+    <link rel="stylesheet" href="homework.css">
+    
+    <style>
+        
+    </style>
+    <script>
+        // window.onload=function(){
+    document.addEventListener("DOMContentLoaded", function (){
+        document.getElementById("star1").addEventListener("mouseover",f1)
+        document.getElementById("star1").addEventListener("mouseout",f2)
+        document.getElementById("star2").addEventListener("mouseover",f3)
+        document.getElementById("star2").addEventListener("mouseout",f4)
+        document.getElementById("star3").addEventListener("mouseover",f5)
+        document.getElementById("star3").addEventListener("mouseout",f6)
+        document.getElementById("star4").addEventListener("mouseover",f7)
+        document.getElementById("star4").addEventListener("mouseout",f8)
+        document.getElementById("star5").addEventListener("mouseover",f9)
+        document.getElementById("star5").addEventListener("mouseout",f10)
+        document.getElementById("star1").addEventListener("click",ck1)
+        document.getElementById("star2").addEventListener("click",ck2)
+        document.getElementById("star3").addEventListener("click",ck3)
+        document.getElementById("star4").addEventListener("click",ck4)
+        document.getElementById("star5").addEventListener("click",ck5)
+    })
+    // }
+
+        function f1(){
+            document.getElementById("star1").src="img/chngstar.gif"
+            document.getElementById("hh").innerHTML="打分中...1"
+        }
+        function f2() {
+            document.getElementById("star1").src="img/star.gif"
+            // document.getElementById("hh").innerHTML=""
+        }
+        function f3(){
+            document.getElementById("star2").src="img/chngstar.gif"
+            document.getElementById("star1").src="img/chngstar.gif"
+            document.getElementById("hh").innerHTML="打分中...2"
+        }
+        function f4() {
+            document.getElementById("star2").src="img/star.gif";
+            document.getElementById("star1").src="img/star.gif"
+            // document.getElementById("hh").innerHTML=""
+        }
+        function f5(){
+            document.getElementById("star3").src="img/chngstar.gif"
+            document.getElementById("star2").src="img/chngstar.gif"
+            document.getElementById("star1").src="img/chngstar.gif"
+            document.getElementById("hh").innerHTML="打分中...3"
+        }
+        function f6() {
+            document.getElementById("star3").src="img/star.gif"
+            document.getElementById("star2").src="img/star.gif"
+            document.getElementById("star1").src="img/star.gif"
+            // document.getElementById("hh").innerHTML=""
+        }
+        function f7(){
+            document.getElementById("star4").src="img/chngstar.gif"
+            document.getElementById("star3").src="img/chngstar.gif"
+            document.getElementById("star2").src="img/chngstar.gif"
+            document.getElementById("star1").src="img/chngstar.gif"
+            document.getElementById("hh").innerHTML="打分中...4"
+        }
+        function f8() {
+            document.getElementById("star4").src="img/star.gif"
+            document.getElementById("star3").src="img/star.gif"
+            document.getElementById("star2").src="img/star.gif"
+            document.getElementById("star1").src="img/star.gif"
+            // document.getElementById("hh").innerHTML=""
+        }
+        function f9(){
+            document.getElementById("star5").src="img/chngstar.gif"
+            document.getElementById("star4").src="img/chngstar.gif"
+            document.getElementById("star3").src="img/chngstar.gif"
+            document.getElementById("star2").src="img/chngstar.gif"
+            document.getElementById("star1").src="img/chngstar.gif"
+            document.getElementById("hh").innerHTML="打分中...5"
+        }
+        function f10() {
+            document.getElementById("star5").src="img/star.gif"
+            document.getElementById("star4").src="img/star.gif"
+            document.getElementById("star3").src="img/star.gif"
+            document.getElementById("star2").src="img/star.gif"
+            document.getElementById("star1").src="img/star.gif"
+            // document.getElementById("hh").innerHTML=""
+        }
+        function ck1(){document.getElementById("hh").innerHTML="你給一顆星"}
+        function ck2(){document.getElementById("hh").innerHTML="你給兩顆星"}
+        function ck3(){document.getElementById("hh").innerHTML="你給三顆星"}
+        function ck4(){document.getElementById("hh").innerHTML="你給四顆星"}
+        function ck5(){document.getElementById("hh").innerHTML="你給五顆星"}
+    </script>
+</head>
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="homework首頁.html">首頁</a></li>
+                    <li><a href="Lab01.html">作業一</a></li>
+                    <li><a href="Lab02.html">作業二</a></li>
+                    <li><a href="Lab03.html">作業三</a></li>
+                    <li><a href="Lab04.html">作業四</a></li>
+                    <li><a href="Lab05.html">作業五</a></li>                    
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+        <article>
+            <h2 class="title">Lab03</h2> 
+            <section>
+                <img src="img/star.gif" id="star1">
+                <img src="img/star.gif" id="star2">
+                <img src="img/star.gif" id="star3">
+                <img src="img/star.gif" id="star4">
+                <img src="img/star.gif" id="star5">
+                <h2 id="hh"></h2>
+                <!-- <script src="homework3.js"></script> -->
+            </section> 
+        </article>
+         </div><!--end content -->
+    </div><!--end allpage -->
+</body>
+</html>

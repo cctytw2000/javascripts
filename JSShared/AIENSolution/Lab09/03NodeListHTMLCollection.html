@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        /*
+        https://www.w3.org/TR/dom/#old-style-collections:-nodelist-and-htmlcollection
+        NodeList 與 HTMLCollection : 這些物件是唯讀的類陣列物件(array-like objects)
+        1.NodeList物件 : 有length 屬性和item(index)方法,[]
+        2.HTMLCollection物件 : 有length 屬性和item(index)方法,[],namedItem(name)
+        */
+
+        window.onload = function () {
+            document.getElementById("idcheck").onclick = check;
+        }
+        function check() {
+           /*
+            //NodeList
+            var theHobbys = document.getElementsByName("hobby");
+            alert(theHobbys);  //[object NodeList]  [object class]
+            var theHobbysLen = theHobbys.length;
+
+            for (var i = 0; i < theHobbysLen; i++) {
+                //console.log(theHobbys.item(i).value);
+                console.log(theHobbys[i].value);
+            }
+         */
+
+
+           /*
+            //HTMLCollection
+            var theInputs = document.getElementsByTagName("input");
+            //alert(theInputs);  //[object HTMLCollection]
+            var theInputsLen = theInputs.length;
+
+            for (var i = 0; i < theInputsLen; i++) {
+                //console.log(theInputs.item(i).value);
+                //console.log(theInputs[i].value);                    
+            }
+            //console.log(theInputs.namedItem("txtName").value);  //abc
+            //console.log(theInputs.namedItem("hobby").value);  //reading 傳回第一個
+            //console.log(theInputs["hobby"].value);
+         */
+
+
+            /*
+            //HTMLCollection
+            var theHobbyClass = document.getElementsByClassName("hobbyClass");
+            //alert(theHobbyClass); //HTMLCollection
+            var theHobbyClassLen = theHobbyClass.length;
+            for (var i = 0; i < theHobbyClassLen; i++) {
+                //console.log(theHobbyClass.item(i).value);
+                //console.log(theHobbyClass[i].value);                    
+            }
+            console.log(theHobbyClass.namedItem("hobby").value);  //reading 傳回第一個
+            */
+        }
+    </script>
+</head>
+<body>
+    <form >
+        name:<input type="text" id="idName" name="txtName" value="abc" /><span id="idsp"></span><br />
+        <input type="checkbox" name="hobby" class="hobbyClass" checked="checked" value="reading" />reading
+        <input type="checkbox" name="hobby" class="hobbyClass" value="movie" />movie
+        <input type="checkbox" name="hobby" class="hobbyClass" value="game" />game
+        <!--<input type="checkbox" name="hobby" value="sleep" />sleep-->
+        <br />
+        <input id="idcheck" type="button" value="check" />
+        
+    </form>
+</body>
+</html>

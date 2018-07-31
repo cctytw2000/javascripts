@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index-css.css">
+    <script>
+        
+            document.addEventListener("DOMContentLoaded",function(){
+                document.getElementById("brd").addEventListener("mouseenter",mouseEnter);            
+                document.getElementById("brd").addEventListener("mouseleave",mouseLeave);
+                document.getElementById("brd").addEventListener("click",Click);
+                movie();               
+                var imgs=document.querySelectorAll(".idimg");         
+                var imgsln=imgs.length;
+                // document.write(imgsln);        
+                for(i=0;i<imgsln;i++){
+                // document.write(i);                
+                imgs[i].addEventListener("mouseover",mouseOver);
+                imgs[i].addEventListener("mouseout",mouseOut);
+                imgs[i].addEventListener("click",Click);
+                }
+                // document.getElementById("").addEventListener("mouseout",mouseOut);
+                // document.getElementById("").addEventListener("click",Click);                       
+            })    
+            var Brn=1; 
+            var pnt=0;     
+            var pnto=0;  
+            var timer=0;
+            var interval=setInterval(movie,1000);             
+            
+            function mouseEnter(){
+                clearInterval(interval);       
+                    // alert("Y");
+                     
+            }
+            function mouseLeave(){
+                interval=setInterval(movie,1000);                
+            }
+            function mouseOver(){
+                pnt=this.id[3];            
+                // if(this.id=="brd"){
+                //     // alert("Y");
+                //     // alert(this.id);
+                // document.images[pnt].src="images/star"+pnt+".png";                
+           
+                
+                // // }
+                // else{
+                // alert(this.id);
+                // document.write(document.getElementById("img0").alt);
+                // document.write(points);
+                // if(pnt==0){
+                // document.images[0].src="/images/chngstar"+pnt+".png";                
+                // }
+                // else{
+                
+                document.images[pnto*1+1].src="images/star.gif";            
+                document.images[timer*1+1].src="images/star.gif";                                                  
+                document.images[1].src="images/chngstar"+pnt+".png";
+                document.images[pnt*1+1].src="images/star"+pnt+".png";
+          
+                
+                // } 
+                 
+                // Brn=0;
+                // alert(Brn);
+         
+                clearInterval(interval);
+                // alert("Tc");
+                movieN=parseInt(pnt);        
+                
+                // }
+            }
+    
+            function mouseOut(){
+                pnto=this.id[3];            
+                
+                // document.images[pnt].src="/images/star.gif";
+                // document.images[0].src="/images/star.gif";
+                // alert(Brn); 
+                interval=setInterval(movie,1000);
+                // alert("To");                                   
+                // Brn=true;
+            }
+    
+            function Click(){
+                pnt=this.id[3];
+               
+           
+            
+            }
+            // if(Brn){
+                // alert(Brn);
+                // clearInterval(movie);
+                
+            // }
+            var movieN=0;
+            function movie(){
+                // alert(Brn);
+                timer=movieN%5+1;      
+                timer2=(movieN-1)%5+1;      
+                // alert(movieN);
+                document.images[timer2*1+1].src="images/star.gif";            
+                document.images[1].src="images/chngstar"+timer+".png";       
+                document.images[timer*1+1].src="images/star"+timer+".png";
+                                
+                movieN=movieN+1;            
+            }
+        </script>
+        <style>
+            .body{
+                /* margin: 0,auto; */
+                text-align: center;
+            }
+            .cntrP{
+                /* text-align: center;         */
+                border: 1px dashed gray;    
+                display:block;
+                overflow: hidden;
+                /* background: wheat; */
+                /* z-index: 2; */
+                /* width: 350px;height: 350px; */
+            }
+            img{
+                border:gray;
+            }
+            .idimg{
+                border: gray;
+            }
+            .prsnt{
+                width: 350px;height: 350px;
+            }
+            article{height: 100%;}
+        </style> 
+</head>
+<body>
+    <div id="allpage">
+        <!-- Header -->
+        <header><nav>
+            <ul class="menu">
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="firstpage.html">Mutiplication table</a></li>
+                <li><a href="secondpage.html">Submit form</a></li>
+                <li><a href="thirdpage.html">Grading system</a></li>
+                <li><a href="fourthpage.html">Slide show</a></li>
+                <li><a href="fifth.html">Date selector</a></li>
+                <li><a href="">Contacts Us</a></li>
+            </ul>
+            <img src="images/space___big_physics_def_english.jpg" width="1024px">
+        </nav></header>
+        <!-- Header end -->
+        <!-- Contents -->
+        <div class="centre">
+            <article>
+                    <div>
+                        <div id="brd" class="cntrP">
+                            <img id="img0" class="idimg0" src="">        
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <br>    
+                    <div>
+                        <img id="img1" class="idimg" src="images/star.gif" alt="1">
+                        <img id="img2" class="idimg" src="images/star.gif" alt="2">
+                        <img id="img3" class="idimg" src="images/star.gif" alt="3">
+                        <img id="img4" class="idimg" src="images/star.gif" alt="4">
+                        <img id="img5" class="idimg" src="images/star.gif" alt="5">
+                    </div>
+            </article>  
+        <hr>
+        <aside>
+
+        </aside>
+        </div>
+        <!-- Contents end -->
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Html demo page</p>
+        </footer>
+        <!-- Footer end -->
+    </div>
+</body>
+</html>

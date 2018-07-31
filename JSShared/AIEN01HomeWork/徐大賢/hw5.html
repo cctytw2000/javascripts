@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Gary Hsu's Homework Page</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<style type="text/css">
+	
+		#info{
+			width:400px;
+			height: 250px;
+			border: 3px solid black;
+			margin-top: 15px;
+			padding: 5px;
+		}
+
+</style>
+
+
+</head>
+
+
+<body>
+	
+	<header id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<span class="icon icon-wrench"></span>
+				<h1><a >Gary Hsu's Homework Page</a></h1>
+				<!-- <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span> -->
+			</div>
+			<div id="triangle-up"></div>
+		</div>
+	</header>>
+	<nav id="menu-wrapper">
+			<div id="menu">
+				<ul>
+					<li><a href="hw1.html"  title="">Timestable</a></li>
+					<li><a href="hw2.html"  title="">Formcheck</a></li>
+					<li><a href="hw3.html"  title="">Score</a></li>
+					<li><a href="hw4.html"  title="">Carousel</a></li>
+					<li><a href="hw5.html"  title="">Calender</a></li>
+				</ul>
+			</div>
+	</nav>
+
+	<div id="wrapper" style="height: 800px;font-size: 28px;font-weight: 400;" >
+		<br>
+		<div style="width: 800px;margin: 0 auto">
+		<form id="date_form">
+		<select id="year" class="date_form" name="date_form">
+			
+		</select>年
+
+		<select id="month" class="date_form" name="date_form">
+			
+		</select>月
+
+		<select id="day">
+			
+		</select>日
+	</form>
+	
+	<div id="info">
+		<h3 style="text-align: center;">Information</h3>
+		<p>你選擇的日期是:</p><p id="choose_date"></p>
+	</div>
+	</div>
+	</div>
+<script type="text/javascript">
+	
+	for(var i=2010;i<2021;i++){
+		var opt = document.createElement("option");
+		opt.setAttribute("value",i);
+		var opt_text = document.createTextNode(i);
+		opt.appendChild(opt_text);
+		document.getElementById("year").appendChild(opt);
+		
+	}
+
+	for(var j=1;j<13;j++){
+		var opt1 = document.createElement("option");
+		opt1.setAttribute("value",j);
+		var opt_text1 = document.createTextNode(j);
+		opt1.appendChild(opt_text1);
+		document.getElementById("month").appendChild(opt1);
+		
+	}
+	document.getElementById("year").addEventListener("change",function(){
+		
+		document.getElementById("day").innerHTML = "";
+		var year = (document.getElementById("year").value);
+		var month = (document.getElementById("month").value);
+		var date = new Date(year,month,"0");
+		var all_day = date.getDate();
+		var day = (document.getElementById("day").value)
+		for(var j=1;j<all_day+1;j++){
+			var opt1 = document.createElement("option");
+			opt1.setAttribute("value",j);
+			var opt_text1 = document.createTextNode(j);
+			opt1.appendChild(opt_text1);
+			document.getElementById("day").appendChild(opt1);
+			
+		}
+
+	})
+
+	document.getElementById("month").addEventListener("change",function(){
+		
+		document.getElementById("day").innerHTML = "";
+		var year = (document.getElementById("year").value);
+		var month = (document.getElementById("month").value);
+		var date = new Date(year,month,"0");
+		var all_day = date.getDate();
+		var day = (document.getElementById("day").value)
+		for(var j=1;j<all_day+1;j++){
+			var opt1 = document.createElement("option");
+			opt1.setAttribute("value",j);
+			var opt_text1 = document.createTextNode(j);
+			opt1.appendChild(opt_text1);
+			document.getElementById("day").appendChild(opt1);
+			
+		}
+		
+
+	})
+
+	document.getElementById("day").addEventListener("change",function(){
+		var year = (document.getElementById("year").value);
+		var month = (document.getElementById("month").value);
+		var date = new Date(year,month,"0");
+		var all_day = date.getDate();
+		var day = (document.getElementById("day").value)
+		ddd = year+"年"+month+"月"+day+"日";
+		document.getElementById("choose_date").innerHTML=ddd;
+	})
+
+
+	function check() {
+		var index = document.getElementsByClassName("form_date");
+		alert(typeof(index));
+		// alert(document.getElementById("year").options[index].value);
+	}
+	
+</script>
+</body>
+</html>

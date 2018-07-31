@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework-1</title>
+    <link rel="stylesheet" href="main_hw.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+    <style>
+        #table1 {
+        width:500px;
+        border:3px solid silver;
+        border-collapse: collapse;
+        text-align: center ;
+        background-color:bisque ;
+        color:blue ;
+        font-weight:bold ;
+        }
+        tbody td:hover{
+        background-color:white;
+        color:black ;
+    }
+
+    </style>
+    <script>
+    </script>
+</head>
+
+<body>
+
+    <div id="allpage">
+    <header>
+    <nav >
+        <ul class="menu">
+            <li><a href="homework-1.html">HW-1</a></li>
+            <li><a href="homework-2.html">HW-2</a></li>
+            <li><a href="homework-3.html">HW-3</a></li>
+            <li><a href="homework-4.html">HW-4</a></li>
+            <li><a href="homework-5.html">HW-5</a></li>            
+        </ul>
+    </nav>
+
+    <img src="images\jstips-animation.gIF"alt="logo" title="logo" width="1044" height="340">
+</header>
+<div class="content">
+<article>
+    <h2 class="title">Homework-1 使用Table印出九九乘法表</h2>
+    <section>
+        <table id=table1 border="1">
+            <tr>
+            <script>
+            for(var i=2;i<10;i++)
+            {
+                document.write('<td>');
+                for(var j=1;j<10;j++)
+                {
+                    document.write(i+"*"+j+"="+i*j+"<br>");
+                }
+                document.write('</td>');
+            }
+            </script>
+            </tr>
+        </table>
+    </section>
+</article>
+
+<aside>
+<h2 class="title">備註</h2>
+<dl>
+    <dt>班級 
+        <dd>AIEN 02</dd>
+    </dt>
+</dl>
+<dl>
+    <dt>課程
+        <dd>JavaScript</dd>
+    </dt>
+</dl>
+<dl>
+    <dt>指導老師
+        <dd>陳銀華 老師</dd>
+    </dt>
+    </dl>
+<dl>
+    <dt>學生
+        <dd>黃奕菁</dd>
+    </dt>
+</dl>
+</aside>
+
+    </div><!--end cintent-->
+<footer>
+        <p>E-amil:jnek23758@hotmail.com &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology CO. </p>
+    </footer>
+</div><!--end allpage-->  
+
+</body>
+</html>

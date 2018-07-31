@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>05createOptionObject.html</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("idSelectMonth").addEventListener("change", selVal);
+            document.getElementById("idclear").addEventListener("click", clearDate);
+            for (i = 1; i <= 12; i++) {   //新增月 
+                var opt = document.createElement("option");
+                opt.setAttribute("value", i);
+                var optTxt = document.createTextNode(i);
+                opt.appendChild(optTxt);
+                //opt.value = i;
+                //opt.innerHTML = i;
+                document.getElementById('idSelectMonth').appendChild(opt);
+            }
+            
+        };
+        function selVal() {
+            alert(this.value);
+        }
+        function clearDate() {
+            //document.getElementById("idSelectMonth").innerHTML = "";
+            var theMonth = document.getElementById("idSelectMonth");
+            for (var i = 0; i <= 12; i++) {
+                //theMonth.firstChild.remove();
+                theMonth.lastChild.remove();
+                //var theNode = theMonth.firstChild;
+                //theNode.remove();
+                //theNode.parentNode.removeChild(theNode);
+            }
+        }
+	</script>
+	</head>
+	<body>
+		<select id="idSelectMonth"></select>
+        <input type="button" id="idclear" value="clearMonth" />
+	</body>
+
+</html>

@@ -1,0 +1,58 @@
+*{
+    margin:0px;
+    padding:0px;
+    background-color: rgb(212, 252, 252)
+}
+#allpage{  
+    margin:auto;
+    width: 1500px;
+    
+}
+header{
+    margin-bottom: 100px;
+}
+.menu{
+    overflow: auto;
+    list-style-type: none;
+    width:1500px;
+    margin: auto;
+}
+.menu li{
+    float:left;
+    width:15.625em; 
+    
+}
+.menu li a{
+    display: block;
+    color:rgb(180, 176, 176);
+    line-height: 4em;
+    text-decoration-line: none;
+    width:100%;
+    text-align: center;
+    letter-spacing:2px;
+    background-color: black;
+}
+.menu li a:hover{color:#FFFFFF;
+    background-color:rgb(0, 174, 255);
+}
+.di1{
+    margin:auto;
+    background-color: rgb(255, 255, 255);
+    height: 1000px;
+    width:1500px;
+}
+.head img{
+    float:left;
+    margin-top:80px;
+    height:100px;
+    margin-left: 200px
+}
+.head div{
+    margin-left:270px;
+    margin-top:15px;
+    letter-spacing:2px
+}
+.head h2{
+    padding-top:100px;
+    font-size:70px
+}

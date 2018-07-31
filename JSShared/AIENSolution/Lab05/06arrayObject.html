@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>06arrayObject.html</title>
+    <script>
+        //建立陣列方法 1
+        
+        var balls = new Array();
+        //alert(balls.length);
+        balls[0] = "basketball";
+        balls[1] = "baseball";
+        balls[2] = "tennis";
+        balls[3] = "volleyball";
+        balls[4] = 123;
+        //alert(balls.length);
+        //document.write(balls);
+
+
+        //建立陣列方法 2
+        var balls2 = new Array("basketball", "baseball", "tennis", 123);
+        //document.write(balls2);
+
+
+        //建立陣列方法 3
+        var balls3 = ["basketball", "baseball", "tennis", 123];  //陣列常數(array literal)
+        //document.write(balls3);
+        //for (var i = 0; i < balls3.length; i++) {
+        //    document.write("balls3[" + i + "]=" + balls3[i] + "<br>");
+
+        //}
+
+        for (var obj in balls3) {
+            document.write("balls3[" + obj + "]=" + balls3[obj] + "<br>");
+
+        }
+
+       
+
+
+        
+            var balls=["basketball","baseball","tennis","volleyball",123];
+            document.write("join('-')="+balls.join("-")+"<br>");
+            document.write("reverse().join('=>')="+balls.reverse().join("=>")+"<br>");
+            document.write("sort()="+balls.sort()+"<br>");
+     
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW-01</title>
+    <link rel="stylesheet" href="Linking/web.css">
+</head>
+<style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+
+        h6 {
+            color: #9d9d9d;
+            margin-top: 5px;
+        }
+
+        .str1 {
+            width: 650px;
+            border-bottom: 1px solid #9d9d9d;
+            padding: 15px;
+            padding-bottom: 10px;
+        }
+
+        input {
+            width: 150px;
+        }
+
+        fieldset {
+            margin: 20px;
+            padding: 20px;
+            width: 500px;
+            border: 1px solid green;
+            border-radius: 10px;
+        }
+
+        .sub {
+            WIDTH: 450PX;
+            margin-top: 20px;
+            text-align: center;
+        }
+</style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("idaccount").addEventListener("blur", check1);
+            document.getElementById("idpwd").addEventListener("blur", check2);
+            document.getElementById("iddate").addEventListener("blur", check3);     
+        });
+
+        function check1(){
+            var theName = document.getElementById("idaccount").value;
+            var flag4 = false;
+            for (var i = 0; i < theName.length; i++) {
+                if (theName.charCodeAt(i) < 0x4E00 || theName.charCodeAt(i) > 0x9FA5)
+                    flag4 = true;
+            };
+            if (flag4)
+                document.getElementById("idsp1").innerHTML="<img src='images/error.png'>請輸入中文字";
+            else if (theName == "")
+                document.getElementById("idsp1").innerHTML="<img src='images/error.png'>請輸入姓名";
+            else if (theName.length > 0 && theName.length < 2)
+                document.getElementById("idsp1").innerHTML="<img src='images/error.png'>姓名至少兩個字以上";
+            else
+                document.getElementById("idsp1").innerHTML="正確";
+        }
+
+        function check2(){
+            var thePwd = document.getElementById("idpwd").value;
+            re = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{6,}$/;
+            if (re.test(thePwd))
+                document.getElementById("idsp2").innerHTML="正確";
+            else if (thePwd == "")
+                document.getElementById("idsp2").innerHTML="<img src='images/error.png'>不可空白";
+            else 
+                document.getElementById("idsp2").innerHTML="<img src='images/error.png'>至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*]";
+        }
+
+        function check3(){
+            var thedate = document.getElementById("iddate").value //string
+            var dateobj = new Date(thedate);
+            // alert(thedate+"\n"+dateobj+"\n"+dateobj.getFullYear()+"\n"+dateobj.getMonth()+"\n"+dateobj.getDate());
+            var datearray = thedate.split("/");
+            // alert(datearray[1]);
+            // alert(dateobj.getMonth());
+            if (datearray[0]==dateobj.getFullYear() && datearray[1]==(dateobj.getMonth()+1) &&  datearray[2]==(dateobj.getDate()))
+                document.getElementById("idsp3").innerHTML="正確";
+            else
+                document.getElementById("idsp3").innerHTML="<img src='images/error.png'>格式或日期不正確";
+        }
+
+        function checkfunction(){
+            ///////
+            var theName = document.getElementById("idaccount").value;
+            var flag4 = false;
+            for (var i = 0; i < theName.length; i++) {
+                if (theName.charCodeAt(i) < 0x4E00 || theName.charCodeAt(i) > 0x9FA5)
+                    flag4 = true;
+            }
+            if (flag4)
+                alert("請輸入中文字");
+
+            if (theName == "")
+                alert("請輸入姓名");
+
+            if (theName.length > 0 && theName.length < 2)
+                alert("姓名至少兩個字以上");
+
+
+            ///////
+            var thePwd = document.getElementById("idpwd").value;
+            var thePwdLen = thePwd.length;
+            var flag1 = false, flag2 = false, flag3 = false;
+            var spcstrObj = new String("!@#$%^&*");
+
+            function spccop() {
+                for (var j = 0; j < spcstrObj.length; j++)
+                    if (spcstrObj.charAt(j) == thePwd.charAt(i))
+                        return true;
+            }
+
+            if (thePwd == "")
+                alert("請輸入密碼");
+            else if (thePwdLen >= 6) {
+                //如果長度是否大於6，判斷是否包含字母、數字、特殊符號
+                //alert(">=6");
+                for (var i = 0; i < thePwdLen; i++) {
+                    var thePwdChr = thePwd.charAt(i).toUpperCase();  //字母轉換成大寫
+                    if (thePwdChr >= "A" && thePwdChr <= "Z")
+                        flag1 = true;
+                    else if (thePwdChr >= "0" && thePwdChr <= "9")
+                        flag2 = true;
+                    else if (spccop())
+                        flag3 = true;
+                    if (flag1 && flag2 && flag3)
+                        break;
+                }
+                if ((flag1 && flag2 && flag3) == false)
+                    alert("密碼格式不正確");
+            } else
+                alert("密碼字元至少要6個字");
+
+
+            //////////
+            var thedate = document.getElementById("iddate").value;
+            var dateobj = new Date(thedate);
+            var datearray = thedate.split("/");
+            if (datearray[0]==dateobj.getFullYear() && datearray[1]==(dateobj.getMonth()+1) &&  datearray[2]==(dateobj.getDate()));
+            else
+               alert("格式或日期不正確");
+
+        }
+
+    </script>
+
+<body>
+    <div id="allpage">
+        <header>
+            <h1>JavaScript 作業</h1>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="hw-homepage.html">HW-01</a>
+                    </li>
+                    <li>
+                        <a href="hw-page02.html">HW-02</a>
+                    </li>
+                    <li>
+                        <a href="hw-page03.html"></a>
+                    </li>
+                    <li>
+                        <a href="hw-page04.html"></a>
+                    </li>
+                    <li>
+                        <a href="hw-page05.html">HW-05</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+        <div class="content">
+            <article>
+                <h3 class="title">表單</h3>
+                <form action="#" method="gain" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>
+                            Form Check
+                        </legend>
+                        <div class="str1">
+                            <label>姓名:</label>
+                            <input type="text" id="idaccount"><span id="idsp1"></span>
+                            <h6>(1.不可空白 2.至少兩個字以上 3.必須全部為中文字)</h6>
+                        </div>
+                        <div class="str1">
+                            <label>密碼:</label>
+                            <input type="password" id="idpwd" size="6" /><span id="idsp2"></span>
+                            <h6>(1.不可空白 2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])</h6>
+                        </div>
+                        <div class="str1">
+                            <label>日期:</label>
+                            <input type="text" id="iddate" value="2000/2/29"><span id="idsp3"></span>
+                            <h6>(格式:西元年/月/日 yyyy/MM/dd)</h6>
+                        </div>
+                        <div class="sub">
+                            <input type="button" value="送出" onclick="checkfunction()">
+                            <input type="reset" value="清除">
+                        </div>
+                    </fieldset>
+                </form>
+
+            </article>
+            <!-- <aside>
+                <h3 class="title">最新消息</h3>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+            </aside> -->
+        </div>
+        <!-- <footer>
+            E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology
+            CO.
+        </footer> -->
+    </div>
+</body>
+
+</html>

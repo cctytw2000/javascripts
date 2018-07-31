@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>hw_02</title>
+    <link rel="stylesheet" href = "template.css">
+    <style>
+        fieldset {
+            width: 600px;
+            margin: 10px auto;
+            border: 3px solid #C05640;
+            background-color: #edd170;
+        }
+        .input {
+            margin: 20px;
+            padding: 10px;
+            border-bottom: 1px solid gray;
+        }
+        .notification {
+            color: gray;
+            font-size: 12px;
+        }
+        .button {
+            text-align: center;
+            padding:10px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("name").addEventListener("blur", checkname);
+            document.getElementById("psw").addEventListener("blur", checkpsw);
+            document.getElementById("bday").addEventListener("blur", checkbday);
+            document.getElementById("send").addEventListener("click", check);
+        });
+        function checkname() {
+            var theName = document.getElementById("name").value;
+            re = /^[\u4E00-\u9FFF].{1,}$/
+            if (re.test(theName))
+                document.getElementById("isName").innerHTML = 
+                "<img src = 'Images/check.png' style = 'width:16px'>正確";
+            else
+                document.getElementById("isName").innerHTML = 
+                "<img src = 'Images/error.png' style = 'width:16px'>輸入錯誤，請重新輸入";
+        }
+        function checkpsw() {
+            var thePSW = document.getElementById("psw").value;
+            re = /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{6,}$/
+            if (re.test(thePSW))
+                document.getElementById("isPsw").innerHTML = 
+                "<img src = 'Images/check.png' style = 'width:16px'>正確";
+            else
+                document.getElementById("isPsw").innerHTML = 
+                "<img src = 'Images/error.png' style = 'width:16px'>輸入錯誤，請重新輸入"; 
+        }
+        function checkbday() {
+            var theBday = document.getElementById("bday").value;
+            var checkBday = new Date(theBday);
+            if (theBday.substr(8,2) == checkBday.getDate())
+                document.getElementById("isBday").innerHTML = 
+                "<img src = 'Images/check.png' style = 'width:16px'>正確";
+            else
+                document.getElementById("isBday").innerHTML = 
+                "<img src = 'Images/error.png' style = 'width:16px'>輸入錯誤，請重新輸入";
+        }
+        function check() {
+            if (document.getElementById("isName").textContent != "正確")
+            alert ("姓名格式不正確，請重新輸入")
+            else if (document.getElementById("isPsw").textContent != "正確")
+            alert ("密碼格式不正確，請重新輸入")
+            else if (document.getElementById("isBday").textContent !="正確")
+            alert ("日期格式不正確，請重新輸入")
+            else
+            document.getElementById("theForm").submit()
+        }
+    </script>
+</head>
+<div class = "allpage">
+    <header>
+        <div class = "title">
+            <h2>AIEN0215 -- Lin, YiHsuan</h2>
+            <h4 class = "date"> May, 2018</h4>
+        </div>
+        <nav>
+            <ul>
+                <li><a href = "hw_01.html">hw_1 -- 九九乘法表</a></li>
+                <li><a href = "hw_02.html">hw_2 -- 表單驗證"</a></li>
+                <li><a href = "hw_03.html">hw_3 -- 星星評分</a></li>
+                <li><a href = "hw_04.html">hw_4 -- 廣告輪播</a></li>
+                <li><a href = "hw_05.html">hw_5 -- 日曆製作</a></li>
+            </ul>  
+        </nav>
+    </header>
+    <div class = "content">
+            <form action = "" method = "get" id = "theForm">  
+                    <fieldset>
+                    <legend>Form Check</legend>
+                        <div class = "input">
+                            <label for = "name">姓名：</label>
+                            <input type = "text" id = "name" name = "name" placeholder = "請輸入姓名" required>
+                            <span id = "isName"></span>
+                            <div class = "notification">
+                                (1.不可空白，2.至少兩個字以上，3.必須全部為中文字)
+                            </div>
+                        </div>
+                        <div class = "input">
+                            <label for = "psw">密碼：</label>
+                            <input type = "password" id = "psw" name = "psw" placeholder = "請輸入密碼" required>
+                            <span id = "isPsw"></span>
+                            <div class = "notification">
+                                (1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])
+                            </div>
+                        </div>
+                        <div class = "input">
+                            <label for = "bday">生日：</label>
+                            <input type = "date" id = "bday" name = "bday" placeholder="ex:2000/2/29" required>
+                            <span id = "isBday"></span>
+                            <div class = "notification">
+                                格式：西元年/月/日 yyyy/MM/dd
+                            </div>
+                        </div>
+                        <div class = "button">
+                            <input type = "button" id = "send" value = "送出">
+                            <input type = "reset" value = "清除">
+                        </div>
+                    </fieldset>
+                    </form>
+    </div>
+    <footer>
+        <h4 class = "contact"> e-mail : b01204002@gmail.com</h4>
+    </footer>
+</div>
+</html>

@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+    line-height: 50px;
+}
+body{
+    background-image: url("../images/back4  .jpg")
+
+}
+img{
+    margin: 10px;
+}
+figure{
+    float: left;
+    width: auto;
+    height: auto;
+    margin: 15px;
+    border: 1px dashed red;
+    padding: 10px;
+}
+figcaption{
+    color: purple;
+    font-size: 16px;
+    font-weight: bold;
+}
+p{
+    font-family: 華康鋼筆體W2;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+h1{
+    font-family: 華康鋼筆體W2;
+    margin-bottom: 10px;
+}

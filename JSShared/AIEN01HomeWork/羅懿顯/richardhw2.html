@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Monochromed by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Homework 2</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<style>
+			.box1 {
+				width:400px;
+				margin:200px auto;
+			}
+			span {
+				font-size: 12px;
+				color: rgb(194, 194, 194);
+			}
+			</style>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+			document.getElementById("idName").addEventListener("blur", chkName);
+			document.getElementById("idPwd").addEventListener("blur", chkPassword);
+			document.getElementById("idDate").addEventListener("blur", chkDate);
+		});
+				function chkName() {
+				//取得元素值
+				var theName = document.getElementById("idName").value;
+				var re = /^(?=.*[\u4e00-\u9fa5]).{2,}$/;
+				if (re.test(theName))
+					document.getElementById("namelog").innerHTML= "<img src='images/correct.png' width='20'>";
+				else
+					document.getElementById("namelog").innerHTML= "<img src='images/wrong.jpg' width='20'>填寫錯誤";
+				}
+	
+				function chkPassword() {
+				//取得元素值
+				var thePwd = document.getElementById("idPwd").value;
+				var re = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{6,12}$/;
+				if (re.test(thePwd))
+					document.getElementById("pwdlog").innerHTML= "<img src='images/correct.png' width='20'>";
+				else
+					document.getElementById("pwdlog").innerHTML= "<img src='images/wrong.jpg' width='20'>填寫錯誤";
+				}
+	
+				function chkDate(){
+				var theDate = document.getElementById("idDate").value;
+				re = /^[0-9]{4}\/[0-9]{2}\/[0-9]{2}$/;
+				var dd = new Date(theDate);
+				if( re.test(theDate) && (theDate.split("/")[2] == dd.getDate()) )
+					// console.log(theDate.split("/")[2]);
+					// console.log(dd.getDate());
+					// console.log(theDate.split("/")[2] == dd.getDate());
+				   document.getElementById("datelog").innerHTML= "<img src='images/correct.png' width='20'>";
+				else
+					document.getElementById("datelog").innerHTML= "<img src='images/wrong.jpg' width='20'>填寫錯誤";
+				}
+	
+	
+	</script>
+	</head>
+	<body>
+
+	<!-- Header -->
+		<div id="header">
+			<div class="container">
+					
+				<!-- Logo -->
+					<div id="logo">
+						<h1><a href="#">Richard's Homework</a></h1>
+						<span>javascript</span>
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="richardhw1.html">Homework 1</a></li>
+							<li class="active"><a href="richardhw2.html">Homework 2</a></li>
+							<li><a href="richardhw3.html">Homework 3</a></li>
+							<li><a href="richardhw4.html">Homework 4</a></li>
+							<li><a href="richardhw5.html">Homework 5</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+	<!-- Header -->
+			
+	<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row">
+
+					<!-- Content -->
+						<div id="content" class="12u skel-cell-important">
+							<section>
+								<header>
+									<h2>表單檢驗</h2>
+									<span class="byline">Validating input fields</span>
+								</header>
+								<form>
+									<fieldset>
+									<legend>Form Check</legend>
+									姓名：<input type="text" name="name" id="idName">
+									<span id="namelog"></span>
+									<br>
+									<span>(1.不可空白，2.至少2個字以上，3必須全部為中文字)
+									</span>
+									<hr>
+									密碼：<input type="text" name="pwd" id="idPwd">
+									<span id="pwdlog"></span>
+									<br>
+									<span>(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[]!@#$%^&*)
+									</span>
+									<hr>
+									生日：<input type="text" name="bday" id="idDate" maxlength="10" placeholder="yyyy/mm/dd">
+									<span id="datelog"></span>
+									<br>
+									<span>格式：西元年/月/日 yyyy/mm/dd
+									</span>
+									<hr>
+									<div style="text-align: center">
+									<input type="reset" value="清除">
+									<input type="submit" value="送出" >
+									</div>
+									</fieldset>
+								</form>
+							</section>
+						</div>
+					<!-- /Content -->
+						
+				</div>
+			
+			</div>
+		</div>
+	<!-- Main -->
+
+
+
+	</body>
+</html>

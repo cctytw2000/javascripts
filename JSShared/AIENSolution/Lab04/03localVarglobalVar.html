@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>03localVarglobalVar.html</title>
+    <script>
+        /*
+        var a = 100; //廣域(全域)變數
+        function f() {
+            //var a = 10;  //區域變數
+            a = 1000;  //廣域(全域)變數
+            document.write("函數內 a=" + a + "<br>");
+        }
+        document.write("函數外 呼叫函數之前 a=" + a + "<br>");
+        f();
+        document.write("函數外 呼叫函數之後 a=" + a + "<br>");
+        */
+
+        var a = 100; //廣域(全域)變數 
+        function f() {
+            var a = 10;  //區域變數
+            a = 1000;  //區域變數
+            document.write("函數內 a=" + a + "<br>");
+        }
+        document.write("函數外 呼叫函數之前 a=" + a + "<br>");
+        f();
+        document.write("函數外 呼叫函數之後 a=" + a + "<br>");
+      
+    </script>
+</head>
+<body>
+
+</body>
+</html>

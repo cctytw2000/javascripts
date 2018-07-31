@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW-01</title>
+    <link rel="stylesheet" href="Linking/web.css">
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // document.getElementById("idSelectYear").addEventListener("change", yearf);
+            // document.getElementById("idSelectMonth").addEventListener("change", monthf);
+            document.getElementById("idSelectMonth").addEventListener("change", datef);
+            document.getElementById("idSelectYear").addEventListener("change", datef);
+            // document.getElementById("idClear").addEventListener("click", Clearf);
+            document.getElementById("idSelectYear").addEventListener("change", inff);
+            document.getElementById("idSelectMonth").addEventListener("change", inff);
+            document.getElementById("idSelectDate").addEventListener("change", inff);
+
+
+
+            for (var i = 2010; i <= 2020; i++) {
+                var optYear = document.createElement("option");
+                optYear.setAttribute("value", i);
+                var optTxtYear = document.createTextNode(i);
+                optYear.appendChild(optTxtYear);
+                document.getElementById("idSelectYear").appendChild(optYear);
+            }
+            for (var i = 1; i <= 12; i++) {   //新增月 
+                var opt = document.createElement("option");  //<option></option>
+                opt.setAttribute("value", i);  //<option value="....></option>
+                var optTxt = document.createTextNode(i);  //1,2,....
+                opt.appendChild(optTxt);  //<option value="....>1</option>
+                // opt.value = i;
+                // opt.innerHTML = i;
+                document.getElementById('idSelectMonth').appendChild(opt);
+            }
+            for (var i = 1; i <= 31; i++) {    
+                var optdate = document.createElement("option");
+                optdate.setAttribute("value", i);
+                var optTexDate = document.createTextNode(i);
+                optdate.appendChild(optTexDate);
+                document.getElementById("idSelectDate").appendChild(optdate);
+            }
+        });
+
+        function yearf() {
+            var theYear = document.getElementById("idSelectYear").value;
+            // alert(theYear);
+        }
+
+        function monthf() {
+            // alert(this.id);
+            var theMonth = document.getElementById("idSelectMonth").value;
+            // alert(theMonth);
+        }
+
+        function datef() {
+            document.getElementById("idSelectDate").innerHTML="";
+            var theYear = document.getElementById("idSelectYear").value;
+            var theMonth = document.getElementById("idSelectMonth").value;
+            var thedate = new Date(theYear, theMonth, 0);
+            // alert(thedate.getDate());
+
+            for (var d = 1; d <= thedate.getDate(); d++) {
+                var optdate = document.createElement("option");
+                optdate.setAttribute("value", d);
+                var optTexDate = document.createTextNode(d);
+                optdate.appendChild(optTexDate);
+                document.getElementById("idSelectDate").appendChild(optdate);
+            }
+        }
+
+        function inff(){
+            document.getElementById("idinf").innerHTML="您選擇的日期為"+document.getElementById('idSelectYear').value+"年"
+                +document.getElementById("idSelectMonth").value+"月"+document.getElementById("idSelectDate").value+"日";
+        }
+
+        // function Clearf() {
+        //     document.getElementById("idSelectYear").innerHTML = "";
+        //     document.getElementById("idSelectMonth").innerHTML = "";
+        //     document.getElementById("idSelectDate").innerHTML = "";
+        // }
+
+    </script>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <h1>JavaScript 作業</h1>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="hw-homepage.html">HW-01</a>
+                    </li>
+                    <li>
+                        <a href="hw-page02.html">HW-02</a>
+                    </li>
+                    <li>
+                        <a href="hw-page03.html"></a>
+                    </li>
+                    <li>
+                        <a href="hw-page04.html"></a>
+                    </li>
+                    <li>
+                        <a href="hw-page05.html">HW-05</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+        <div class="content">
+            <article>
+                <h3 class="title">2010~2020 年月日曆</h3>
+                <br>
+                <select id="idSelectYear"></select>年
+                <select id="idSelectMonth"></select>月
+                <select id="idSelectDate"></select>日
+                <!-- <input type="button" value="clearMonth" id="idClear"> -->
+
+            </article>
+            <aside class="title1">
+                <h2 class="title">Information</h2>
+                <h4 id="idinf">您選擇的日期是2010年1月1號</h4>
+            </aside>
+        </div>
+        <footer>
+            <!-- E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology
+            CO. -->
+        </footer>
+    </div>
+</body>
+
+</html>

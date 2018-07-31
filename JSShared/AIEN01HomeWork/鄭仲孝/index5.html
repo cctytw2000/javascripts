@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework5</title>
+  <meta http-equiv="content-type" content="text/html">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <style>
+    article {
+      height: 600px;
+      margin-left: 400px;
+      margin-top: 80px;
+    }
+
+    fieldset {
+      background-color:  wheat;
+      font-size: 30px;
+      height: 250px;
+      width: 450px;
+    }
+   select{
+    margin-top: 10px;
+    width:90px;
+    height:30px;
+    font-size:24px;
+   }
+  </style>
+
+</head>
+
+<body>
+  <label>
+    <div id="banner">
+      <p>
+        <a href="#">
+          <img src="images/home.gif" alt="homepage">
+        </a> 
+        <a href="">
+          <img src="images/mail.gif" alt="contact">
+        </a>
+      </p>
+      <h1>JaveScript Homework ...</h1>
+    </div>
+
+    <div id="menu">
+      <ul id="nav">
+        <li id="home">
+          <a href="index.html">homework1</a>
+        </li>
+        <li id="who">
+          <a href="index2.html">homework2</a>
+        </li>
+        <li id="prod">
+          <a href="#">homework3</a>
+        </li>
+        <li id="serv">
+          <a href="#">homework4</a>
+        </li>
+        <li id="cont">
+          <a href="index5.html">homework5</a>
+        </li>
+      </ul>
+    </div>
+  </label>
+  <article>
+    <fieldset>
+      <p>請選擇日期:</p>
+      <select name="year" id="year" onchange="print_year();">
+        <option value="0">--</option>
+
+      </select> 年
+      <select name="month" id="month" onchange="print_month();">
+        <option value="0">--</option>
+      </select> 月
+      <select name="date" id="date" onchange="print_date();">
+        <option value="0">--</option>
+      </select> 日
+      <br>
+      <br>
+      </fieldset>
+     
+  </article>
+   <div id="footer">
+    <p>
+      <a href="#">homework</a> |
+      <a href="harnk0916@yahoo.com.tw">contact</a> | &copy; 2007 Anyone | Design by
+      <a href="#"></a>
+    </p>
+  </div>
+
+  <script>
+  //  document.addEventListener("DOMContentLoaded", function () {
+  //     document.getElementById("year").addEventListener("blur", chkName);
+  //     document.getElementById("month").addEventListener("blur", chkPassword);
+  //     document.getElementById("date").addEventListener("blur", chkDate);
+  //   });
+
+
+    function initSelect() {
+      var sel_year = document.getElementById('year');
+      var sel_month = document.getElementById('month');
+      initYear(); 
+      initMonth(); 
+      initDate(); 
+      sel_year.onchange = ch_year; 
+      sel_month.onchange = ch_month; 
+    }
+    initSelect();
+
+    function ch_year() {
+      if (this.options.selectedIndex == 0) { 
+        initMonth();
+        initDate();
+
+      } else { 
+        popMonth();
+      }
+    }
+
+    function ch_month() {
+      var dateArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; 
+      var thisValue = parseInt(this.options[this.options.selectedIndex].value); 
+
+      if (this.options.selectedIndex == 0) { 
+        initDate();
+      } else { 
+        document.getElementById('date').options.length = 1;
+        var isLeap = checkLeap(); 
+        if (isLeap) {
+          dateArr[1] = 29;
+        } else {
+          dateArr[1] = 28;
+        }
+        for (var i = 0; i < dateArr[thisValue - 1]; i++) { 
+          document.getElementById('date').options[i + 1] = new Option(i + 1); 
+        };
+      }
+    }
+
+    function popMonth() {
+      initDate(); 
+      for (var i = 0; i < 12; i++) {
+        document.getElementById('month').options[i + 1] = new Option(i + 1, i + 1); 
+      }
+    }
+
+    function popYear() {
+      for (i = 2010; i <= 2020; i++) {
+        var opt = document.createElement("option");
+        opt.setAttribute("value", i);
+        var optTxt = document.createTextNode(i);
+        opt.appendChild(optTxt);
+        document.getElementById("year").appendChild(opt);
+      }
+    }
+    popYear();
+
+    function checkLeap() { 
+      var sel_year = document.getElementById('year');
+      var thisYearValue = parseInt(sel_year.options[sel_year.options.selectedIndex].value); 
+      if (thisYearValue % 4 == 0 && thisYearValue % 100 != 0) { 
+        return true;
+      }
+      return false;
+    }
+
+    function initYear() {
+      document.getElementById('year').options.selectedIndex = 0; 
+    }
+
+    function initMonth() {
+      document.getElementById('month').options.selectedIndex = 0; 
+      document.getElementById('month').options.length = 1; 
+    }
+
+    function initDate() {
+      document.getElementById('date').options.selectedIndex = 0; 
+      document.getElementById('date').options.length = 1; 
+    }
+  </script>
+
+</body>
+
+</html>

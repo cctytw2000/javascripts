@@ -1,0 +1,87 @@
+* {
+    margin:0;
+    padding:0;
+}
+#allpage{
+    width:1024px;
+    margin:0 auto;
+    font-family: 'Caveat Brush', cursive;
+}
+.menu{
+    overflow:auto;
+    padding: 10px;
+    width:100%;
+    list-style-type:none;
+    background-color:#090909;
+    border-bottom:3px solid #E8CE0E;
+    border-top-right-radius:15px;
+    border-top-left-radius:15px;
+}
+
+.menu li{
+    float:left;
+    width:7em; /*為了讓連結區域能依字型大小的變化自動放大,因此在指定width屬性時採用em為單位*/
+    border-right:1px solid ;
+    border-radius:5px ;
+}
+.menu li a{
+    display:block;
+    width:100%;
+    line-height:2.5em;/*讓文字上下空出適當的空白,不用padding屬性,直接將行Box的高度設的高一些*/
+    color:#E8CE0E;
+    text-decoration:none;
+    text-align:center; 
+    border-radius:5px ;
+}
+.menu li a:hover{
+    color:#ffffff;
+    background-color:#E8CE0E;
+}
+.content {
+    width:100% ;
+    padding-bottom:20px;
+    overflow:auto ;   
+}
+article {
+    width:77%;
+    float:left;
+}
+aside {
+    width:22%;
+    float:right ;
+}
+.title {
+    background-color:	#fff;
+    color:#090909;
+    border-bottom:3px solid #E8CE0E;
+    padding-left:20px;
+}
+article section {
+    margin:16px;
+    border-bottom:1px solid #cccccc;
+    padding-bottom:10px;
+}
+    
+article section p {
+    margin:10px 0;
+    line-height:22px;
+    text-align:justify;
+    }
+.list1 {
+    list-style:decimal inside ;
+    line-height:22px;
+}
+aside dl{
+    margin:16px ;
+}
+footer {
+    width:100%;
+    clear:both;
+    line-height:2.5em;		
+    text-align:center;
+    color:#E8CE0E;
+    background-color:#090909;
+    border-top:3px solid rgb(223, 208, 97);
+    border-bottom-right-radius:15px;
+    border-bottom-left-radius:15px;
+    }

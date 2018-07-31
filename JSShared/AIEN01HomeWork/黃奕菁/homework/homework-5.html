@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework-5</title>
+    <link rel="stylesheet" href="main_hw.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+    <style>    
+    .sec1{ width:45%; height:200px ;
+        float:left; line-height :35px ;}
+    .sec2{ width:45%; height:200px ;
+        float:right; line-height :35px ;
+        text-align:left ; }
+    .table1 {  width:100% ;   }
+    .tr1 { background-color:black ; color:#E8CE0E ; }    
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("idSelectYear").addEventListener("click",printDate);
+            document.getElementById("idSelectMonth").addEventListener("click",printDate); 
+            document.getElementById("idSelectDay").addEventListener("click",printDate);      
+            
+            for (i = 2010; i <= 2020; i++) {   //新增年 
+                var opt = document.createElement("option");
+                opt.setAttribute("value", i);
+                var optTxt = document.createTextNode(i);
+                opt.appendChild(optTxt);
+                document.getElementById('idSelectYear').appendChild(opt);
+            }
+            for (i = 1; i <= 12; i++) {   //新增月 
+                var opt = document.createElement("option");
+                opt.setAttribute("value", i);
+                var optTxt = document.createTextNode(i);
+                opt.appendChild(optTxt);
+                document.getElementById('idSelectMonth').appendChild(opt);
+            }
+            //新增日
+            var y = document.getElementById('idSelectYear').value ;
+            var m = document.getElementById('idSelectMonth').value ;
+            var newd=new Date (y,m,0) ;
+            var d=newd.getDate() ;           
+            for (i = 1; i <= d; i++) {   
+                var opt = document.createElement("option");
+                opt.setAttribute("value", i);
+                var optTxt = document.createTextNode(i);
+                opt.appendChild(optTxt);
+                document.getElementById('idSelectDay').appendChild(opt);
+            }
+            function printDate (){
+                document.getElementById('idtdDate').innerHTML = '你選擇的日期是'+ y+'年'+m+'月'+d+'日';
+            }
+            function clear(){
+             document.getElementById('idSelectDay').innerHTML = ' ';
+        }           
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="allpage">
+    <header>
+    <nav >
+        <ul class="menu">
+            <li><a href="homework-1.html">HW-1</a></li>
+            <li><a href="homework-2.html">HW-2</a></li>
+            <li><a href="homework-3.html">HW-3</a></li>
+            <li><a href="homework-4.html">HW-4</a></li>
+            <li><a href="homework-5.html">HW-5</a></li>              
+        </ul>
+    </nav>
+
+    <img src="images\jstips-animation.gIF"alt="logo" title="logo" width="1044" height="340">
+</header>
+<div class="content">
+<article>
+    <h2 class="title">Homework-5 製作2010~2020年日曆</h2>
+    <section class=sec1>
+        <h2>Welcome</h2>
+        <select id="idSelectYear"></select><span>年</span>
+        <select id="idSelectMonth"></select><span>月</span>
+        <select id="idSelectDay"></select><span>日</span>         
+    </section>
+    <section class=sec2>
+        <table class=table1>
+            <tr class=tr1>
+                <th>Imformation</th>
+            </tr>
+            <tr>
+                <td id=idtdDate></td>
+            </tr>
+        </table> 
+    </section>
+</article>
+
+<aside>
+<h2 class="title">備註</h2>
+<dl>
+    <dt>班級 
+        <dd>AIEN 02</dd>
+    </dt>
+</dl>
+<dl>
+    <dt>課程
+        <dd>JavaScript</dd>
+    </dt>
+</dl>
+<dl>
+    <dt>指導老師
+        <dd>陳銀華 老師</dd>
+    </dt>
+    </dl>
+<dl>
+    <dt>學生
+        <dd>黃奕菁</dd>
+    </dt>
+</dl>
+</aside>
+
+    </div><!--end cintent-->
+<footer>
+        <p>E-amil:jnek23758@hotmail.com &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology CO. </p>
+    </footer>
+</div><!--end allpage-->  
+
+</body>
+</html>

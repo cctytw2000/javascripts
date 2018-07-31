@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>homework</title>
+
+</head>
+
+<style>
+    *{
+        margin:0;
+    }
+    table{
+        border:3px solid red;
+        border-collapse: collapse;
+        background-color: aquamarine;
+        margin:2em auto;
+    }
+    #tr99 td{
+        border:2px solid blue;
+        color:red;
+        padding:10px;
+    }
+</style>
+<body>
+    <table>
+        <caption><h1>99乘法表</h1></caption>
+        <tr id="tr99">
+        </tr>
+    </table>
+</body>
+<script>
+    for(var i=2;i<10;i++){
+        var td1 = document.createElement("td");
+            
+        for(var j=1;j<10;j++){
+            var x = document.createTextNode(String(i + "*" + j + "=" + i*j));
+            var br1 = document.createElement("br");
+            td1.appendChild(x);
+            td1.appendChild(br1);
+            document.getElementById("tr99").appendChild(td1);
+
+        }  
+    }
+        
+    </script>
+    
+</html>

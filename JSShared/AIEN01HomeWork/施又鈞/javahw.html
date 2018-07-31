@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #table1{
+            border:2pt solid red;
+            background-color: sandybrown;
+
+        }
+        td{
+            border:1pt solid black;
+            background-color:powderblue
+        }
+    
+    
+    
+    </style>
+    
+</head>
+<body>
+        <table id="table1">
+       <tr>
+                <script>
+                for(var i=0;i<9;i++)
+                {
+                    document.write("<td>");
+                    for(var j=1;j<10;j++)
+                    {
+                        
+                        document.write(i+"*"+j+"="+i*j +"<br>");
+                        
+                    }
+                    document.write("</td>");
+                }
+                </script>
+                </tr>
+                </table>
+</body>
+</html>

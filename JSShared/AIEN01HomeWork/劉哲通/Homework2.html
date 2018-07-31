@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+      .str1{
+        border-bottom: 1px solid grey;
+        width: 500px;
+        margin: 20px;
+        padding-bottom: 10px;
+                  
+        }
+        fieldset{
+            border:1px solid #00AA00;
+            margin: 3px;
+            width: 400px;
+            border-radius: 15px
+        }
+        .sub{
+            width: 400px;
+            margin: 15px;
+            text-align: center;
+        }
+        .t2{
+            font-size: 0.01cm;
+            padding-right: 5px; 
+            text-align: right;    
+            width: 400px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="allpage">
+        <header>
+            
+            <nav>
+                <ul class="menu">
+                <li><a href="index.html">回首頁</a></li>
+                <li><a href="Homework1.html">九九乘法表</a></li>
+                <li><a href="Homework2.html">表單製作</a></li>
+                <li><a href="HomeWork3.html">評點製作</a></li>
+                <li><a href="">主要客戶</a></li>
+                <li><a href="">公司簡介</a></li>
+                <li><a href="">聯絡我們</a></li>
+                </ul>
+            </nav>
+            <img src="images/logo.jpg"width=1024px height=150px>
+        </header>
+        <div class="content">
+        <article>
+            <h2 class="title">表單製作</h2>
+                    <form action="#" method="GET" enctype="">
+                            <fieldset>
+                                <legend>Form Check</legend>
+                                <div class="str1"><label>姓名:</label><input type="text" id="name" style="margin:0px" >
+                                    <span id="idsp" style="color: red"></span><label class="t2"><br>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</label></div>
+                                <div class="str1"><label>密碼:</label><input type="password" id="password">
+                                    <span id="pwsp" style="color: red"></span><label class="t2"><br>(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])</label></div>
+                                <div class="str1"><label>日期:</label><input type="datetime" id="datetime">
+                                    <span id="dtsp" style="color: red"></span><label class="t2"><br>(格式:西元/年/月/日 yyyy/MM/dd)</label></div>
+                                <div class="sub">
+                                <input type="submit" value="送出">
+                                <input type="reset" value="清除">
+                              
+                            </fieldset>
+                            <script>
+                                document.getElementById("name").addEventListener("blur",checkname)
+                                document.getElementById("password").addEventListener("blur",checkpassword)
+                                document.getElementById("datetime").addEventListener("blur",checkdate)
+                                function checkname(){
+                                var name1 = document.getElementById("name").value;
+                                var date = document.getElementById("datetime").value;
+                                if(name1 =="")
+                                document.getElementById("idsp").innerHTML ="<img src='Images/error.png'>姓名不可為空白"
+                                else if(name1.length >=2){
+                                 for(var i=0;i<name1.length;i++){
+                                     if(name1.charCodeAt(i) < 0x4E00 || name1.charCodeAt(i)>0x9FA5){
+                                     document.getElementById("idsp").innerHTML ="<img src='Images/error.png'>姓名有非中文字";
+                                     }else{
+                                        document.getElementById("idsp").innerHTML ="<img src='Images/correct.gif'>正確";
+                                     }
+                                 }       
+                                }
+                                else if(name1.length<2){
+                                    document.getElementById("idsp").innerHTML ="<img src='Images/error.png'>姓名不可少於兩個字";
+                                } 
+                                }
+                                function checkpassword(){ 
+                                var thePwd = document.getElementById("password").value;
+                                var thePwdLen = thePwd.length;
+                                var flag1 = false;
+                                var flag2 = false;
+                                var flag3 = false;     
+                                //判斷元素值是否為空白，密碼長度是否大於6
+                                    if(thePwd == "")
+                                    document.getElementById("pwsp").innerHTML ="<img src='Images/error.png'>密碼不可為空白";
+                                    else if(thePwdLen>=6){     
+                                    // alert("password >=6");
+                                    for(var i=0;i<thePwdLen;i++){
+                                        var PwdChar = thePwd.substr(i,1).toUpperCase();
+                                        var Pwdcode = thePwd.charCodeAt(i);
+                                        if(PwdChar>="A"&&PwdChar<="Z")
+                                        flag1=true;
+                                        else if(PwdChar >= "0" && PwdChar <= "9")
+                                        flag2=true;
+                                        else if(Pwdcode>="33"&&Pwdcode<="94")
+                                        flag3=true;
+                                        if(flag1&&flag2&&flag3)
+                                        break;
+                                    }
+                                    if (flag1 && flag2 && flag3) document.getElementById("pwsp").innerHTML ="<img src='Images/correct.gif'>正確";
+                                     else document.getElementById("pwsp").innerHTML ="<img src='Images/error.png'>密碼格式有誤";
+                                    }
+                                    else{
+                                        document.getElementById("pwsp").innerHTML ="<img src='Images/error.png'>密碼必須超過六個字";}
+                                    //如果長度是否大於6，判斷是否包含字母、數字、特殊符號 
+                                    } 
+                                function checkdate(){
+                                var date = document.getElementById("datetime").value;
+                                 re = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
+                                 if(re.test(date)){
+                                     var dt = new Date(date)
+                                     
+                                     if(dt != "Invalid Date")
+                                    document.getElementById("dtsp").innerHTML ="<img src='Images/correct.gif'>正確"
+                                    else{
+                                        document.getElementById("dtsp").innerHTML ="<img src='Images/error.png'>日期格式有誤" 
+                                    }
+                                    date = date.split("/")
+                                    if(parseInt(date[1]) == dt.getMonth()+1 &&parseInt(date[2]) == dt.getDate())
+                                    document.getElementById("dtsp").innerHTML ="<img src='Images/correct.gif'>正確"
+                                    else{
+                                        document.getElementById("dtsp").innerHTML ="<img src='Images/error.png'>日期格式有誤" 
+                                    }
+                                 }
+                                 else{
+                                document.getElementById("dtsp").innerHTML ="<img src='Images/error.png'>日期格式有誤"}   
+                                }
+                            </script>
+        </article>
+        <aside>
+                <h2 class="title">最新消息</h2>
+                 <dl>   
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                 </dl>
+                 <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>   
+                <dl>
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+                </dl>
+                <dl>   
+                    <dt>2018年4月</dt>
+                    <dd>AI人工智慧有限公司網頁全新改版</dd>
+               </dl>
+        </aside>
+    </div>
+    <footer>
+            E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology CO. 
+    </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>04for.html</title>
+    <style>
+    table{
+       margin:50px auto;  
+       border:3px double red;
+       border-collapse:collapse;
+       background-color:blanchedalmond;
+    }
+    td{
+        border-left:1px solid blue;
+        text-align:center;
+        color:brown;
+        padding:10px;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<table>");
+            for(var i = 2 ; i < 10 ; i++){
+                 document.write("<tr>")
+                for(var j = 1 ; j < 10 ; j++){
+                    document.write("<td>"+i+"*"+j+"="+ i*j +"</td>")
+                }
+                document.write("</tr>")    
+            }
+        document.write("</table>");
+	</script>
+</body>
+</html>

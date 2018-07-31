@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0
+}
+
+#fieldset1{
+    width:500px;
+    /* border-left:3px gainsboro double;
+    border-right:3px gainsboro double;
+    border-bottom:3px gainsboro double; */
+    background-color: darkgrey;
+    margin:auto;
+    margin-top: 50px;
+    padding:5px;
+    text-align: left;
+    /* overflow: auto; */
+}
+
+.div1{
+    width:400px;
+    border-bottom:3px gainsboro double;
+    margin:20px;
+    padding-bottom:20px;
+}
+
+#div4{
+    width:400px;
+    margin:20px;
+    padding-bottom:20px;
+    text-align: center;
+
+}
+
